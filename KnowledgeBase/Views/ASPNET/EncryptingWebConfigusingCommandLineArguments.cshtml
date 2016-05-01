@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Encrypting Web Config using Command Line Arguments";
+}
+
+<h2>Encrypting Web.Config using Command Line Arguments</h2>
+
+<p>This Article Provides a step-by-step example for encrypting sections of a configuration file for an ASP.NET application.
+
+Protected Configuration helps improve the security of an application by letting you encrypt sensitive information that is stored in a Web.config file. You can use aspnet_regiis.exe to encrypt sections of the Web.config file and manage encryption keys. ASP.NET decrypts the configuration file when it processes the file. Therefore, decryption does not require any additional code.
+
+At the command prompt, change the directory to the .NET Framework version 2.0 directory by typing the following command:</p>
+<pre>
+<span style='color:#005fd2; '>cd</span> <span style='color:#0000e6; '>\WINDOWS\Microsoft.Net\Framework\v2.0.*</span>
+</pre>
+<p>
+    At the command prompt, run aspnet_regiis.exe with the following options:
+
+    The -pe option and the string "connectionStrings" to encrypt the connectionStrings element of the Web.config file for your application.
+
+    The -app option and the name of your application.
+
+    For example, the following command encrypts the section of the Web.config file for an application named MyApplication.
+</p>
+<pre>
+<span style='color:#005fd2; '>aspnet_regiis</span> <span style='color:#074726; '>-pe</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>connectionStrings</span><span style='color:#800000; '>"</span> <span style='color:#074726; '>-app</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>/MyApplication</span><span style='color:#800000; '>"</span>
+</pre>
+<p>Repeat the preceding step for the child element of the element, as shown in the following example:</p>
+<pre>
+<span style='color:#005fd2; '>aspnet_regiis</span> <span style='color:#074726; '>-pe</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>system.web/machineKey</span><span style='color:#800000; '>"</span> <span style='color:#074726; '>-app</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>/MyApplication</span><span style='color:#800000; '>"</span>
+</pre>
+<p>Do not close the Command Prompt window.
+</p>
+<pre>
+<span style='color:#005fd2; '>aspnet_regiis</span> <span style='color:#074726; '>-pd</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>connectionStrings</span><span style='color:#800000; '>"</span> <span style='color:#074726; '>-app</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>/MyApplication</span><span style='color:#800000; '>"</span>
+<span style='color:#005fd2; '>aspnet_regiis</span> <span style='color:#074726; '>-pd</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>system.web/machineKey</span><span style='color:#800000; '>"</span> <span style='color:#074726; '>-app</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>/MyApplication</span><span style='color:#800000; '>"</span>
+</pre>
+<ul>
+    <li>Create a custom RSA key container.</li>
+    <li>Specify a Protected Configuration provider that uses a custom RSA key container.</li>
+    <li>Encrypt sections of a Web.config file by using a custom RSA key container.</li>
+    <li>Export a custom RSA key container to an XML file.</li>
+    <li>Import a custom RSA key container from an XML file.</li>
+</ul>
+<p>To create a machine-level RSA key container
+
+Open a command prompt.
+
+To do this, in Microsoft Windows, click Start, click Run, in the Open box, type cmd, and then click OK.
+
+At the command prompt, enter the following command to change the directory to the .NET Framework version 2.0 directory:</p>
+<pre>
+<span style='color:#005fd2; '>cd</span> <span style='color:#0000e6; '>\WINDOWS\Microsoft.Net\Framework\v2.0.*</span>
+</pre>
+<p>Create a new, machine-level RSA key container by running aspnet_regiis.exe with the following options: The -pc option followed by the name of the RSA key container, to create the RSA key pair. The -exp option, to make sure that the key is exportable.
+
+The following command will create the "MyKeys" key container.</p>
+<pre>
+<span style='color:#005fd2; '>aspnet_regiis</span> <span style='color:#074726; '>-pc</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>MyKeys</span><span style='color:#800000; '>"</span> <span style='color:#074726; '>-exp</span>
+</pre>
+<p>Do not close the Command Prompt window. -px - decrypting -pri - make sure that private key information is exported. other wise the exported key information only encrypts not decrypt it.</p>
+<pre>
+<span style='color:#005fd2; '>aspnet_regiis</span> <span style='color:#074726; '>-px</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>MyKeys</span><span style='color:#800000; '>"</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>c:\keys.xml</span><span style='color:#800000; '>"</span> <span style='color:#074726; '>-pri</span>
+</pre>
+<p>-pz - delete key container
+</p>
+<pre>
+<span style='color:#005fd2; '>aspnet_regiis</span> <span style='color:#074726; '>-pz</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>MyKeys</span><span style='color:#800000; '>"</span>
+</pre>
+<p>-pi = importing a key container from xml.</p>
+<pre>
+<span style='color:#005fd2; '>aspnet_regiis</span> <span style='color:#074726; '>-pi</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>MyKeys</span><span style='color:#800000; '>"</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>c:\keys.xml</span><span style='color:#800000; '>"</span>
+</pre>

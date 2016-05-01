@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "ExceptionHandlingMVC";
+}
+
+<h1>Exception Handling in MVC</h1>
+
+<p>Hello all, Welcome back to Knowledge Base. </p>
+<p>Today we are going to talk about Exception Handling.... uhhhhhh Key Concept.</p>
+<p>Exception Handling is the key component in every software program. We are very unfortunate that there will be 
+    certain situations where we experience errors. Either it could be with respect to network, data mismatch,
+    casting issue or some thing which cause a booooommmmm error. But we should be cautious in handling those so 
+    user won't get distracted. If we won't handle them properly we will see the beautiful red screen with 
+    some errors in red......:( </p>
+
+<p>Lets get started, we will see now how we can handle exceptions in MVC application. In this example, its a simple
+    and one way of doing exception handling. This is just to get understanding and to start implementing exception 
+    handling.</p>
+
+<p>As usual, lets create a MVC application. No Logic nothing, just straight forward a normal MVC application with 
+    default skeleton. </p>
+
+<p>As a first step lets create a MVC View, here we are naming it as ErrorView.cshtml.</p>
+<p>Create a simple layout for showing up if any error occurs.</p>
+<pre>&#64;<span style='color:#800080; '>{</span>
+    Layout <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>null</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+
+<span style='color:#808030; '>&lt;</span>link href<span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>~/Content/bootstrap.css</span><span style='color:#800000; '>"</span> rel<span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>stylesheet</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>/</span><span style='color:#808030; '>></span>
+
+<span style='color:#808030; '>&lt;</span>div <span style='color:#800000; font-weight:bold; '>class</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>container</span><span style='color:#800000; '>"</span><span style='color:#808030; '>></span>
+<span style='color:#808030; '>&lt;</span>div <span style='color:#800000; font-weight:bold; '>class</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>alert alert-danger</span><span style='color:#800000; '>"</span> role<span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>alert</span><span style='color:#800000; '>"</span> style<span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>margin-top:10px;</span><span style='color:#800000; '>"</span><span style='color:#808030; '>></span>
+<span style='color:#808030; '>&lt;</span>h1<span style='color:#808030; '>></span>Error Page<span style='color:#808030; '>.</span><span style='color:#808030; '>.</span><span style='color:#808030; '>.</span> Something Went Wrong<span style='color:#808030; '>&lt;</span><span style='color:#808030; '>/</span>h1<span style='color:#808030; '>></span>
+<span style='color:#808030; '>&lt;</span>h4<span style='color:#808030; '>></span>Please Try Again<span style='color:#808030; '>.</span> If Still Persists<span style='color:#808030; '>,</span> Please Contact System Administrator<span style='color:#808030; '>.</span><span style='color:#808030; '>&lt;</span><span style='color:#808030; '>/</span>h4<span style='color:#808030; '>></span>
+<span style='color:#808030; '>&lt;</span>p<span style='color:#808030; '>></span>
+            Controller<span style='color:#808030; '>:</span> &#64;Model<span style='color:#808030; '>.</span>ControllerName
+<span style='color:#808030; '>&lt;</span><span style='color:#808030; '>/</span>p<span style='color:#808030; '>></span>
+<span style='color:#808030; '>&lt;</span>p<span style='color:#808030; '>></span>
+            Action<span style='color:#808030; '>:</span>&#64;Model<span style='color:#808030; '>.</span>ActionName
+<span style='color:#808030; '>&lt;</span><span style='color:#808030; '>/</span>p<span style='color:#808030; '>></span>
+<span style='color:#808030; '>&lt;</span>p<span style='color:#808030; '>></span>
+            Message<span style='color:#808030; '>:</span> &#64;Model<span style='color:#808030; '>.</span>Exception<span style='color:#808030; '>.</span>Message
+<span style='color:#808030; '>&lt;</span><span style='color:#808030; '>/</span>p<span style='color:#808030; '>></span>
+<span style='color:#808030; '>&lt;</span>p<span style='color:#808030; '>></span>
+            Stack Trace<span style='color:#808030; '>:</span> &#64;Model<span style='color:#808030; '>.</span>Exception<span style='color:#808030; '>.</span>StackTrace
+<span style='color:#808030; '>&lt;</span><span style='color:#808030; '>/</span>p<span style='color:#808030; '>></span>
+<span style='color:#808030; '>&lt;</span><span style='color:#808030; '>/</span>div<span style='color:#808030; '>></span>
+<span style='color:#808030; '>&lt;</span><span style='color:#808030; '>/</span>div<span style='color:#808030; '>></span>
+</pre>
+
+<p>Add customerror section in Web.Config. The reason behind this is to intimate the application that we are 
+    using custom error handling, so we are turning custom errors "on". We are even specifying the defaultRedirect for our custom errors.</p>
+
+<pre><span style='color:#808030; '>&lt;</span>customErrors mode<span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>On</span><span style='color:#800000; '>"</span> defaultRedirect<span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>ErrorView</span><span style='color:#800000; '>"</span><span style='color:#808030; '>></span>
+<span style='color:#808030; '>&lt;</span><span style='color:#808030; '>/</span>customErrors<span style='color:#808030; '>></span>
+</pre>
+
+<p>Now in our controller, we are going to use built-in feature of handling errors by using <b><u>HandleError</u></b> attribute.</p>
+
+<img src="~/Images/CustomError_1.png" />
+
+<p>HandleAttribute, has some Named Properties which we need to configure based on our needs. The different named 
+    properties are,</p>
+
+<ul>
+    <li><b> ExceptionType.</b> Specifies the exception type or types that the filter will handle. If this property is not specified, the filter handles all exceptions.</li>
+    <li><b>View. </b>Specifies the name of the view to display.</li>
+    <li><b>Master.</b> Specifies the name of the master view to use, if any.</li>
+    <li><b>Order.</b> Specifies the order in which the filters are applied, if more than one HandleErrorAttribute filter is possible for a method.</li>
+</ul>
+<p>(Courtesy: <a href="https://msdn.microsoft.com/en-us/library/system.web.mvc.handleerrorattribute(v=vs.118).aspx" target="_blank">MSDN</a>)</p>
+
+<p>We are specifying the HandleError attribute in the controller at action level or we can specify them at controller level.</p>
+<pre><span style='color:#808030; '>[</span>HandleError<span style='color:#808030; '>(</span>View <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>ErrorView</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>]</span>
+<span style='color:#800000; font-weight:bold; '>public</span> ActionResult Index<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>try</span>
+    <span style='color:#800080; '>{</span>
+        <span style='color:#2C3E50; '>//Logic</span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>catch</span> <span style='color:#808030; '>(</span>Exception ex<span style='color:#808030; '>)</span>
+    <span style='color:#800080; '>{</span>
+        <span style='color:#800000; font-weight:bold; '>throw</span> ex<span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>return</span> View<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>
+
+<p>We need to register our custom filter in Global.asax.</p>
+
+<pre><span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#800000; font-weight:bold; '>void</span> RedisterGlobalFilter<span style='color:#808030; '>(</span>GlobalFilterCollection filters<span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+            filters<span style='color:#808030; '>.</span>Add<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>new</span> HandleErrorAttribute<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>
+
+<p>Exception shows as below. We can customize this as per our needs.</p>
+
+<img src="~/Images/CustomError.png" width="450" height="250" class="img-responsive" />
+
+<p>Enjoy Coding... </p>

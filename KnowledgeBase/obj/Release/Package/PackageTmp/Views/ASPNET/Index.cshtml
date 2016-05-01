@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "ASPNETIndex";
+}
+
+<script type="text/javascript">
+    $(function () {
+        var $rows = $('#table tr');
+        $('#search').keyup(function () {
+
+            var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+                reg = RegExp(val, 'i'),
+                text;
+
+            $rows.show().filter(function () {
+                text = $(this).text().replace(/\s+/g, ' ');
+                return !reg.test(text);
+            }).hide();
+        });
+    });
+</script>
+<br /> 
+<div class="panel panel-default">
+   <div class="panel-heading">
+        
+        <input type="text" class="form-control pull-right" id="search" placeholder="Search Articles" />
+    </div>
+    <div class="panel-body">
+        <table id="table" class="table-hover" style="width:100%;">
+            @foreach (var x in KBArticles.GetASPNETList().ToList())
+            {
+                <tr>
+                    <td style="padding:10px;">
+                        <span class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp;<a style="text-decoration:none; color:#2C3E50;" href="@x.ArticleURL">@x.ArticleName</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,48 @@
+﻿@model KnowledgeBase.Models.Feedback
+
+@{
+    ViewBag.Title = "Comments";
+}
+
+@using (Ajax.BeginForm("PostFeedback", FormMethod.Post, new AjaxOptions { HttpMethod = "Post" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="col-sm-12 col-md-8 col-lg-5">
+        <div class="form-horizontal">
+            <h4>Post your Valuable Feedback</h4>
+            <hr />
+            <div>
+                <div class="inputgroup">
+                    @Html.TextBoxFor(model => model.FullName, new { @class = "form-control", autocomplete = "off", placeholder = "Enter Name" })
+                    @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+                </div>
+                <br />
+
+                <div class="inputgroup">
+                    @Html.TextBoxFor(model => model.EmailAddress, new { @class = "form-control", autocomplete = "off", placeholder = "Enter Email Address" })
+                    @Html.ValidationMessageFor(model => model.EmailAddress, "", new { @class = "text-danger" })
+
+                </div>
+                <br />
+                <div class="inputgroup">
+                    @Html.TextBoxFor(model => model.FeedbackType, new { @class = "form-control", autocomplete = "off", placeholder = "Enter Feedback Type" })
+                    @Html.ValidationMessageFor(model => model.FeedbackType, "", new { @class = "text-danger" })
+
+                </div>
+                <br />
+                <div class="inputgroup">
+                    @Html.TextAreaFor(model => model.Comment, new { @class = "form-control", rows = 6, placeholder = "Enter Comments" })
+                    @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+
+                </div>
+                <br />
+                <div class="inputgroup">
+
+                    <input type="submit" value="Post Feedback" id="submitBtn" class="btn btn-info" />
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+}

@@ -1,0 +1,191 @@
+﻿@{
+    ViewBag.Title = "Dynamic Data with ASP.NET";
+}
+
+<h2>Dynamic Data with ASP.NET</h2>
+<p>
+    ASP.NET Dynamic Data provides a framework that enables you to quickly build a functional data-driven application, based on a LINQ to SQL or Entity Framework data model. Rapid Action Development is significantly increased by the use of a rich scaffolding framework. After you add a LINQ to SQL or Entity Framework data model to a project, you can simply register it with Dynamic Data. The result is a fully functional Web site. Full CRUD (create, read, update, and delete) operations are supported. The site includes filtering by foreign keys and Boolean fields; foreign keys are automatically converted to their friendly names. Smart validation is automatically available, which provides validation based on database constraints for nullable fields, data type, and field length.
+    <br />
+    Dynamic Data will then automatically build the UI for these controls based on the templates that you specify.
+    <br />
+    Validation is significantly improved in the controls as well. The controls read metadata for a LINQ to SQL or Entity Framework data model and provide automatic validation based on the model. For example, if a column in the database is limited to 50 characters, and if a column is marked as not nullable, a RequiredFieldValidator control is automatically enabled for the column.
+    <ul>
+        <li>Dynamic Data offers the following features:</li>
+        <li>Support for multiple data models and data validation.</li>
+        <li>Support for table relationships. Dynamic Data detects relationships between tables and creates a UI that enables the user to view data from related tables. Dynamic Data supports displaying and editing data in a many-to-many relationship.</li>
+        <li>Support for customizing data-field validation.</li>
+        <li>Support for data filtering.</li>
+        <li>Support for table action links. Dynamic Data allows for the creation of dynamic hyperlinks that are based on the table actions enabled by Dynamic Data.</li>
+    </ul>
+    Following is the Sample Example for creation of Dynamic Data web application.
+    <br />
+    Create a new Dynamic Data Web Application.
+    <br />
+</p>
+<img src="~/Images/DynamicData/DynamicData_1.jpg" class="img-responsive" />
+<br />
+<br />
+<p>Following will be the structure you see once you create a Dynamic Data web application. A Folder with Dynamic Data will be created under the solution.</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_2.jpg" class="img-responsive" />
+<br />
+<br />
+<p>
+    Once you look in to the Dynamic Data folder you see,
+    <ul>
+        <li>Field Templates</li>
+        <li>Page Templates</li>
+    </ul>
+    Page Templates holds the default structure of the pages like, Details, Add, Edit etc.
+    <br />
+    Field Templates holds when ever add or edit records are done in pages automatically respective user controls for the field level controls
+    <br />
+    will be shown with respect to field validations.
+</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_3.jpg" class="img-responsive" />
+<br /><br />
+- Create a Database.<br />
+- Create tables with the following structure(s). 
+<br />
+<br />
+<img src="~/Images/DynamicData/DynamicData_4.jpg" class="img-responsive" />
+<br />
+<br />
+<br />
+<img src="~/Images/DynamicData/DynamicData_5.jpg" class="img-responsive" />
+<br />
+<br />
+<p>We defined "SID" column for Foreign Key specification which we are going to bind up using database diagrams. There is a Column level computation specification is given for "TOTAL" field for calculating total automatically.</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_6.jpg" class="img-responsive" />
+<br /><br />
+<p>In the Database Explorer, Add new Diagram for creating a Database Diagram.</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_7.jpg" class="img-responsive" />
+<br /><br />
+<p>There will be a confirmation shown for creating database diagram. Click Yes to create a database diagram.</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_8.jpg" class="img-responsive" />
+<br /><br />
+<p>Select the tables for which you wish to create database diagram.</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_9.jpg" class="img-responsive" />
+<br /><br />
+<p>Drag ID column in Student table to SID column in Marks table for forming up foreign key relationship.</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_10.jpg" class="img-responsive" />
+<br /><br />
+<p>
+    Once the foreign key is established it will ask for updating the schema in the database. Click Yes to update the schema.
+    <br />
+    Note: If Visual Studio doesn't allow you to update the schema then Go To Tools > Options > Database Tools > Table and Database Designers > Prevent saving changes that require table re-creation
+</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_11.jpg" class="img-responsive" />
+<br /><br />
+<p>Add New Item (LINQ to SQL Classes) to solution.</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_12.jpg" class="img-responsive" />
+<br />
+<br />
+<p>On the designer drag the selected tables to from up context.</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_13.jpg" class="img-responsive" />
+<br />
+<br />
+<p>Once the tables are dragged and dropped in to the designer automatically the relationships also be shown as below.</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_14.jpg" class="img-responsive" />
+<br />
+<br />
+<p>Open global.asax file which is there in the solution.</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_15.jpg" class="img-responsive" />
+<br />
+<br />
+<p>There is a piece of code, which illustrates the Context Registration to the application. Uncomment the selected line below.</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_16.jpg" class="img-responsive" />
+<br />
+<br />
+<p>In the "YourDataContextType" specify the context of the application which we can found in the designer of .dbml file</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_17.jpg" class="img-responsive" />
+<br />
+<br />
+<p>Following is the DataContext (ExampleModelDataContext) of the current application.</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_18.jpg" class="img-responsive" />
+<br />
+<br />
+<p>Specify the Context as below.</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_19.jpg" class="img-responsive" />
+<br />
+<br />
+<p>
+    Make ScaffoldAllTables element to true. It will be false by default. ScaffoldAllTables option is used for having automatic generation of operations page level.
+    <br />
+    <a href="http://msdn.microsoft.com/en-us/library/system.web.dynamicdata.contextconfiguration.scaffoldalltables.aspx">Click Here</a> to know more about ScaffoldAllTables
+</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_20.jpg" class="img-responsive" />
+<br />
+<br />
+<p>Once all the settings are done. Run the application. You will see the tables list as below.</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_21.jpg" class="img-responsive" />
+<br />
+<br />
+<p>Click on Students link you will see the details about that table. Click on Insert new Item to create a student record.</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_22.jpg" class="img-responsive" />
+<br />
+<br />
+<p>Following will be the screen shown for adding the record.</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_23.jpg" class="img-responsive" />
+<br />
+<br />
+<p>Once the record is added you will see View Marks link. Since the tables Student and Marks are having relationship.</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_24.jpg" class="img-responsive" />
+<br />
+<br />
+<p>Add new item to Marks table by using Insert New Item.</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_25.jpg" class="img-responsive" />
+<br />
+<br />
+<p>You will see the Student record relation which you see in the following image.</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_26.jpg" class="img-responsive" />
+<br />
+<br />
+<p>
+    There is one more in built functionality in Dynamic Data Web Application which is "Routing"
+    <br />
+    Open the Global.asax file Routing will be registered and specification can be done in different ways.
+</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_27.jpg" class="img-responsive" />
+<br />
+<br />
+<img src="~/Images/DynamicData/DynamicData_28.jpg" class="img-responsive" />
+<br />
+<br />
+<img src="~/Images/DynamicData/DynamicData_29.jpg" class="img-responsive" />
+<br />
+<br />
+<p>We can modify the routing link as below in the global.asax.</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_30.jpg" class="img-responsive" />
+<br />
+<br />
+<p>The modified link will be as below.</p>
+<br />
+<img src="~/Images/DynamicData/DynamicData_31.jpg" class="img-responsive" />
+<br /><br />
+<a href="http://www.box.net/shared/k9hi3dmbmj" class="btn btn-danger">
+     Sample</a>

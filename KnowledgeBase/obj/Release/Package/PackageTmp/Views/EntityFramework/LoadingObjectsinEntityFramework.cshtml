@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Loading Objects in Entity Framework";
+}
+
+<h1>Loading Objects in Entity Framework</h1>
+
+<p>
+    Entity types can define navigation properties that represent associations in the data model. You can use these properties to load entities that are related to the returned entity by the defined association. When entities are generated based on the data model, navigation properties are generated for entities at both ends of an association. These navigation properties return either a reference on the "one" end of a one-to-one or many-to-one relationship or a collection on the "many" end of a one-to-many or many-to-many relationship.
+    <br />
+    Navigation properties in the Entity Framework provide a way to navigate an association between two entity types. A navigation property is defined by the NavigationProperty Element (CSDL) in the conceptual model. Every object can have a navigation property for every relationship in which it participates. Navigation properties allow you to navigate and manage relationships in both directions, returning either an EntityReference, if the multiplicity is either one or zero-or-one, or an EntityCollection, if the multiplicity is many. You may also choose to have one-way navigation, in which case you can delete the navigation property
+    <br />
+    The different Loading Patterns which we can use in Entity Framework are
+    <ul>
+        <li>Explicit Loading</li>
+        <li>Lazy Loading</li>
+        <li>Eager Loading</li>
+    </ul>
+</p>
+<p>
+    <b>Explicit Loading:</b>
+    <br />
+    Explicitly loading entities into the ObjectContext requires multiple round-trips to the database and might require multiple active result sets, but the amount of data returned is limited to only the entities being loaded.
+    <br />
+    <br />
+    <b>Lazy Loading:</b>
+    <br />
+    In this Loading related entities are automatically loaded from the data source when you access a navigation property.
+    <br />
+    <br />
+    <b>Eager Loading:</b>
+    <br />
+    When you know the exact shape of the graph of related entities that your application requires, you can use the Include method on the ObjectQuery to define a query path that controls which related entities to return as part of the initial query. When you define a query path, only a single request against the database is required to return all entities defined by the path in a single result set, and all related entities of the type specified in the path are loaded with each object that the query returns.
+    <br />
+    To specify the query path, pass a string representation of the object graph to the Include method on the ObjectQuery. This path specifies which related entities to return when an object query is executed. Following is the sample example for how to work on eager loading.
+    <br />
+    <br />
+    Create a Empty web site.
+    <br /><br />
+    <img src="~/Images/LoadingObjects/LoadingObjects_1.jpg" class="img-responsive" />
+    <br />
+<p>Add a SQL Server Database to the application and create tables with the schema as below.</p>
+<br />
+<img src="~/Images/LoadingObjects/LoadingObjects_2.jpg" class="img-responsive" />
+<br /><br />
+<img src="~/Images/LoadingObjects/LoadingObjects_3.jpg" class="img-responsive" />
+<br />
+<p>using databse diagram create up relationship between PERSON and QUALIFICATION tables.</p>
+<br />
+<img src="~/Images/LoadingObjects/LoadingObjects_4.jpg" class="img-responsive" />
+<br />
+<p>Add an ADO.NET Entity Data Model to the application.</p>
+<br />
+<img src="~/Images/LoadingObjects/LoadingObjects_5.jpg" class="img-responsive" />
+<br /><br />
+<p>Drag and Drop the tables to the data model.</p>
+<br />
+<img src="~/Images/LoadingObjects/LoadingObjects_6.jpg" class="img-responsive" />
+<br />
+<p>Add a web page to the application and add up a grid view control to the web page and add up the following code.</p>
+<br />
+<img src="~/Images/LoadingObjects/LoadingObjects_7.jpg" class="img-responsive" />
+<br />
+<p>We included a relationship Qualification with People by using Include. Based on that we are performing a operation.</p>
+<br /><br />
+<a href="http://www.box.net/shared/lir16h0am3" class="btn btn-danger">
+     Sample</a>

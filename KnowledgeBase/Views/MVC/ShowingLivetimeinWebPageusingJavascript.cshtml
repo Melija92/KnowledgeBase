@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Showing Live time in Web Page using Javascript";
+}
+
+<h1>Showing Live time in Web Page using Javascript</h1>
+<pre>
+<span style='color:#800000; font-weight:bold; '>function</span> dTime<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>var</span> d <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> <span style='color:#797997; '>Date</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>var</span> h <span style='color:#808030; '>=</span> d<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>getHours</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>var</span> m <span style='color:#808030; '>=</span> d<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>getMinutes</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>var</span> s <span style='color:#808030; '>=</span> d<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>getSeconds</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#696969; '>//add a zero in front of numbers &lt; 10</span>
+       m <span style='color:#808030; '>=</span> checkTime<span style='color:#808030; '>(</span>m<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+       s <span style='color:#808030; '>=</span> checkTime<span style='color:#808030; '>(</span>s<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>var</span> dd <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>AM</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>var</span> hh <span style='color:#808030; '>=</span> h<span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>hh <span style='color:#808030; '>>=</span> <span style='color:#008c00; '>12</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+          hh <span style='color:#808030; '>=</span> h <span style='color:#808030; '>-</span> <span style='color:#008c00; '>12</span><span style='color:#800080; '>;</span>
+          dd <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>PM</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>hh <span style='color:#808030; '>==</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+          hh <span style='color:#808030; '>=</span> <span style='color:#008c00; '>12</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+       document<span style='color:#808030; '>.</span>getElementById<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>txt</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>innerHTML <span style='color:#808030; '>=</span> d<span style='color:#808030; '>.</span>toDateString<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>  </span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> hh <span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>:</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> m <span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>:</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> s <span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '> </span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> dd<span style='color:#800080; '>;</span>
+       t <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>setTimeout</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>dTime()</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>500</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<br />
+<span style='color:#800000; font-weight:bold; '>function</span> checkTime<span style='color:#808030; '>(</span>i<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>i <span style='color:#808030; '>&lt;</span> <span style='color:#008c00; '>10</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+          i <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>0</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> i<span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>return</span> i<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>

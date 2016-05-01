@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Working With Custom Fonts";
+}
+
+<h1>Working With Custom Fonts</h1>
+<br />
+<p>Beautiful fonts make the appearance of the application crisp and smooth. There are lot of fonts which iOS supports in using them and even if you are looking for a different font you can do it with Custom Font concept.</p>
+<p>Following is the simple example and procedure for using custom fonts.</p>
+<p>As in general create an iOS application and Create a sample view controller. </p>
+<p>(Optional) Create a folder named Fonts (Good Practice to have this so that it is easy to understand).</p>
+<p>Download your font from <a href="http://www.fontpalace.com/" target="_blank">Font Place</a>. Add the .ttf file to the Fonts Folder.</p>
+<p>Right click on the folder and choose build action as content as shown in the below picture. This gives an indication to the application that the file should render as a separate content file.</p>
+<br />
+<img src="~/Images/CustomFont/CustomFont_1.png" class="img-responsive" />
+<br />
+<br />
+<p>Open Info.Plist and click on source tab in the bottom. Add New Entry the Property list file and Choose "Fonts Provided by Application" and specify the path of the font file as string. (Shown in the below picure)</p>
+<p><b>Note:</b> Please specify the exact path of the font located.</p>
+<img src="~/Images/CustomFont/CustomFont_2.png" class="img-responsive" />
+<br />
+<br />
+<p>Here is the sample code to use the custom font.</p>
+<pre>
+<span style='color:#800000; font-weight:bold; '>var</span> lblTitle <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> UILabel <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>new</span> CGRect <span style='color:#808030; '>(</span><span style='color:#008c00; '>20</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>190</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>300</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>60</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+lblTitle<span style='color:#808030; '>.</span>Font <span style='color:#808030; '>=</span> UIFont<span style='color:#808030; '>.</span>FromName <span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Calibri</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>20</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+lblTitle<span style='color:#808030; '>.</span>TextColor <span style='color:#808030; '>=</span> UIColor<span style='color:#808030; '>.</span>Blue<span style='color:#800080; '>;</span>
+lblTitle<span style='color:#808030; '>.</span>Text <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Sample Custom Font</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>.</span>View<span style='color:#808030; '>.</span>AddSubview <span style='color:#808030; '>(</span>lblTitle<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>​
+<br />
+<p><b>Output:</b></p>
+<img src="~/Images/CustomFont/CustonFont_3.jpg" width="200" height="300" class="img-responsive" />
+<br />
+<br />
+<p>Enjoy Coding.... :)</p>

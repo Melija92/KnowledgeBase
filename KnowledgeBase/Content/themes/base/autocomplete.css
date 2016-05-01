@@ -1,0 +1,60 @@
+@import url('http://fonts.googleapis.com/css?family=Raleway:400,500');
+
+.ui-corner-all {
+    -moz-border-radius: 0px 0px 0px 0px;
+}
+
+.ui-widget-content {
+    border: 1px solid rgba(151, 151, 151, 0.62);
+    color: #222222;
+    z-index:3000;
+    background-color: white; 
+      font-family:  'Raleway', sans-serif;
+}
+
+.ui-widget {
+    font-family: Lato;
+    font-size: 15px; 
+}
+
+.loading {
+    background: url('~/Content/252.GIF') no-repeat right center;
+}
+
+.ui-menu {
+    float: left;
+    margin: 0;
+    padding: 4px;
+}
+
+.ui-autocomplete {
+    cursor: pointer;
+    position: absolute;  font-family:  'Raleway', sans-serif;
+    /*min-height: 200px;*/
+    overflow: auto;
+}
+
+.ui-menu .ui-menu-item {
+    clear: left;  font-family:  'Raleway', sans-serif;
+    float: left;
+    margin: 0;
+    padding: 4px;
+    width: 400px;
+}
+
+.ui-menu .ui-menu-item li {
+    display: block;
+    padding: 4px;
+ }
+
+ul.ui-autocomplete li.ui-menu-item:hover {
+    display: block;
+    color: White;
+    font-size: 15px;
+    background-color: #2c3e50;
+    outline: none;
+}
+
+.ui-widget-content li {
+    color: #222222;
+}

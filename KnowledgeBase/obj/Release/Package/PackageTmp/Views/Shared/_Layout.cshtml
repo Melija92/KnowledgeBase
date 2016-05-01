@@ -1,0 +1,157 @@
+﻿@using KnowledgeBase.Models
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="knowledge Base, xamarin, iOS, asp.net, dependency, injection, unity, caller attributes, ravendb, nosql,live time, linq, entity framework, wcf, iis, mvc, software, programming, asynchronous, play sound, uisearchbar, tableview, dialog,  animations, extensions, ios8, pull to refresh, custom fonts, floating text, push notifications" />
+    <meta name="author" content="Dheeraj Kumar Gunti">
+    <meta name="description" content="Knowledge base is an beginner, intermediate educating platform in technology. We are trying to bring
+          examples in simple way that it can be easily learnt and implemented." />
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="1 month">
+    <title>Knowledge Base</title>
+    @Styles.Render("~/Content/css")
+    @*<script src="//fast.eager.io/pX0EM8Ab9z.js"></script>*@
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <link href="~/Content/simple-sidebar.css" rel="stylesheet" />
+    @*<script src="~/Content/scrollToTop.js"></script>*@
+
+    <style type="text/css">
+        #login-nav input {
+            margin-bottom: 15px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <strong>Knowledge Base</strong>
+                </li>
+                <li>
+                    <img class="img-circle" src="~/Images/logoImage.jpg">
+                </li>
+                <li>
+                    <a href="@Url.Action(Routes.ActionMethod, Routes.Controller)">Home</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "Books")">Books</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","MVC")">ASP.NET &amp; ASP.NET MVC</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","EntityFramework")">Entity Framework &amp; LINQ</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","XamariniOS")">Xamarin iOS</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Comments", "Feedback")">Feedback</a>
+                </li>
+            </ul>
+
+            <div style="position:absolute;bottom:10px; font-size:12px; padding:10px;">
+                &copy; Copyright 2015,<br />
+                Knowledge Base - Dheeraj Kumar Gunti.
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="#menu-toggle" id="menu-toggle"><span class="glyphicon glyphicon-th-list"></span></a>
+                        <br />
+                        <br />
+                        <div class="col-sm-12" style="margin: 0 auto; text-align:center; padding-bottom:20px;">
+                            <iframe src='http://www.flipkart.com/affiliate/displayWidget?affrid=WRID-141279414353876233' frameborder=0 height=90 width=728></iframe>
+                        </div>
+                        <div role="navigation" aria-label="breadcrumbs navigation" id="navigationMenu">
+                            @if (ViewBag.Title != "Home Page" && ViewBag.Title != "ThankYou" && ViewBag.Title != "Comments")
+                            {
+                                <div>
+                                    <div>
+
+                                        @Html.ActionLink("Home", Routes.ActionMethod, Routes.Controller)
+
+                                        @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
+                                        {
+                                            @:/ @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index", ViewContext.RouteData.Values["controller"].ToString())
+                                        }
+                                        @if (ViewContext.RouteData.Values["action"].ToString() != "Index")
+                                        {
+                                            if (KBArticles.GetListArticles().ToList().Select(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).Count() > 0)
+                                            {
+                                                @:/ @Html.ActionLink(KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().ArticleName, KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().ArticleName, ViewContext.RouteData.Values["controller"].ToString())
+                                            }
+                                            else
+                                            {
+                                                @:/ @Html.ActionLink(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString())
+                                            }
+                                        }
+                                    </div>
+
+                                </div>
+                            }
+                        </div>
+                        <br />
+                        @RenderBody()
+
+                        <div style="padding-top:15px; padding-bottom:20px;">
+                            <br />
+                            <br />
+                            @if (ViewBag.Title != "Home Page" && ViewBag.Title != "ASPNETIndex" &&
+                    ViewBag.Title != "MVCIndex" && ViewBag.Title != "BooksIndex" &&
+                    ViewBag.Title != "BooksDetail" && ViewBag.Title != "DownloadsIndex" &&
+                    ViewBag.Title != "EntityFrameworkIndex" && ViewBag.Title != "Comments" &&
+                    ViewBag.Title != "ThankYou" && ViewBag.Title != "iOSIndex" && ViewBag.Title != "LinqIndex")
+                            {
+                                <div id="disqus_thread"></div>
+                                <script type="text/javascript">
+                                    /* * * CONFIGURATION VARIABLES * * */
+                                    var disqus_shortname = 'knowledge-base';
+
+                                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                                    (function () {
+                                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                                    })();
+                                </script>
+                            }
+                            <br />
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" class="scrollToTop">Scroll&nbsp;To&nbsp;Top <span class="glyphicon glyphicon-arrow-up"></span></a>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+
+
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

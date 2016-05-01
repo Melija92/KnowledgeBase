@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Request Processing in IIS";
+}
+
+<h1>Request Processing in IIS</h1>
+<p>
+    When a request is sent to IIS following is the process of execution of that request :
+    <br />
+    <br />
+    Request first will be identified by http.sys (Kernal mode driver). When a new website is created in IIS, IIS registers the site in http.sys which then handles all the requests from the same site.
+    <br />
+    <br />
+    http.sys finds queue in the application pool for the respective site and forwards the request to worker process (w3wp.exe), which runs using Network service account. We can change the account in application pool properties.
+    <br />
+    <br />
+    Worker Process identifies and loads the correct ISAPI dll (aspnet_isapi.dll) based on the URL. Once the correct extension found then ISAPI loads HttpRuntime to process the request. HttpRuntime is also called as ASP.NET Runtime. There will be a consultation happens to HttpApplicationFactory class with HttpRuntime which creates a HttpApplication object to process the request. For every request HttpApplicationFactory will creates HttpApplication object.
+    <br />
+    <br />
+    Request will pass through HttpPipelines (a pipeline for the request to pass by). It is a pipeline because it contains a set of HttpModules that intercept the request on its way to the HttpHandler. HTTPModules are classes that have access to the incoming request. Modules are registered in web.config under httpModules section. User can create his/her own httpModule. Requests inside the HTTP Pipeline will pass through all modules defined in the machine.config and web.config.
+    <br />
+    <br />
+    Authentication, State management, Caching, membership, role management are some of the HttpModules. HttpModules then transfer the request to HttpHandlers which are endpoints to the pipeline.
+    <br />
+    <br />
+    HttpHandlers are used to process the requested resource. ASPX pages are registered in PageHandlerFactory whcih compiles the requested page and returns the compiled class. Until unless any change to the page happens the request coming from the same page will use the same compiled class. PageHandlerFactory creates an instance of HttpHandler object for every incoming request. Handlers are registered in web.config under httpHandlers section. HttpHandlers can be created at machine level using machine.config and can be created at application level using web.config.
+    <br />
+    <br />
+    Once the process is done then HttpHandler sends back the response to the client.
+</p>
+<br />
+<br />
+<img src="~/Images/RequestProcessinginIIS.jpg" class="img-responsive" />

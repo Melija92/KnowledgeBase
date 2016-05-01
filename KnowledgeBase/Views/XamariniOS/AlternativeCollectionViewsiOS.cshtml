@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Alternative Collection Views iOS";
+}
+
+<h1>Alternative CollectionViews in iOS</h1>
+<br />
+<p>CollectionViews are finest representation of items in rows and columns format. Here is a small sample which can be used as alternative for CollectionView.</p>
+<p><b>Note:</b> This example is best suited for loading minimal number of items.</p>
+
+<p>Following is the sample for achieving that...</p>
+<p>As in a normal flow, create a Empty Solution and Add a new view controller.</p>
+<pre>UIScrollView mainScroll <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> UIScrollView <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+Random random <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> Random <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+<p>In the ViewDidLoad method have the below code pasted.</p>
+<pre>mainScroll<span style='color:#808030; '>.</span>Frame <span style='color:#808030; '>=</span> UIScreen<span style='color:#808030; '>.</span>MainScreen<span style='color:#808030; '>.</span>Bounds<span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>var</span> vWidth <span style='color:#808030; '>=</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>float</span><span style='color:#808030; '>)</span>UIScreen<span style='color:#808030; '>.</span>MainScreen<span style='color:#808030; '>.</span>Bounds<span style='color:#808030; '>.</span>Width <span style='color:#808030; '>/</span> <span style='color:#008c00; '>2</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>var</span> vHeight <span style='color:#808030; '>=</span> 200f<span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>var</span> xCoord <span style='color:#808030; '>=</span> 0f<span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>var</span> yCoord <span style='color:#808030; '>=</span> 0f<span style='color:#800080; '>;</span>
+
+<span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>int</span> i <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span> i <span style='color:#808030; '>&lt;</span> <span style='color:#008c00; '>2</span><span style='color:#800080; '>;</span> i<span style='color:#808030; '>+</span><span style='color:#808030; '>+</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>int</span> j <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span> j <span style='color:#808030; '>&lt;</span> <span style='color:#008c00; '>2</span><span style='color:#800080; '>;</span> j<span style='color:#808030; '>+</span><span style='color:#808030; '>+</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+        <span style='color:#800000; font-weight:bold; '>var</span> view <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> UIView <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>new</span> CGRect <span style='color:#808030; '>(</span>xCoord<span style='color:#808030; '>,</span> yCoord<span style='color:#808030; '>,</span> vWidth<span style='color:#808030; '>,</span> vHeight<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        view<span style='color:#808030; '>.</span>BackgroundColor <span style='color:#808030; '>=</span> GetRandomColor <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        UIImageView iView <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> UIImageView <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        iView<span style='color:#808030; '>.</span>Frame <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> CGRect <span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> vWidth<span style='color:#808030; '>,</span> vHeight<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        <span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>.</span>LoadImage <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>ContinueWith <span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>t<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#800080; '>{</span>
+            InvokeOnMainThread <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>delegate</span> <span style='color:#800080; '>{</span>
+                iView<span style='color:#808030; '>.</span>Image <span style='color:#808030; '>=</span> t<span style='color:#808030; '>.</span>Result<span style='color:#800080; '>;</span>
+            <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        view<span style='color:#808030; '>.</span>AddSubview <span style='color:#808030; '>(</span>iView<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        mainScroll<span style='color:#808030; '>.</span>AddSubview <span style='color:#808030; '>(</span>view<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        xCoord <span style='color:#808030; '>+</span><span style='color:#808030; '>=</span> vWidth<span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+    xCoord <span style='color:#808030; '>=</span> 0f<span style='color:#800080; '>;</span>
+    yCoord <span style='color:#808030; '>+</span><span style='color:#808030; '>=</span> vHeight<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+mainScroll<span style='color:#808030; '>.</span>ContentSize <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> CGSize <span style='color:#808030; '>(</span>vWidth <span style='color:#808030; '>*</span> <span style='color:#008c00; '>2</span><span style='color:#808030; '>,</span> yCoord <span style='color:#808030; '>+</span> <span style='color:#008c00; '>50</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>.</span>View<span style='color:#808030; '>.</span>AddSubview <span style='color:#808030; '>(</span>mainScroll<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+<p>For Differentiating the cells we are specifying background color for the child views.</p>
+<pre><span style='color:#800000; font-weight:bold; '>private</span> UIColor GetRandomColor <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>return</span> UIColor<span style='color:#808030; '>.</span>FromRGB <span style='color:#808030; '>(</span>random<span style='color:#808030; '>.</span>Next <span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>255</span><span style='color:#808030; '>)</span><span style='color:#808030; '>,</span> random<span style='color:#808030; '>.</span>Next <span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>255</span><span style='color:#808030; '>)</span><span style='color:#808030; '>,</span> random<span style='color:#808030; '>.</span>Next <span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>255</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>
+<p>In this example we are displaying image which loads asynchronously.</p>
+<pre><span style='color:#800000; font-weight:bold; '>public</span> async Task<span style='color:#808030; '>&lt;</span>UIImage<span style='color:#808030; '>></span> LoadImage <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>var</span> url <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://cdn3.iconfinder.com/data/icons/trio-apple-watch/32/apple-watch-short-look-2-128.png</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>var</span> httpClient <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> HttpClient <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    Task<span style='color:#808030; '>&lt;</span><span style='color:#800000; font-weight:bold; '>byte</span><span style='color:#808030; '>[</span><span style='color:#808030; '>]</span><span style='color:#808030; '>></span> contentsTask <span style='color:#808030; '>=</span> httpClient<span style='color:#808030; '>.</span>GetByteArrayAsync <span style='color:#808030; '>(</span>url<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>var</span> contents <span style='color:#808030; '>=</span> await contentsTask<span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>return</span> UIImage<span style='color:#808030; '>.</span>LoadFromData <span style='color:#808030; '>(</span>NSData<span style='color:#808030; '>.</span>FromArray <span style='color:#808030; '>(</span>contents<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>
+<p>Run the application...</p>
+<p><b><u>Output:</u></b></p>
+<img src="~/Images/CollectionViewiOS.jpg" width="200" height="300" />
+<br />
+<br />
+<img src="~/Images/CollectionViewiOS_1.jpg" width="200" height="300" />
+<br />
+<br />
+<p>Enjoy Coding..... :)</p>

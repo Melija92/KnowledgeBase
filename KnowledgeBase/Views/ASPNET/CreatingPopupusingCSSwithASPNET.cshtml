@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "Creating Popup using CSS with ASP.NET";
+}
+
+<h2>Creating Popup using CSS with ASP.NET</h2>
+<p>
+    Following is the example for creating a popup using CSS.
+    <br />
+    Step 1: Create an empty web application.<br />
+    Step 2: Create a page in that web application.<br />
+    Step 3: Add a div in that page as below.<br />
+</p>
+<br />
+<img src="~/Images/customcsspopup_1.jpg" class="img-responsive" />
+<br />
+<br />
+<p>
+    Step 4: Add a anchor tag to open the popup. It can be done even with server side controls also.
+</p>
+<br />
+<img src="~/Images/customcsspopup_2.jpg" class="img-responsive" />
+<br />
+<br />
+<p>Step 5: Add styles for the popup to open.</p>
+<br />
+<img src="~/Images/customcsspopup_3.jpg" class="img-responsive" />
+<br />
+<br />
+<p>Step 6: For opening the popup we will be adding some javascript code.</p>
+<br />
+<pre>
+<span style='color:#800000; font-weight:bold; '>function</span> toggle<span style='color:#808030; '>(</span>div_id<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+<span style='color:#800000; font-weight:bold; '>var</span> el <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>getElementById<span style='color:#808030; '>(</span>div_id<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span> el<span style='color:#808030; '>.</span>style<span style='color:#808030; '>.</span>display <span style='color:#808030; '>==</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>none</span><span style='color:#800000; '>'</span> <span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>    el<span style='color:#808030; '>.</span>style<span style='color:#808030; '>.</span>display <span style='color:#808030; '>=</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>block</span><span style='color:#800000; '>'</span><span style='color:#800080; '>;</span><span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>else</span> <span style='color:#800080; '>{</span>el<span style='color:#808030; '>.</span>style<span style='color:#808030; '>.</span>display <span style='color:#808030; '>=</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>none</span><span style='color:#800000; '>'</span><span style='color:#800080; '>;</span><span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>function</span> blanket_size<span style='color:#808030; '>(</span>popUpDivVar<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>typeof</span> window<span style='color:#808030; '>.</span>innerWidth <span style='color:#808030; '>!=</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>undefined</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+        viewportheight <span style='color:#808030; '>=</span> window<span style='color:#808030; '>.</span>innerHeight<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span> <span style='color:#800000; font-weight:bold; '>else</span> <span style='color:#800080; '>{</span>
+        viewportheight <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>documentElement<span style='color:#808030; '>.</span>clientHeight<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>viewportheight <span style='color:#808030; '>></span> document<span style='color:#808030; '>.</span>body<span style='color:#808030; '>.</span>parentNode<span style='color:#808030; '>.</span>scrollHeight<span style='color:#808030; '>)</span> <span style='color:#808030; '>&amp;&amp;</span> <span style='color:#808030; '>(</span>viewportheight <span style='color:#808030; '>></span> document<span style='color:#808030; '>.</span>body<span style='color:#808030; '>.</span>parentNode<span style='color:#808030; '>.</span>clientHeight<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+        blanket_height <span style='color:#808030; '>=</span> viewportheight<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span> <span style='color:#800000; font-weight:bold; '>else</span> <span style='color:#800080; '>{</span>
+<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>document<span style='color:#808030; '>.</span>body<span style='color:#808030; '>.</span>parentNode<span style='color:#808030; '>.</span>clientHeight <span style='color:#808030; '>></span> document<span style='color:#808030; '>.</span>body<span style='color:#808030; '>.</span>parentNode<span style='color:#808030; '>.</span>scrollHeight<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+            blanket_height <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>body<span style='color:#808030; '>.</span>parentNode<span style='color:#808030; '>.</span>clientHeight<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span> <span style='color:#800000; font-weight:bold; '>else</span> <span style='color:#800080; '>{</span>
+            blanket_height <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>body<span style='color:#808030; '>.</span>parentNode<span style='color:#808030; '>.</span>scrollHeight<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>var</span> blanket <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>getElementById<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>blanket</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    blanket<span style='color:#808030; '>.</span>style<span style='color:#808030; '>.</span>height <span style='color:#808030; '>=</span> blanket_height <span style='color:#808030; '>+</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>px</span><span style='color:#800000; '>'</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>var</span> popUpDiv <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>getElementById<span style='color:#808030; '>(</span>popUpDivVar<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    popUpDiv_height<span style='color:#808030; '>=</span>blanket_height<span style='color:#808030; '>/</span><span style='color:#008c00; '>2</span><span style='color:#808030; '>-</span><span style='color:#008c00; '>150</span><span style='color:#800080; '>;</span><span style='color:#696969; '>//150 is half popup's height</span>
+    popUpDiv<span style='color:#808030; '>.</span>style<span style='color:#808030; '>.</span>top <span style='color:#808030; '>=</span> popUpDiv_height <span style='color:#808030; '>+</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>px</span><span style='color:#800000; '>'</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>function</span> window_pos<span style='color:#808030; '>(</span>popUpDivVar<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>typeof</span> window<span style='color:#808030; '>.</span>innerWidth <span style='color:#808030; '>!=</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>undefined</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+        viewportwidth <span style='color:#808030; '>=</span> window<span style='color:#808030; '>.</span>innerHeight<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span> <span style='color:#800000; font-weight:bold; '>else</span> <span style='color:#800080; '>{</span>
+        viewportwidth <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>documentElement<span style='color:#808030; '>.</span>clientHeight<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>viewportwidth <span style='color:#808030; '>></span> document<span style='color:#808030; '>.</span>body<span style='color:#808030; '>.</span>parentNode<span style='color:#808030; '>.</span>scrollWidth<span style='color:#808030; '>)</span> <span style='color:#808030; '>&amp;&amp;</span> <span style='color:#808030; '>(</span>viewportwidth <span style='color:#808030; '>></span> document<span style='color:#808030; '>.</span>body<span style='color:#808030; '>.</span>parentNode<span style='color:#808030; '>.</span>clientWidth<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+        window_width <span style='color:#808030; '>=</span> viewportwidth<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span> <span style='color:#800000; font-weight:bold; '>else</span> <span style='color:#800080; '>{</span>
+<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>document<span style='color:#808030; '>.</span>body<span style='color:#808030; '>.</span>parentNode<span style='color:#808030; '>.</span>clientWidth <span style='color:#808030; '>></span> document<span style='color:#808030; '>.</span>body<span style='color:#808030; '>.</span>parentNode<span style='color:#808030; '>.</span>scrollWidth<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+            window_width <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>body<span style='color:#808030; '>.</span>parentNode<span style='color:#808030; '>.</span>clientWidth<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span> <span style='color:#800000; font-weight:bold; '>else</span> <span style='color:#800080; '>{</span>
+            window_width <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>body<span style='color:#808030; '>.</span>parentNode<span style='color:#808030; '>.</span>scrollWidth<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>var</span> popUpDiv <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>getElementById<span style='color:#808030; '>(</span>popUpDivVar<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    window_width<span style='color:#808030; '>=</span>window_width<span style='color:#808030; '>/</span><span style='color:#008c00; '>2</span><span style='color:#808030; '>-</span><span style='color:#008c00; '>150</span><span style='color:#800080; '>;</span><span style='color:#696969; '>//150 is half popup's width</span>
+    popUpDiv<span style='color:#808030; '>.</span>style<span style='color:#808030; '>.</span>left <span style='color:#808030; '>=</span> window_width <span style='color:#808030; '>+</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>px</span><span style='color:#800000; '>'</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>function</span> popup<span style='color:#808030; '>(</span>windowname<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+    blanket_size<span style='color:#808030; '>(</span>windowname<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    window_pos<span style='color:#808030; '>(</span>windowname<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    toggle<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>blanket</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    toggle<span style='color:#808030; '>(</span>windowname<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>       
+<span style='color:#800080; '>}</span>
+</pre>
+<p>
+    Step 7: Include this javascript file in to the web page.<br />
+    Step 8: Run the application. Click on the "Click here to open the popup link". You can see the popup opened.
+</p>
+<br />
+<img src="~/Images/customcsspopup_4.jpg" class="img-responsive" />
+<br /><br />
+<a href="https://www.box.com/s/2128adce5ce41edcc4be" class="btn btn-danger">
+     Sample </a>

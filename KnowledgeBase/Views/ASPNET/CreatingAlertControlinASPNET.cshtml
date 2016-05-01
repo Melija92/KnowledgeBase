@@ -1,0 +1,128 @@
+﻿@{
+    ViewBag.Title = "Creating Alert Control in ASP.NET";
+}
+
+<h2>Creating Alert Control in ASP.NET</h2>
+<p>
+    Following is the process for creating Alert Control in ASP.NET
+    <br />
+    Step 1: Add Web User Control to your web application.
+</p>
+<br />
+<img src="~/Images/alert_control_1.jpg" class="img-responsive" />
+<br />
+<br />
+<p>Step 2: Add css for the web user control</p>
+<pre>
+<span style='color:#808030; '>.</span>messages
+<span style='color:#800080; '>{</span>
+<span style='color:#bb7977; font-weight:bold; '>width</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>75</span><span style='color:#006600; '>%</span><span style='color:#800080; '>;</span>
+<span style='color:#bb7977; font-weight:bold; '>padding</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>5</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span>
+<span style='color:#bb7977; font-weight:bold; '>margin-left</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>3</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#808030; '>.</span>messages-logo
+<span style='color:#800080; '>{</span>
+<span style='color:#bb7977; font-weight:bold; '>height</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>32</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span>
+<span style='color:#bb7977; font-weight:bold; '>width</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>32</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span>
+<span style='color:#bb7977; font-weight:bold; '>float</span><span style='color:#808030; '>:</span> <span style='color:#074726; '>left</span><span style='color:#800080; '>;</span>
+<span style='color:#bb7977; font-weight:bold; '>background</span><span style='color:#808030; '>:</span> <span style='color:#400000; '>url</span><span style='color:#808030; '>(</span><span style='color:#40015a; '>../Images/message_logos.png</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#808030; '>.</span>messages-text
+<span style='color:#800080; '>{</span>
+<span style='color:#bb7977; font-weight:bold; '>margin-left</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>40</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span>
+<span style='color:#bb7977; font-weight:bold; '>padding</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>6</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#808030; '>.</span>messages-error
+<span style='color:#800080; '>{</span>
+<span style='color:#bb7977; font-weight:bold; '>background-color</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>#</span><span style='color:#008000; '>fbe3e4</span><span style='color:#800080; '>;</span>
+<span style='color:#bb7977; font-weight:bold; '>color</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>#</span><span style='color:#008000; '>d12f19</span><span style='color:#800080; '>;</span>
+<span style='color:#bb7977; font-weight:bold; '>border</span><span style='color:#808030; '>:</span> <span style='color:#074726; '>solid</span> <span style='color:#008c00; '>1</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>#</span><span style='color:#008000; '>fbc2c4</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#808030; '>.</span>messages-error <span style='color:#808030; '>.</span>messages-logo
+<span style='color:#800080; '>{</span>
+<span style='color:#bb7977; font-weight:bold; '>background-position</span><span style='color:#808030; '>:</span> <span style='color:#808030; '>-</span><span style='color:#008c00; '>64</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#808030; '>.</span>messages-warning
+<span style='color:#800080; '>{</span>
+<span style='color:#bb7977; font-weight:bold; '>background-color</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>#</span><span style='color:#008000; '>faffcf</span><span style='color:#800080; '>;</span>
+<span style='color:#bb7977; font-weight:bold; '>color</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>#</span><span style='color:#008000; '>5e5f00</span><span style='color:#800080; '>;</span>
+<span style='color:#bb7977; font-weight:bold; '>border</span><span style='color:#808030; '>:</span> <span style='color:#074726; '>solid</span> <span style='color:#008c00; '>1</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>#</span><span style='color:#008000; '>edef00</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#808030; '>.</span>messages-warning <span style='color:#808030; '>.</span>messages-logo
+<span style='color:#800080; '>{</span>
+<span style='color:#bb7977; font-weight:bold; '>background-position</span><span style='color:#808030; '>:</span> <span style='color:#808030; '>-</span><span style='color:#008c00; '>32</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#808030; '>.</span>messages-success
+<span style='color:#800080; '>{</span>
+<span style='color:#bb7977; font-weight:bold; '>background-color</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>#</span><span style='color:#008000; '>e0efd1</span><span style='color:#800080; '>;</span>
+<span style='color:#bb7977; font-weight:bold; '>color</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>#</span><span style='color:#008000; '>003300</span><span style='color:#800080; '>;</span>
+<span style='color:#bb7977; font-weight:bold; '>border</span><span style='color:#808030; '>:</span> <span style='color:#074726; '>solid</span> <span style='color:#008c00; '>1</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>#</span><span style='color:#008000; '>a5cc7a</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#808030; '>.</span>messages-success <span style='color:#808030; '>.</span>messages-logo
+<span style='color:#800080; '>{</span>
+<span style='color:#bb7977; font-weight:bold; '>background-position</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>0</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>
+<p>Step 3: Create following methods for accessing alert control</p>
+<pre>
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>enum</span> MessageType <span style='color:#808030; '>:</span> <span style='color:#800000; font-weight:bold; '>int</span>
+<span style='color:#800080; '>{</span>
+    Error <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span>
+    Warning <span style='color:#808030; '>=</span> <span style='color:#008c00; '>1</span><span style='color:#808030; '>,</span>
+    Success <span style='color:#808030; '>=</span> <span style='color:#008c00; '>2</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>void</span> SetMessage<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>string</span> sMessage<span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+    SetMessage<span style='color:#808030; '>(</span>sMessage<span style='color:#808030; '>,</span> MessageType<span style='color:#808030; '>.</span>Success<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>void</span> SetMessage<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>string</span> sMessage<span style='color:#808030; '>,</span> MessageType messageType<span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+   pnlMessage<span style='color:#808030; '>.</span>CssClass <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>messages messages-error</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>messageType <span style='color:#808030; '>=</span><span style='color:#808030; '>=</span> MessageType<span style='color:#808030; '>.</span>Warning<span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+        pnlMessage<span style='color:#808030; '>.</span>CssClass <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>messages messages-warning</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>else</span> <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>messageType <span style='color:#808030; '>=</span><span style='color:#808030; '>=</span> MessageType<span style='color:#808030; '>.</span>Success<span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+         pnlMessage<span style='color:#808030; '>.</span>CssClass <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>messages messages-success</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+        pnlMessage<span style='color:#808030; '>.</span>Visible <span style='color:#808030; '>=</span> <span style='color:#808030; '>(</span>sMessage<span style='color:#808030; '>.</span>Length <span style='color:#808030; '>></span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        litMessage<span style='color:#808030; '>.</span>Text <span style='color:#808030; '>=</span> sMessage<span style='color:#800080; '>;</span>
+        litMessage<span style='color:#808030; '>.</span>Visible <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>true</span><span style='color:#800080; '>;</span>
+        litSpace<span style='color:#808030; '>.</span>Text <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>void</span> ClearMessage<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+   litMessage<span style='color:#808030; '>.</span>Text <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span>
+   litSpace<span style='color:#808030; '>.</span>Text <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span>
+   pnlMessage<span style='color:#808030; '>.</span>Visible <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>false</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>
+<p>
+    Step 4: Add a web page for accessing the alert control<br />
+    Step 5: Following is the code to access the control.
+</p>
+<pre>
+MessageBox<span style='color:#808030; '>.</span>SetMessage<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>An example of an error message!</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> MessageboxControl<span style='color:#808030; '>.</span>MessageType<span style='color:#808030; '>.</span>Warning<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+<p>
+    Output will be show as below:
+</p>
+<p>
+    For Warning - MessageboxControl.MessageType.Warning
+</p>
+<img src="~/Images/alert_control_2.jpg" class="img-responsive" />
+<br />
+<p>
+    For Success - MessageboxControl.MessageType.Warning
+</p>
+<img src="~/Images/alert_control_3.jpg" class="img-responsive" />
+<br />
+<p>
+    For Error - MessageboxControl.MessageType.Warning
+
+</p>
+<img src="~/Images/alert_control_4.jpg" class="img-responsive" />
+<br /><br />
+<a href="https://www.box.com/s/e5ce20add571beae8a21" class="btn btn-danger">
+     Sample</a>

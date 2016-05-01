@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "WorkingWithDependencyInjection";
+}
+
+<h1>Working With Dependency Injection in MVC Application</h1>
+
+<p>In Software programming, building an effective and efficient application is the primary role and for that to acheive the main key role is to have a good architecture in place. With Good Architecture we can achieve the key objective. </p>
+
+<p>In this article we will see how to use dependency injection pattern using Unity on an MVC application. This article is intended to give a brief idea how to use, and real example will differ based on the architecture developer follows.</p>
+
+<p>First lets see what is dependency injection in other words we call Inversion of Control (IOC), In Simple words dependency injection is a process where high level modules won't depend on low level modules . The main intent of using Dependency injection is to make application loosely coupled where application won't depend on concrete class rather it depends on its abstraction. Dependency injection is a way to remove hard-coded dependencies among objects.</p>
+
+<p>Dependency injection allows a program design to follow the dependency inversion principle. There are four types where we can use dependency injection -</p>
+
+<ol>
+    <li>
+        Constructor
+    </li>
+    <li>
+        Property
+    </li>
+    <li>
+        Interface
+    </li>
+    <li>
+       Service
+    </li>
+</ol>
+
+<p>Constructor Dependency Injection - This is the most commonly used Dependency Pattern in Object Oriented Programming. The Constructor Injection uses a parameter to inject dependencies so there is normally one parameterized constructor always. So in this constructor dependency, the object has no default constructor and you need to pass specified values at the time of creation to initiate the object.</p>
+
+<script src="https://gist.github.com/guntidheerajkumar/77a7f63ee57b354d258b.js"></script>
+
+<p>Property or Setter Injection - Injecting using default get and set properties.</p>
+
+<script src="https://gist.github.com/guntidheerajkumar/e856dc704e2584d9431d.js"></script>
+
+<p>Using Unity we will be resolving the dependency and make our application to understand all the dependencies.</p>
+
+<p>Lets create a small example using Dependency Injection and Unity Container.</p>
+
+<p>Create a simple MVC application and have a simple model.</p>
+
+<script src="https://gist.github.com/guntidheerajkumar/826e38aa19e5523f4e85.js"></script>
+
+<p>Create an interface and implement that in a class.</p>
+
+<script src="https://gist.github.com/guntidheerajkumar/872625b3e43a708d7d83.js"></script>
+
+<p>Using NuGet package Manager Install Unity.MVC4</p>
+
+<p>Install-Package Unity.Mvc4</p>
+
+<p>Once the installation is done package will install one static class which is Bootstrapper, which actually has certain methods and process to resolve the dependencies. With respect to our application we need to register our components in this class.</p>
+
+<script src="https://gist.github.com/guntidheerajkumar/f6feb33d7180094963c0.js"></script>
+
+<p>Specify the below statement in Global.asax - Application_Start.</p>
+
+<script src="https://gist.github.com/guntidheerajkumar/d3bb31516b25e1093fec.js"></script>
+
+<p>Create a controller and use Empty template.</p>
+
+<p>Add an empty constructor and specify the IEmployee object.</p>
+
+<script src="https://gist.github.com/guntidheerajkumar/1d174e9c9af36cdce9a7.js"></script>
+
+<p>In the index action we are returning all the employees using employee.GetAllEmployees() method.</p>
+
+<p>Dependency Injection can be extended a lot based on the architecture that we design.</p>
+
+<p>Advantages of DI:</p>
+
+<ul>
+    <li>
+        Reduces class coupling
+    </li>
+    <li>
+        Increases code reusability
+    </li>
+    <li>
+        Improves code maintainability
+    </li>
+    <li>
+        Improves application testing
+    </li>
+</ul>
+
+<p>Enjoy Coding.........</p>
