@@ -17,6 +17,7 @@ namespace KnowledgeBase
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+             
             foreach (Route r in RouteTable.Routes)
             {
                 if (r.Defaults != null)
@@ -29,6 +30,6 @@ namespace KnowledgeBase
                     }
                 }
             }
-        }
+        } 
     }
 }

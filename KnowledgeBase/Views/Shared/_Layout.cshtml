@@ -89,7 +89,11 @@
                                         {
                                             if (KBArticles.GetListArticles().ToList().Select(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).Count() > 0)
                                             {
-                                                @:/ @Html.ActionLink(KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().ArticleName, KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().ArticleName, ViewContext.RouteData.Values["controller"].ToString())
+                                                if (KBArticles.GetListArticles().Where(x => x.ArticleName == "BooksDetail").ToList().Count == 0)
+                                                { }else
+                                                {
+                                                    @:/ @Html.ActionLink(KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().ArticleName, KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().ArticleName, ViewContext.RouteData.Values["controller"].ToString())
+                                                } 
                                             }
                                             else
                                             {
@@ -108,10 +112,10 @@
                             <br />
                             <br />
                             @if (ViewBag.Title != "Home Page" && ViewBag.Title != "ASPNETIndex" &&
-                    ViewBag.Title != "MVCIndex" && ViewBag.Title != "BooksIndex" &&
-                    ViewBag.Title != "BooksDetail" && ViewBag.Title != "DownloadsIndex" &&
-                    ViewBag.Title != "EntityFrameworkIndex" && ViewBag.Title != "Comments" &&
-                    ViewBag.Title != "ThankYou" && ViewBag.Title != "iOSIndex" && ViewBag.Title != "LinqIndex")
+ViewBag.Title != "MVCIndex" && ViewBag.Title != "BooksIndex" &&
+ViewBag.Title != "BooksDetail" && ViewBag.Title != "DownloadsIndex" &&
+ViewBag.Title != "EntityFrameworkIndex" && ViewBag.Title != "Comments" &&
+ViewBag.Title != "ThankYou" && ViewBag.Title != "iOSIndex" && ViewBag.Title != "LinqIndex")
                             {
                                 <div id="disqus_thread"></div>
                                 <script type="text/javascript">
