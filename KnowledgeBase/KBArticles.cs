@@ -370,19 +370,19 @@ namespace KnowledgeBase
                 Article = "AlternativeCollectionViewsiOS"
             });
 
-            Names.Add(new ArticlesList
-            {
-                ArticleName = "Creating XibLess Application",
-                ArticleURL = "../XamariniOS/CreatingXibLessApplication",
-                Article = "CreatingXibLessApplication"
-            });
+            //Names.Add(new ArticlesList
+            //{
+            //    ArticleName = "Creating XibLess Application",
+            //    ArticleURL = "../XamariniOS/CreatingXibLessApplication",
+            //    Article = "CreatingXibLessApplication"
+            //});
 
-            Names.Add(new ArticlesList
-            {
-                ArticleName = "Working with Navigation Controller",
-                ArticleURL = "../XamariniOS/WorkingwithNavigationBar",
-                Article = "WorkingwithNavigationBar"
-            });
+            //Names.Add(new ArticlesList
+            //{
+            //    ArticleName = "Working with Navigation Controller",
+            //    ArticleURL = "../XamariniOS/WorkingwithNavigationBar",
+            //    Article = "WorkingwithNavigationBar"
+            //});
 
             Names.Add(new ArticlesList
             {

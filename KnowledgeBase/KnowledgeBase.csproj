@@ -478,9 +478,6 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Videos\index_videolb\video\creatingbasicapplication.mp4" />
-    <Content Include="Videos\index_videolb\video\navigationcontroller.mp4" />
-    <Content Include="Videos\index_videolb\video\xiblessview.mp4" />
     <Content Include="Views\MVC\WorkingWithViewEnginesinMVC.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
