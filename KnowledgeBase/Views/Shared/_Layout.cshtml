@@ -25,10 +25,10 @@
     </style>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-2632970577965066",
-    enable_page_level_ads: true
-  });
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-2632970577965066",
+            enable_page_level_ads: true
+        });
     </script>
 </head>
 <body>
@@ -49,7 +49,7 @@
                     <a href="@Url.Action("Index", "Books")">Books</a>
                 </li>
                 <li>
-                    <a href="@Url.Action("Index","MVC")">ASP.NET &amp; ASP.NET MVC</a>
+                    <a href="@Url.Action("Index","MVC")">C# &amp; ASP.NET MVC</a>
                 </li>
                 <li>
                     <a href="@Url.Action("Index","EntityFramework")">Entity Framework &amp; LINQ</a>
@@ -60,12 +60,14 @@
                 <li>
                     <a href="@Url.Action("Comments", "Feedback")">Feedback</a>
                 </li>
+                <li>
+                    <br />
+                    <div data-WRID="WRID-146296317363469518" data-widgetType="staticBanner" data-class="affiliateAdsByFlipkart" height="180" width="180"></div>
+                    <script async src="//affiliate.flipkart.com/affiliate/widgets/FKAffiliateWidgets.js"></script>
+                </li>
             </ul>
-
-            <div style="position:absolute;bottom:10px; font-size:12px; padding:10px;">
-                &copy; Copyright @DateTime.Now.Year,<br />
-                Knowledge Base - Dheeraj Kumar Gunti.
-            </div>
+            <br />
+            <br />
         </div>
         <!-- /#sidebar-wrapper -->
         <!-- Page Content -->
@@ -76,9 +78,6 @@
                         <a href="#menu-toggle" id="menu-toggle"><span class="glyphicon glyphicon-th-list"></span></a>
                         <br />
                         <br />
-                        <div class="col-sm-12" style="margin: 0 auto; text-align:center; padding-bottom:20px;">
-                            <iframe src='http://www.flipkart.com/affiliate/displayWidget?affrid=WRID-141279414353876233' frameborder=0 height=90 width=728></iframe>
-                        </div>
                         <div role="navigation" aria-label="breadcrumbs navigation" id="navigationMenu">
                             @if (ViewBag.Title != "Home Page" && ViewBag.Title != "ThankYou" && ViewBag.Title != "Comments")
                             {
@@ -96,10 +95,11 @@
                                             if (KBArticles.GetListArticles().ToList().Select(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).Count() > 0)
                                             {
                                                 if (KBArticles.GetListArticles().Where(x => x.ArticleName == "BooksDetail").ToList().Count == 0)
-                                                { }else
+                                                { }
+                                                else
                                                 {
                                                     @:/ @Html.ActionLink(KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().ArticleName, KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().ArticleName, ViewContext.RouteData.Values["controller"].ToString())
-                                                } 
+                                                }
                                             }
                                             else
                                             {
@@ -107,7 +107,6 @@
                                             }
                                         }
                                     </div>
-
                                 </div>
                             }
                         </div>

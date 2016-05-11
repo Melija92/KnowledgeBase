@@ -447,10 +447,6 @@
     <Content Include="Images\WCF_1\8.jpg" />
     <Content Include="Images\WCF_1\9.jpg" />
     <Content Include="Images\WCF_Bindings.jpg" />
-    <Content Include="Images\DynamicData\Thumbs.db" />
-    <Content Include="Images\EF\Thumbs.db" />
-    <Content Include="Images\MasterPage\Thumbs.db" />
-    <Content Include="Images\Thumbs.db" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap.min.js.map" />
