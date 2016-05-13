@@ -31,10 +31,13 @@
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    
+    overflow-x: hidden;
+    overflow-y:scroll;
 }
 
 #wrapper.toggled #sidebar-wrapper {
-    width: 250px;
+    width: 240px; 
 }
 
 #page-content-wrapper {
@@ -53,7 +56,7 @@
 .sidebar-nav {
     position: absolute;
     top: 0;
-    width: 250px;
+    width: 240px;
     margin: 0;
     padding: 0;
     list-style: none;
