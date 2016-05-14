@@ -27,20 +27,19 @@
             <div class="panel-body">
                 @if (Model != null)
                 {
-                    <ul class="productlist">
+                    <table style="width:100%; line-height:30px;">
                         @for (int i = 0; i < Model.BookData.Books.Count; i++)
                         {
-                            <li>
-                                <div class="product_img">
-                                    <a href="@Url.Action("BooksDetail","Books",new { Id = Model.BookData.Books[i].Id })">  <img alt="" src="@Url.Content(Model.BookData.Books[i].Image)" width="150" height="230"></a>
-                                </div>
-
-                                <div class="product_title">
-                                    @Html.Label(Model.BookData.Books[i].Title)
-                                </div>
-                            </li>
+                            <tr>
+                                <td style="padding-left:10px;">
+                                    <a href="@Url.Action("BooksDetail", "Books", new { Id = Model.BookData.Books[i].Id })">
+                                        (@(i + 1)) &nbsp;&nbsp;@Model.BookData.Books[i].Title
+                                    </a>
+                                </td>
+                            </tr>
                         }
-                    </ul><br />
+                    </table>
+                    <br />
                     <nav>
                         <ul class="pager">
                             @for (int i = 1; i < Convert.ToInt32(Model.BookData.Total) / 10; i++)
@@ -61,11 +60,10 @@
     </div>
 
     <div id="loading">
-            <div id="loadingcontent">
-                <p id="loadingspinner">
-                    <img src="~/Images/319.GIF" />
-                </p>
-            </div>
+        <div id="loadingcontent">
+            <p id="loadingspinner">
+                <img src="~/Images/319.GIF" />
+            </p>
         </div>
+    </div>
 }
-

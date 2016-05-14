@@ -52,50 +52,9 @@ textarea {
 
 .feed_item_date {
 }
-
-
-.productlist {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-}
-
-    .productlist li {
-        display: inline-block;
-        word-wrap: break-word;
-        margin: 10px;
-        padding: 0;
-        text-align: center;
-        background-color: #f2f2f2;
-        padding: 15px;
-        height: 300px;
-    }
-
-        .productlist li div.product_img {
-            margin-bottom: 5px;
-            height: 200px;
-        }
-
-            .productlist li div.product_img img {
-                height: 100%;
-            }
-
-        .productlist li div.product_title {
-            font-size: 14px;
-            width: 150px;
-            margin: 0 auto 5px auto;
-            height: 45px;
-            overflow: hidden;
-        }
-
+ 
 .widthtext {
     width: 500px;
-}
-
-
-.productlist li:hover {
-    border: 1px solid #2C3E50;
 }
 
 .pager li a {
@@ -227,4 +186,4 @@ h2 {
     font-family: 'Lato', sans-serif;
     padding-bottom: 10px; 
 }
-
+ 
