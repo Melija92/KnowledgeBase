@@ -19,27 +19,31 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="form-inline">
-                    @Html.TextBoxFor(m => m.SearchTerm, new { @class = "form-control widthtext", autocomplete = "off", placeholder = "Search" })
+                    @Html.TextBoxFor(m => m.SearchTerm, new { @class = "form-control", autocomplete = "off", placeholder = "Search" })
                     <button type="submit" class="btn btn-default" id="submitBtn">Search</button>
-                    &nbsp;&nbsp;&nbsp;Search books by typing the keyword. Examples: asp.net, entity framework, etc
+                    &nbsp;&nbsp;<a href="#" data-toggle="tooltip" , title="Search books by typing the keyword. Examples: asp.net, entity framework, etc">?</a>
                 </div>
             </div>
             <div class="panel-body">
                 @if (Model != null)
                 {
-                    <table style="width:100%; line-height:30px;">
+                    <table style="width:100%; line-height:35px;" class="table-hover">
+                        <tr>
+                            <td style="padding-left:20px;">About @Model.BookData.Total.ToString() results (@Model.BookData.Time.ToString() seconds) </td>
+                        </tr> 
                         @for (int i = 0; i < Model.BookData.Books.Count; i++)
                         {
                             <tr>
                                 <td style="padding-left:10px;">
-                                    <a href="@Url.Action("BooksDetail", "Books", new { Id = Model.BookData.Books[i].Id })">
-                                        (@(i + 1)) &nbsp;&nbsp;@Model.BookData.Books[i].Title
+                                    <span class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp;<a style="text-decoration:none;" href="@Url.Action("BooksDetail", "Books", new { Id = Model.BookData.Books[i].Id })">
+                                        @Model.BookData.Books[i].Title
                                     </a>
                                 </td>
                             </tr>
                         }
                     </table>
                     <br />
+                    <hr />
                     <nav>
                         <ul class="pager">
                             @for (int i = 1; i < Convert.ToInt32(Model.BookData.Total) / 10; i++)
