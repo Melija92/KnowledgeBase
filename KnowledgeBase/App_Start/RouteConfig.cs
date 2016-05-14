@@ -16,7 +16,7 @@ namespace KnowledgeBase
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "MVC", action = "CallerInfoAttributesinCSharp", id = UrlParameter.Optional }
+                defaults: new { controller = "MVC", action = "ConcurrentDictionaryinNET", id = UrlParameter.Optional }
             );
         }
     }
