@@ -5,12 +5,13 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
-@import url(https://fonts.googleapis.com/css?family=Lato);
+/*@import url(https://fonts.googleapis.com/css?family=Lato);*/
 
 html {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Segoe UI Light'; 
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
+      font-size: 14px;
 }
 body {
   margin: 0;
@@ -108,7 +109,7 @@ code,
 kbd,
 pre,
 samp {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Segoe UI Light'; 
   font-size: 1em;
 }
 button,
@@ -1085,7 +1086,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Segoe UI Light'; 
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
@@ -1535,7 +1536,7 @@ code,
 kbd,
 pre,
 samp {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Segoe UI Light';
 }
 code {
   padding: 2px 4px;
@@ -5996,7 +5997,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Segoe UI Light'
   font-size: 12px;
   font-style: normal;
   font-weight: normal;
@@ -6115,7 +6116,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Segoe UI Light'
   font-size: 14px;
   font-style: normal;
   font-weight: normal;
@@ -6384,7 +6385,7 @@ button.close {
 .carousel-control .icon-next {
   width: 20px;
   height: 20px;
-  font-family: serif;
+  font-family: 'Segoe UI Light'
   line-height: 1;
 }
 .carousel-control .icon-prev:before {
