@@ -190,19 +190,19 @@ namespace KnowledgeBase
                 Article = "CreatingModeFirstwithEntityFramework"
             });
 
-            Names.Add(new ArticlesList
-            {
-                ArticleName = "Entity Framework",
-                ArticleURL = "../EntityFramework/EntityFramework",
-                Article = "EntityFramework"
-            });
+            //Names.Add(new ArticlesList
+            //{
+            //    ArticleName = "Entity Framework",
+            //    ArticleURL = "../EntityFramework/EntityFramework",
+            //    Article = "EntityFramework"
+            //});
 
-            Names.Add(new ArticlesList
-            {
-                ArticleName = "MVC Architecture",
-                ArticleURL = "../MVC/MVCArchitecture",
-                Article = "MVCArchitecture"
-            });
+            //Names.Add(new ArticlesList
+            //{
+            //    ArticleName = "MVC Architecture",
+            //    ArticleURL = "../MVC/MVCArchitecture",
+            //    Article = "MVCArchitecture"
+            //});
 
             Names.Add(new ArticlesList
             {

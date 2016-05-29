@@ -9,31 +9,9 @@
 
     ApplicationException is thrown by a user program, not by the common language runtime. If you are designing an application that needs to create its own exceptions, derive from the ApplicationException class. ApplicationException extends Exception, but does not add new functionality. This exception is provided as means to differentiate between exceptions defined by applications versus exceptions defined by the system.
 </p>
-<pre>
-<span style='color:#808030; '>[</span>Serializable<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>]</span>
-<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>class</span> MyException <span style='color:#808030; '>:</span> ApplicationException
-    <span style='color:#800080; '>{</span>
-    <span style='color:#800000; font-weight:bold; '>public</span> MyException<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
-    <span style='color:#808030; '>:</span> <span style='color:#800000; font-weight:bold; '>base</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span> <span style='color:#800080; '>}</span>
-    <span style='color:#800000; font-weight:bold; '>public</span> MyException<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>string</span> message<span style='color:#808030; '>)</span>
-    <span style='color:#808030; '>:</span> <span style='color:#800000; font-weight:bold; '>base</span><span style='color:#808030; '>(</span>message<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span> <span style='color:#800080; '>}</span>
-    <span style='color:#800000; font-weight:bold; '>public</span> MyException<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>string</span> message<span style='color:#808030; '>,</span> Exception innerException<span style='color:#808030; '>)</span>
-    <span style='color:#808030; '>:</span> <span style='color:#800000; font-weight:bold; '>base</span><span style='color:#808030; '>(</span>message<span style='color:#808030; '>,</span> innerException<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span> <span style='color:#800080; '>}</span>
-<span style='color:#800080; '>}</span>
-</pre>
+<script src="https://gist.github.com/guntidheerajkumar/7e6ae783d3c532ff1cc99a3634be8f90.js"></script>
 <p><u>Usage:</u></p>
-<pre>
-<span style='color:#800000; font-weight:bold; '>protected</span> <span style='color:#800000; font-weight:bold; '>void</span> Page_Load<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>object</span> sender<span style='color:#808030; '>,</span> EventArgs e<span style='color:#808030; '>)</span>
-<span style='color:#800080; '>{</span>
-    <span style='color:#800000; font-weight:bold; '>try</span>
-    <span style='color:#800080; '>{</span>
-    <span style='color:#800080; '>}</span>
-    <span style='color:#800000; font-weight:bold; '>catch</span> <span style='color:#808030; '>(</span>MyException ex<span style='color:#808030; '>)</span>
-    <span style='color:#800080; '>{</span>
-        Response<span style='color:#808030; '>.</span>Write<span style='color:#808030; '>(</span>ex<span style='color:#808030; '>.</span>ToString<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-    <span style='color:#800080; '>}</span>
-<span style='color:#800080; '>}</span>
-</pre>
+<script src="https://gist.github.com/guntidheerajkumar/cb0b41e27235e7c92126b562ece439a6.js"></script>
 <p>Things that to be taken care when designing custom exceptions,</p>
 <ul>
     <li>Derive custom exceptions from System.Exception or other common base exception classes.</li>
