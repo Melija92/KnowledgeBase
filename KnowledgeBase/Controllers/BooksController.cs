@@ -7,11 +7,13 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace KnowledgeBase.Controllers
 {
     public class BooksController : Controller
     {
+        [OutputCache(Duration = 3600, VaryByParam = "none", Location = OutputCacheLocation.Client, NoStore = true)]
         public ActionResult Index(string searchTerm, int pageNumber = 1)
         {
             if (!string.IsNullOrWhiteSpace(searchTerm))
@@ -54,6 +56,7 @@ namespace KnowledgeBase.Controllers
             return View();
         }
 
+        [OutputCache(Duration = 3600, VaryByParam = "none", Location = OutputCacheLocation.Client, NoStore = true)]
         public ActionResult BooksDetail(string Id)
         {
             if (!string.IsNullOrWhiteSpace(Id))
