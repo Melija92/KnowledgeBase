@@ -353,6 +353,7 @@
     <Content Include="Images\MasterPage\MasterPage_7.jpg" />
     <Content Include="Images\MasterPage\MasterPage_8.jpg" />
     <Content Include="Images\MasterPage\MasterPage_9.jpg" />
+    <Content Include="Images\mobile.png" />
     <Content Include="Images\OAuth\OAuth_1.PNG" />
     <Content Include="Images\OAuth\OAuth_10.PNG" />
     <Content Include="Images\OAuth\OAuth_11.PNG" />
