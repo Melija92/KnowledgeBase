@@ -353,6 +353,17 @@
     <Content Include="Images\MasterPage\MasterPage_7.jpg" />
     <Content Include="Images\MasterPage\MasterPage_8.jpg" />
     <Content Include="Images\MasterPage\MasterPage_9.jpg" />
+    <Content Include="Images\OAuth\OAuth_1.PNG" />
+    <Content Include="Images\OAuth\OAuth_10.PNG" />
+    <Content Include="Images\OAuth\OAuth_11.PNG" />
+    <Content Include="Images\OAuth\OAuth_2.PNG" />
+    <Content Include="Images\OAuth\OAuth_3.PNG" />
+    <Content Include="Images\OAuth\OAuth_4.PNG" />
+    <Content Include="Images\OAuth\OAuth_5.PNG" />
+    <Content Include="Images\OAuth\OAuth_6.PNG" />
+    <Content Include="Images\OAuth\OAuth_7.PNG" />
+    <Content Include="Images\OAuth\OAuth_8.PNG" />
+    <Content Include="Images\OAuth\OAuth_9.PNG" />
     <Content Include="Images\PushSharp\PushSharp_1.png" />
     <Content Include="Images\PushSharp\PushSharp_2.png" />
     <Content Include="Images\PushSharp\PushSharp_3.png" />
@@ -522,6 +533,7 @@
     <Content Include="Views\MVC\WorkingWithDependencyInjection.cshtml" />
     <Content Include="Views\MVC\WorkingWithMongoDBinMVCApplication.cshtml" />
     <Content Include="Views\MVC\CallerInfoAttributesinCSharp.cshtml" />
+    <Content Include="Views\XamariniOS\GoogleAuthenticationinMobileApplication.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

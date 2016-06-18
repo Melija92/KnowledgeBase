@@ -45,7 +45,6 @@ namespace KnowledgeBase
             return xamarinData;
         }
 
-
         public static List<ArticlesList> GetListArticles()
         {
             Names = new List<ArticlesList>();
@@ -469,11 +468,19 @@ namespace KnowledgeBase
                 ArticleURL = "../MVC/WorkingWithMongoDBinMVCApplication",
                 Article = "WorkingWithMongoDBinMVCApplication"
             });
+
             Names.Add(new ArticlesList
             {
                 ArticleName = "Caller Info Attributes in CSharp",
                 ArticleURL = "../MVC/CallerInfoAttributesinCSharp",
                 Article = "CallerInfoAttributesinCSharp"
+            });
+
+            Names.Add(new ArticlesList
+            {
+                ArticleName = "Google Authentication in Mobile Application",
+                ArticleURL = "../XamariniOS/GoogleAuthenticationinMobileApplication",
+                Article = "GoogleAuthenticationinMobileApplication"
             });
             return Names;
         }

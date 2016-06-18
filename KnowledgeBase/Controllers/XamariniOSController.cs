@@ -123,5 +123,10 @@ namespace KnowledgeBase.Controllers
         {
             return View();
         }
+
+        public ActionResult GoogleAuthenticationinMobileApplication()
+        {
+            return View();
+        }
     }
 }
