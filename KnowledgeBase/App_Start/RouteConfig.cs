@@ -16,7 +16,7 @@ namespace KnowledgeBase
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "XamariniOS", action = "GoogleAuthenticationinMobileApplication", id = UrlParameter.Optional }
+                defaults: new { controller = "XamariniOS", action = "PlayingStreamingAudioiniOSApplication", id = UrlParameter.Optional }
             );
         }
     }
