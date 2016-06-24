@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "WorkingwithSeriLoginNETCoreApplication";
+}
+
+<h1>Working with SeriLog in .NET Core Application</h1>
+
+<p>.NET Core is a set of runtime, library and compiler components that allow you to create apps that run on Windows, Mac OS X and Linux. It can be installed locally with your app with only the packages you need. It provides a lightweight development model and the flexibility to work with your favorite development tools on your favorite development platform. If you're new to .NET Core, visit the Getting Started page to find installation instructions for each supported platform.</p>
+
+<p>More about : <a href="https://blogs.msdn.microsoft.com/dotnet/2014/12/04/introducing-net-core/" target="_blank">.NET Core</a></p>
+
+<p>Today we will see how to integrate SeriLog in to our Web application. Here we are using the all new .NET Core Capabilities. The solution now we are building is over ASP.NET 5.0 (.NET Core).</p>
+<p>Download Seq from <a href="https://getseq.net/" target="_blank">Seq - Machine data, for humans</a></p>
+<p>Once the download is done. Install the application as guided by the wizard.</p>
+<br />
+<img src="~/Images/NETCore/Seq_1.PNG" width="450" height="350" class="img-responsive"/>
+<br />
+<br />
+<img src="~/Images/NETCore/Seq_2.PNG" width="450" height="350" class="img-responsive" />
+<br />
+<br />
+<img src="~/Images/NETCore/Seq_3.PNG"  width="450" height="350" class="img-responsive"/>
+<br />
+<br />
+<img src="~/Images/NETCore/Seq_4.PNG"  width="450" height="350" class="img-responsive"/>
+<br />
+<p>Once the installation is successfull. We will now continue in building a small application.</p>
+<p>Create a new ASP.NET Web Application and in the template wizard. If you see ASP.NET 5.0 and if it is not installed. Please install .NET Core. Once the install is done. You can see the templates listed as below. You got to choose either .NET Core or with .NET framework.</p>
+<p>As today we are talking about .NET Core we will be dealing with .NET Core template.</p>
+<br />
+<img src="~/Images/NETCore/Core_1.PNG"  width="450" height="350" class="img-responsive"/>
+<br />
+<p>Choose Web Application and click on OK.</p>
+<br />
+<img src="~/Images/NETCore/Core_2.PNG"  width="450" height="350" class="img-responsive"/>
+<br />
+<p>Specify the SeriLog packages as below in <u>project.json</u>. </p>
+<br />
+<img src="~/Images/NETCore/Core_3.PNG" width="450" height="350" class="img-responsive" />
+<br />
+<script src="https://gist.github.com/guntidheerajkumar/57aff980a08eed83bf81812843a4c7cc.js"></script>
+<p>Once the packages are included then you can observe that solution is restoring the packages.</p>
+<p>Run the application and even browse Seq at <u>http://localhost:5341</u></p>
+<p>You can able to see all the trace of events which are running on the application in Seq.</p>
+<br />
+<img src="~/Images/NETCore/Seq_5.PNG"  width="450" height="350" class="img-responsive"/>
+<br />
+<br />
+<p>Happy Coding....</p>

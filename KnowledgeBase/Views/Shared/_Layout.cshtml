@@ -33,7 +33,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="#" class = "navbar-brand">Knowledge Base</a>
+                <a href="#" class="navbar-brand">Knowledge Base</a>
             </div>
             <div class="navbar-collapse collapse">
             </div>
@@ -44,22 +44,25 @@
         <br />
         <br />
         <div class="row">
-            <div class="col-lg-9">
+            <div class="col-lg-1">
+                <br />
+            </div>
+            <div class="col-lg-8">
                 <br />
                 <br />
                 <div role="navigation" aria-label="breadcrumbs navigation" id="navigationMenu">
                     @if (ViewBag.Title != "Home Page" && ViewBag.Title != "ThankYou" && ViewBag.Title != "Comments" && ViewBag.Title != "About")
                     {
+                    <div>
                         <div>
-                            <div>
 
-                                @Html.ActionLink("Home", Routes.ActionMethod, Routes.Controller)
+                            @Html.ActionLink("Home", Routes.ActionMethod, Routes.Controller)
 
-                                @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
+                            @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
                                 {
-                                    @:/ @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index", ViewContext.RouteData.Values["controller"].ToString())
+                                @:/ @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index", ViewContext.RouteData.Values["controller"].ToString())
                                         }
-                                @if (ViewContext.RouteData.Values["action"].ToString() != "Index")
+                            @if (ViewContext.RouteData.Values["action"].ToString() != "Index")
                                 {
                                     if (KBArticles.GetListArticles().ToList().Select(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).Count() > 0)
                                     {
@@ -67,16 +70,16 @@
                                         { }
                                         else
                                         {
-                                            @:/ @Html.ActionLink(KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().ArticleName, KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().ArticleName, ViewContext.RouteData.Values["controller"].ToString())
+                                @:/ @Html.ActionLink(KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().ArticleName, KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().ArticleName, ViewContext.RouteData.Values["controller"].ToString())
                                                 }
                                     }
                                     else
                                     {
-                                        @:/ @Html.ActionLink(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString())
+                                @:/ @Html.ActionLink(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString())
                                             }
                                 }
-                            </div>
                         </div>
+                    </div>
                     }
                 </div>
                 <br />
@@ -92,8 +95,8 @@
                             ViewBag.Title != "EntityFrameworkIndex" && ViewBag.Title != "Comments" &&
                             ViewBag.Title != "ThankYou" && ViewBag.Title != "iOSIndex" && ViewBag.Title != "LinqIndex" && ViewBag.Title != "About")
                     {
-                        <div id="disqus_thread"></div>
-                        <script type="text/javascript">
+                    <div id="disqus_thread"></div>
+                    <script type="text/javascript">
                             /* * * CONFIGURATION VARIABLES * * */
                             var disqus_shortname = 'knowledge-base';
 
@@ -103,7 +106,7 @@
                                 dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
                                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
                             })();
-                        </script>
+                    </script>
                     }
                     <br />
                     <br />
@@ -111,19 +114,21 @@
 
             </div>
             <div class="col-lg-3" style="padding-top:50px;">
-                <a href="~/Home/About" class="btn btn-info">About Me</a>
-                <br />
-                <br />
-                <a href="~/MVC/Index" class="btn btn-success">MVC</a>
-                <br />
-                <br />
-                <a href="~/EntityFramework/Index" class="btn btn-danger">Entity Framework</a>
-                <br />
-                <br />
-                <a href="~/XamariniOS/Index" class="btn btn-info">Xamarin</a>
-                <br />
-                <br />
-                <a href="~/Books/Index" class="btn btn-danger">Books</a>
+                <div class="sidebarMain">
+                    <a href="~/Home/About" class="btn btn-info">About Me</a>
+                    <br />
+                    <br />
+                    <a href="~/MVC/Index" class="btn btn-success">MVC</a>
+                    <br />
+                    <br />
+                    <a href="~/EntityFramework/Index" class="btn btn-danger">Entity Framework</a>
+                    <br />
+                    <br />
+                    <a href="~/XamariniOS/Index" class="btn btn-info">Xamarin</a>
+                    <br />
+                    <br />
+                    <a href="~/Books/Index" class="btn btn-danger">Books</a>
+                </div>
             </div>
         </div>
         <br />

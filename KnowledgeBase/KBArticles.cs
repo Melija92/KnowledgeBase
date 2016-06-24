@@ -482,6 +482,20 @@ namespace KnowledgeBase
                 ArticleURL = "../XamariniOS/GoogleAuthenticationinMobileApplication",
                 Article = "GoogleAuthenticationinMobileApplication"
             });
+
+            Names.Add(new ArticlesList
+            {
+                ArticleName = "Playing Streaming Audio in iOS Application",
+                ArticleURL = "../XamariniOS/PlayingStreamingAudioiniOSApplication",
+                Article = "PlayingStreamingAudioiniOSApplication"
+            });
+
+            Names.Add(new ArticlesList
+            {
+                ArticleName = "Working with SeriLog in .NET Core Application",
+                ArticleURL = "../MVC/WorkingwithSeriLoginNETCoreApplication",
+                Article = "WorkingwithSeriLoginNETCoreApplication"
+            });
             return Names;
         }
     }

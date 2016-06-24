@@ -161,7 +161,9 @@
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.min.css">
+      <DependentUpon>bootstrap.css</DependentUpon>
+    </Content>
     <Content Include="Content\emailTemplate.txt" />
     <Content Include="Content\jquery-ui.css" />
     <Content Include="Content\scrollToTop.js" />
@@ -221,6 +223,7 @@
     <Content Include="Images\CALayer_1.jpg" />
     <Content Include="Images\CALayer_2.jpg" />
     <Content Include="Images\CallerInfoAttributes.png" />
+    <Content Include="Images\Capture.PNG" />
     <Content Include="Images\CollectionViewiOS.jpg" />
     <Content Include="Images\CollectionViewiOS_1.jpg" />
     <Content Include="Images\config-1.png" />
@@ -354,6 +357,14 @@
     <Content Include="Images\MasterPage\MasterPage_8.jpg" />
     <Content Include="Images\MasterPage\MasterPage_9.jpg" />
     <Content Include="Images\mobile.png" />
+    <Content Include="Images\NETCore\Core_1.PNG" />
+    <Content Include="Images\NETCore\Core_2.PNG" />
+    <Content Include="Images\NETCore\Core_3.PNG" />
+    <Content Include="Images\NETCore\Seq_1.PNG" />
+    <Content Include="Images\NETCore\Seq_2.PNG" />
+    <Content Include="Images\NETCore\Seq_3.PNG" />
+    <Content Include="Images\NETCore\Seq_4.PNG" />
+    <Content Include="Images\NETCore\Seq_5.PNG" />
     <Content Include="Images\OAuth\OAuth_1.PNG" />
     <Content Include="Images\OAuth\OAuth_10.PNG" />
     <Content Include="Images\OAuth\OAuth_11.PNG" />
@@ -424,6 +435,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="bundleconfig.json" />
     <None Include="Properties\PublishProfiles\KBProfile.pubxml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.3.js" />
@@ -535,6 +547,8 @@
     <Content Include="Views\MVC\WorkingWithMongoDBinMVCApplication.cshtml" />
     <Content Include="Views\MVC\CallerInfoAttributesinCSharp.cshtml" />
     <Content Include="Views\XamariniOS\GoogleAuthenticationinMobileApplication.cshtml" />
+    <Content Include="Views\XamariniOS\PlayingStreamingAudioiniOSApplication.cshtml" />
+    <Content Include="Views\MVC\WorkingwithSeriLoginNETCoreApplication.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

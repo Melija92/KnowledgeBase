@@ -187,3 +187,6 @@ textarea {
     padding-bottom: 10px; 
 }*/
  
+.sidebarMain {
+    position: fixed;  
+}

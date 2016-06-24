@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "PlayingStreamingAudioiniOSApplication";
+}
+
+<h1>Playing Streaming Audio in iOS Application</h1>
+
+<p>Audio is the greatest thing now happening in the mobile world. With the cool stuff in CoreAudio framework, your apps can have great audio experience. Core Audio streaming is particularly useful for scenarios such as playing live audio from web. Lets start with a small example of how we can leverage CoreAudio framework for streaming an audio from web.</p>
+
+<p>First we will have some initalizations. In the below code we are trying to have a audio url from where we will be streaming the audio. We are using AudioFileStream class which is the key in CoreAudio framework. Create an object of AudioFileStream. After that we are creating an object for OutputAudioQueue which we will use to allocate number of buffers that we use to fill in the data. Once the buffer is filled it is enqueued and when the OutputAudioQueue finished then the completed event will be raised.</p>
+
+<script src="https://gist.github.com/guntidheerajkumar/cdae61aac5b9e842db48927211d3dd1a.js"></script>
+
+<p>We will be creating an instrance of AudioFileStream here and we are specifying the type of the audio as MP3.</p>
+
+<script src="https://gist.github.com/guntidheerajkumar/65775e66e3fb85ce79ccfec55d9bccb9.js"></script>
+
+<p>AudioFileStream has two important events,</p>
+<ol>
+    <li>PacketDecoded</li>
+    <li>PropertyFound</li>
+</ol>
+
+<p>-- Packet Decoded --</p>
+<script src="https://gist.github.com/guntidheerajkumar/94321401d77d94ea88ebcd7d6ce8bd94.js"></script>
+<p>-- Property Changed --</p>
+<script src="https://gist.github.com/guntidheerajkumar/ce7751651757ad93e57eb519625eea32.js"></script>
+
+<p>Using NSUrlSession we are trying to get the default session configuration based on our filestream and executing task using the audio url.</p>
+
+<script src="https://gist.github.com/guntidheerajkumar/8692ef97de66b7fbbf3aa8eb1aee12b9.js"></script>
+
+<p>We are creating a SessionDelegate which is used in whenever the stream receives data it parses the bytes.</p>
+
+<script src="https://gist.github.com/guntidheerajkumar/ab95842cecfded40dfac3e32c3d1764f.js"></script>
+
+<p>Run the application and see the magic of CoreAudio framework done to your application.</p>
+
+<p>More about <a href="https://developer.apple.com/library/mac/documentation/MusicAudio/Conceptual/CoreAudioOverview/Introduction/Introduction.html" target="_blank">Core Audio</a>  </p>
+
+<p>Happy Coding.... </p>
+
