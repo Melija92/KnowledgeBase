@@ -496,6 +496,20 @@ namespace KnowledgeBase
                 ArticleURL = "../MVC/WorkingwithSeriLoginNETCoreApplication",
                 Article = "WorkingwithSeriLoginNETCoreApplication"
             });
+
+            Names.Add(new ArticlesList
+            {
+                ArticleName = "Reading Plist File",
+                ArticleURL = "../XamariniOS/ReadingPlistFile",
+                Article = "ReadingPlistFile"
+            });
+
+            Names.Add(new ArticlesList
+            {
+                ArticleName = "Generating Unique Keys and Random Passwords",
+                ArticleURL = "../MVC/GeneratingUniqueKeysandRandomPasswords",
+                Article = "GeneratingUniqueKeysandRandomPasswords"
+            });
             return Names;
         }
     }
