@@ -205,6 +205,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\nodata.png" />
     <Content Include="Images\319.GIF" />
     <Content Include="Images\alert_control_1.jpg" />
     <Content Include="Images\alert_control_2.jpg" />
@@ -256,6 +257,7 @@
     <Content Include="Images\deploy_4.JPG" />
     <Content Include="Images\deploy_5.JPG" />
     <Content Include="Images\deploy_6.JPG" />
+    <Content Include="Images\Dheeraj kumar.jpg" />
     <Content Include="Images\DynamicData\DynamicData_1.jpg" />
     <Content Include="Images\DynamicData\DynamicData_10.jpg" />
     <Content Include="Images\DynamicData\DynamicData_11.jpg" />
@@ -397,6 +399,7 @@
     <Content Include="Images\routing_1.gif" />
     <Content Include="Images\routing_2.png" />
     <Content Include="Images\Searching.gif" />
+    <Content Include="Images\searching.png" />
     <Content Include="Images\spiffygif_32x32.gif" />
     <Content Include="Images\TracingMVC\ErrorTracer.png" />
     <Content Include="Images\TracingMVC\InfoTrace.png" />

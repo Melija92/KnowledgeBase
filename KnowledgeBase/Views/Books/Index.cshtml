@@ -16,32 +16,29 @@
 @using (Ajax.BeginForm("Index", FormMethod.Post, new AjaxOptions { UpdateTargetId = "tableRefresh" }, new { @class = "form-horizontal", role = "form" }))
 {
     <div id="tableRefresh">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="form-inline">
-                    @Html.TextBoxFor(m => m.SearchTerm, new { @class = "form-control", autocomplete = "off", placeholder = "Search" })
-                    <button type="submit" class="btn btn-success" id="submitBtn">Search</button>
-                    &nbsp;&nbsp;<a href="#" data-toggle="tooltip" , title="Search books by typing the keyword. Examples: asp.net, entity framework, etc">?</a>
-                </div>
-            </div>
-            <div class="panel-body">
-                @if (Model != null)
+        <div class="icon-addon addon-lg">
+            @Html.TextBoxFor(m => m.SearchTerm, new { @class = "form-control", autocomplete = "off", placeholder = "Search" })
+            <p class="pull-right">(Please enter the keyword and press enter.)</p>
+        </div>
+        <br />
+        <br />
+        @if (Model != null)
                 {
-                    <table style="width:100%; line-height:35px;" class="table-hover">
-                        <tr>
-                            <td style="padding-left:20px;">About @Model.BookData.Total.ToString() results (@Model.BookData.Time.ToString() seconds) </td>
-                        </tr> 
-                        @for (int i = 0; i < Model.BookData.Books.Count; i++)
-                        {
-                            <tr>
-                                <td style="padding-left:10px;">
-                                    <span class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp;<a style="text-decoration:none;" href="@Url.Action("BooksDetail", "Books", new { Id = Model.BookData.Books[i].Id })">
-                                        @Model.BookData.Books[i].Title
-                                    </a>
-                                </td>
-                            </tr>
-                        }
-                    </table>
+            <table style="width:100%; line-height:35px;" class="table-hover">
+                <tr>
+                    <td style="padding-left:20px;">About @Model.BookData.Total.ToString() results (@Model.BookData.Time.ToString() seconds) </td>
+                </tr>
+                @for (int i = 0; i < Model.BookData.Books.Count; i++)
+                {
+                    <tr>
+                        <td style="padding-left:10px;">
+                            <span class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp;<a style="text-decoration:none;" href="@Url.Action("BooksDetail", "Books", new { Id = Model.BookData.Books[i].Id })">
+                                @Model.BookData.Books[i].Title
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </table>
                     <br />
                     <hr />
                     <nav>
@@ -52,22 +49,22 @@
                             }
                         </ul>
                     </nav>
-                }
-                else
-                {
-                    <div style="text-align:center;">
-                        <p style="text-align:center;">No Results to show</p>
-                    </div>
-                }
+        }
+        else
+        {
+            <div style="text-align:center;">
+                <img src="~/Images/nodata.png" />
+                <br />
+                <p style="text-align:center;">No Results to show</p>
             </div>
-        </div>
+        }
     </div>
 
-    <div id="loading">
-        <div id="loadingcontent">
-            <p id="loadingspinner">
-                <img src="~/Images/319.GIF" />
-            </p>
-        </div>
-    </div>
+            <div id="loading">
+                <div id="loadingcontent">
+                    <p id="loadingspinner">
+                        <img src="~/Images/319.GIF" />
+                    </p>
+                </div>
+            </div>
 }

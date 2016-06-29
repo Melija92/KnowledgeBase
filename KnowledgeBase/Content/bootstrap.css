@@ -4814,8 +4814,13 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   text-align: center;
 }
 .pager li {
-  display: inline;
+   display: inline-block;
+  margin:0 0 10px 0;   
 }
+.pager li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
 .pager li > a,
 .pager li > span {
   display: inline-block;
