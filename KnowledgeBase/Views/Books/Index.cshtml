@@ -7,8 +7,10 @@
 @Scripts.Render("~/bundles/jquery")
 <script type="text/javascript">
     $(function () {
-        $("#submitBtn").click(function () {
-            $("#loading").fadeIn();
+        $("input").keydown(function (e) {
+            if (e.keyCode == 13) {
+                $("#loading").fadeIn();
+            }
         });
     });
 </script>
@@ -39,7 +41,7 @@
                     </tr>
                 }
             </table>
-                    <br />
+            <br />
                     <hr />
                     <nav>
                         <ul class="pager">
@@ -60,11 +62,11 @@
         }
     </div>
 
-            <div id="loading">
-                <div id="loadingcontent">
-                    <p id="loadingspinner">
-                        <img src="~/Images/319.GIF" />
-                    </p>
-                </div>
-            </div>
+    <div id="loading">
+        <div id="loadingcontent">
+            <p id="loadingspinner">
+                <img src="~/Images/319.gif" />
+            </p>
+        </div>
+    </div>
 }
