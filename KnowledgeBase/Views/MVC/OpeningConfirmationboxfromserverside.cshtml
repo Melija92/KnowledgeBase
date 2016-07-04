@@ -3,43 +3,55 @@
 }
 
 <h1>Opening Confirmation box from server side</h1>
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url(https://github.com/guntidheerajkumar.png)" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <p>
+        Following are the events used in opening confirmation box from server side.
+        <br />
 
-<p>
-    Following are the events used in opening confirmation box from server side.
+        <ul>
+            <li>
+                ClientScript.GetPostBackEventReference
+            </li>
+            <li>  ClientScript.RegisterStartupScript</li>
+            <li>
+                _doPostBack
+            </li>
+        </ul>
+        <b>ClientScript.GetPostBackEventReference:</b> Returns a string that can be used in a client event to cause postback to the server. <br />
+        <b>ClientScript.RegisterStartupScript:</b> Registers the startup script with the Page object.<br />
+        <b>_doPostBack: </b>It is ASP.NET's way of doing javascript postbacks .
+        <br />
+        <br />
+        The first argument is eventTarget, which is the control that is triggering the action.<br />
+        The second argument is event args means any additional information you might want to send with your postback.<br />
+        Following is the example for opening up confirmation box
+    </p>
+    <br />
+    <img src="~/Images/ConfirmationBox_1.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <img src="~/Images/ConfirmationBox_2.jpg" class="img-responsive" />
+    <br />
     <br />
 
-    <ul>
-        <li>
-            ClientScript.GetPostBackEventReference
-        </li>
-        <li>  ClientScript.RegisterStartupScript</li>
-        <li>
-            _doPostBack
-        </li>
-    </ul>
-    <b>ClientScript.GetPostBackEventReference:</b> Returns a string that can be used in a client event to cause postback to the server. <br />
-    <b>ClientScript.RegisterStartupScript:</b> Registers the startup script with the Page object.<br />
-    <b>_doPostBack: </b>It is ASP.NET's way of doing javascript postbacks .
+    <img src="~/Images/ConfirmationBox_3.jpg" class="img-responsive" />
     <br />
     <br />
-    The first argument is eventTarget, which is the control that is triggering the action.<br />
-    The second argument is event args means any additional information you might want to send with your postback.<br />
-    Following is the example for opening up confirmation box
-</p>
-<br />
-<img src="~/Images/ConfirmationBox_1.jpg" class="img-responsive" />
-<br />
-<br />
-<img src="~/Images/ConfirmationBox_2.jpg" class="img-responsive" />
-<br />
-<br />
 
-<img src="~/Images/ConfirmationBox_3.jpg" class="img-responsive" />
-<br />
-<br />
+    <img src="~/Images/ConfirmationBox_4.jpg" class="img-responsive" />
+    <br />
+    <br />
 
-<img src="~/Images/ConfirmationBox_4.jpg" class="img-responsive" />
-<br />
-<br />
-
-<p>In the button submit event handler we are rendering a string to the client as javascript code. When user clicks on Ok automatically _dopostback event will be called in javascript and postback will take place and this is due to ClientScript.GetPostBackEventReference. In _doPostBackevent we are having two parameters, one the event target and other event arguments. Here in the above example “ConfirmationPostBackevent” is the eventTarget name and “Testing” will be the eventArgument.</p>
+    <p>In the button submit event handler we are rendering a string to the client as javascript code. When user clicks on Ok automatically _dopostback event will be called in javascript and postback will take place and this is due to ClientScript.GetPostBackEventReference. In _doPostBackevent we are having two parameters, one the event target and other event arguments. Here in the above example “ConfirmationPostBackevent” is the eventTarget name and “Testing” will be the eventArgument.</p>
+</article>

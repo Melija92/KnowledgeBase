@@ -3,76 +3,91 @@
 }
 
 <h1>Building and Deployment of ASP.NET Application</h1>
-<p>
-    We have developed an ASP.NET Application and the end user need to work with the application directly by installing the application where ever he needs. Visual Studio SDK has provided Packaging and deployment concept where in a developer can create a setup project of the application.
-    <br />
-    <br />
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url(https://github.com/guntidheerajkumar.png)" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <p>
+        We have developed an ASP.NET Application and the end user need to work with the application directly by installing the application where ever he needs. Visual Studio SDK has provided Packaging and deployment concept where in a developer can create a setup project of the application.
+        <br />
+        <br />
 
-    There are so many tools available for creating setup. In this article we are going to learn about how to create a setup using Web Setup Project.
-    <br />
-    <br />
+        There are so many tools available for creating setup. In this article we are going to learn about how to create a setup using Web Setup Project.
+        <br />
+        <br />
 
-    <b>    Creating Web Setup Project With VS 2010:</b>
+        <b>    Creating Web Setup Project With VS 2010:</b>
+        <br />
+        <br />
+        We have created a sample web application as below.
+    </p>
     <br />
+    <img src="~/Images/deploy_1.JPG" class="img-responsive" />
     <br />
-    We have created a sample web application as below.
-</p>
-<br />
-<img src="~/Images/deploy_1.JPG" class="img-responsive" />
-<br />
-<br />
-<ul>
-    <li>
-        Right click on the Solution and Select Add New Project.
-    </li>
-    <li>
-        Select Other Project Types and Choose Setup and Deployment.
-    </li>
-    <li>
-        In that Choose Visual Studio Installer.
-    </li>
-    <li>It shows different templates under Visual Studio Installer. Select Web Setup Project and specify a meaningful name.</li>
-</ul>
-<br />
-<img src="~/Images/deploy_2.JPG" class="img-responsive" />
-<br />
-<br />
-<p>Once we add a new project it creates a platform for creating setup.</p>
-<br />
-<img src="~/Images/deploy_3.JPG" class="img-responsive" />
-<br />
-<br />
-<p>Right Click on the Setup Project we added and choose Add and select Project Output. Following window will be displayed.</p>
-<br />
-<img src="~/Images/deploy_4.JPG" class="img-responsive" />
-<br />
-<br />
-<p>
-    In the above window select Primary Output and click on Ok. Here primary output includes the solution files and the dependencies. Once the primary output is added to the project automatically based on the output it creates even the dependencies which are to be included in to this project. Say .NET Framework.
-    <br />
-    <br />
-    Basically there are two modes in the build configuration.
     <br />
     <ul>
-        <li>Debug mode</li>
-        <li>Release mode (In simple terms Non Debugger mode)</li>
+        <li>
+            Right click on the Solution and Select Add New Project.
+        </li>
+        <li>
+            Select Other Project Types and Choose Setup and Deployment.
+        </li>
+        <li>
+            In that Choose Visual Studio Installer.
+        </li>
+        <li>It shows different templates under Visual Studio Installer. Select Web Setup Project and specify a meaningful name.</li>
     </ul>
-    Select release mode since this is the end user copy by changing the configuration mode as Release on the application properties.
+    <br />
+    <img src="~/Images/deploy_2.JPG" class="img-responsive" />
     <br />
     <br />
-    Build the Solution. Make sure like there should not be any errors.
+    <p>Once we add a new project it creates a platform for creating setup.</p>
+    <br />
+    <img src="~/Images/deploy_3.JPG" class="img-responsive" />
     <br />
     <br />
-    Right Click on the setup project and choose Build. Visual Studio builds the setup project and creates an MSI for the application.
-</p>
-<br />
-<img src="~/Images/deploy_5.JPG" class="img-responsive" />
-<br />
-<br />
-<p>Look in the project directory location, you can able to see MSI created for your project as below.</p>
-<br />
-<img src="~/Images/deploy_6.JPG" class="img-responsive" />
-<br />
-<br />
-<a href="http://www.box.net/shared/fr4x4t2iqqodalf07r23" class="btn btn-danger">FontAwesome
-    Download Sample</a>
+    <p>Right Click on the Setup Project we added and choose Add and select Project Output. Following window will be displayed.</p>
+    <br />
+    <img src="~/Images/deploy_4.JPG" class="img-responsive" />
+    <br />
+    <br />
+    <p>
+        In the above window select Primary Output and click on Ok. Here primary output includes the solution files and the dependencies. Once the primary output is added to the project automatically based on the output it creates even the dependencies which are to be included in to this project. Say .NET Framework.
+        <br />
+        <br />
+        Basically there are two modes in the build configuration.
+        <br />
+        <ul>
+            <li>Debug mode</li>
+            <li>Release mode (In simple terms Non Debugger mode)</li>
+        </ul>
+        Select release mode since this is the end user copy by changing the configuration mode as Release on the application properties.
+        <br />
+        <br />
+        Build the Solution. Make sure like there should not be any errors.
+        <br />
+        <br />
+        Right Click on the setup project and choose Build. Visual Studio builds the setup project and creates an MSI for the application.
+    </p>
+    <br />
+    <img src="~/Images/deploy_5.JPG" class="img-responsive" />
+    <br />
+    <br />
+    <p>Look in the project directory location, you can able to see MSI created for your project as below.</p>
+    <br />
+    <img src="~/Images/deploy_6.JPG" class="img-responsive" />
+    <br />
+    <br />
+    <a href="http://www.box.net/shared/fr4x4t2iqqodalf07r23" class="btn btn-danger">
+        FontAwesome
+        Download Sample
+    </a>
+</article>

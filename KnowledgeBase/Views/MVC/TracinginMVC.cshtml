@@ -4,53 +4,65 @@
 }
 
 <h1>Tracing in MVC</h1>
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url(https://github.com/guntidheerajkumar.png)" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <p>
+        Tracing the execution flow is very important in resolving lot of issues when working with a huge functionlity.
+        This helps in identifying the statements executing and the fixing issues occured in the execution flow.
+    </p>
 
-<p>
-    Tracing the execution flow is very important in resolving lot of issues when working with a huge functionlity.
-    This helps in identifying the statements executing and the fixing issues occured in the execution flow.
-</p>
+    <p>System.Diagnostics.Trace will help in acheiving this process.</p>
 
-<p>System.Diagnostics.Trace will help in acheiving this process.</p>
-
-<p>
-    Here is the small sample how we can acheive the tracing in an application. This is a basic sample, we
-    can extend this to our needs.
-</p>
+    <p>
+        Here is the small sample how we can acheive the tracing in an application. This is a basic sample, we
+        can extend this to our needs.
+    </p>
 
 
 <pre><span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#800000; font-weight:bold; '>class</span> Tracer
     <span style='color:#800080; '>{</span>
-        <span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#800000; font-weight:bold; '>void</span> MyTrace<span style='color:#808030; '>(</span>TraceLevel level<span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>string</span> message<span style='color:#808030; '>)</span>
-        <span style='color:#800080; '>{</span>
-            <span style='color:#800000; font-weight:bold; '>switch</span> <span style='color:#808030; '>(</span>level<span style='color:#808030; '>)</span>
-            <span style='color:#800080; '>{</span>
-            <span style='color:#800000; font-weight:bold; '>case</span> TraceLevel<span style='color:#808030; '>.</span>Error<span style='color:#808030; '>:</span>
+    <span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#800000; font-weight:bold; '>void</span> MyTrace<span style='color:#808030; '>(</span>TraceLevel level<span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>string</span> message<span style='color:#808030; '>)</span>
+    <span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>switch</span> <span style='color:#808030; '>(</span>level<span style='color:#808030; '>)</span>
+    <span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>case</span> TraceLevel<span style='color:#808030; '>.</span>Error<span style='color:#808030; '>:</span>
                                Trace<span style='color:#808030; '>.</span>TraceError<span style='color:#808030; '>(</span>message<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-            <span style='color:#800000; font-weight:bold; '>break</span><span style='color:#800080; '>;</span>
-            <span style='color:#800000; font-weight:bold; '>case</span> TraceLevel<span style='color:#808030; '>.</span>Warning<span style='color:#808030; '>:</span>
+    <span style='color:#800000; font-weight:bold; '>break</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>case</span> TraceLevel<span style='color:#808030; '>.</span>Warning<span style='color:#808030; '>:</span>
                                Trace<span style='color:#808030; '>.</span>TraceWarning<span style='color:#808030; '>(</span>message<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-            <span style='color:#800000; font-weight:bold; '>break</span><span style='color:#800080; '>;</span>
-            <span style='color:#800000; font-weight:bold; '>case</span> TraceLevel<span style='color:#808030; '>.</span>Info<span style='color:#808030; '>:</span>
+    <span style='color:#800000; font-weight:bold; '>break</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>case</span> TraceLevel<span style='color:#808030; '>.</span>Info<span style='color:#808030; '>:</span>
                                Trace<span style='color:#808030; '>.</span>TraceInformation<span style='color:#808030; '>(</span>message<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-            <span style='color:#800000; font-weight:bold; '>break</span><span style='color:#800080; '>;</span>
-            <span style='color:#800000; font-weight:bold; '>case</span> TraceLevel<span style='color:#808030; '>.</span>Verbose<span style='color:#808030; '>:</span>
+    <span style='color:#800000; font-weight:bold; '>break</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>case</span> TraceLevel<span style='color:#808030; '>.</span>Verbose<span style='color:#808030; '>:</span>
                                Trace<span style='color:#808030; '>.</span>WriteLine<span style='color:#808030; '>(</span>message<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-            <span style='color:#800000; font-weight:bold; '>break</span><span style='color:#800080; '>;</span>
-        <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>break</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
     <span style='color:#800080; '>}</span>
 <span style='color:#800080; '>}</span>
 </pre>
 
-<br />
-<img src="~/Images/TracingMVC/InfoTrace.png" class="img-responsive" />
-<br />
-<br />
-<img src="~/Images/TracingMVC/WarningTracer.png" class="img-responsive" />
-<br />
-<br />
-<img src="~/Images/TracingMVC/ErrorTracer.png" class="img-responsive" />
-<br />
-<br />
+    <br />
+    <img src="~/Images/TracingMVC/InfoTrace.png" class="img-responsive" />
+    <br />
+    <br />
+    <img src="~/Images/TracingMVC/WarningTracer.png" class="img-responsive" />
+    <br />
+    <br />
+    <img src="~/Images/TracingMVC/ErrorTracer.png" class="img-responsive" />
+    <br />
+    <br />
 
 <pre>Tracer<span style='color:#808030; '>.</span>MyTrace<span style='color:#808030; '>(</span>TraceLevel<span style='color:#808030; '>.</span>Warning<span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Warning Tracer</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
 </pre>
+</article>

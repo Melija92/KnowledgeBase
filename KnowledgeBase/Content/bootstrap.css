@@ -55,13 +55,8 @@ dfn {
   font-style: italic;
 }
 h1 {
-  font-size: 2em;
+  font-size: 2.2em;
   margin: 0.67em 0;
-  /*border-bottom: 1px solid #005cbf;*/
-  text-transform:uppercase;
-  padding-bottom:10px;
-  border-left: 4px solid  #ff0039;
-  padding-left:10px;
 }
 mark {
   background: #ff0;
@@ -1578,27 +1573,6 @@ pre code {
 .pre-scrollable {
   max-height: 340px;
   overflow-y: scroll;
-}
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
 }
 .container-fluid {
   margin-right: auto;

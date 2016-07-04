@@ -3,88 +3,62 @@
 }
 
 <h1>Code First with Entity Framework</h1>
-<p>Code First allows you to define your model using C# or VB.Net classes, optionally additional configuration can be performed using attributes on your classes and properties or by using a Fluent API. Your model can be used to generate a database schema or to map to an existing database.</p>
-<ul>
-    <li>Develop without ever having to open a designer or define an XML mapping file</li>
-    <li>Define your model objects by simply writing “plain old classes” with no base classes required</li>
-    <li>Use a “convention over configuration” approach that enables database persistence without explicitly configuring anything</li>
-    <li>Optionally override the convention-based persistence and use a fluent code API to fully customize the persistence mapping</li>
-</ul>
-<pre>
-<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>class</span> Person
-<span style='color:#800080; '>{</span>
-    <span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>int</span> Id <span style='color:#800080; '>{</span> <span style='color:#800000; font-weight:bold; '>get</span><span style='color:#800080; '>;</span> <span style='color:#800000; font-weight:bold; '>set</span><span style='color:#800080; '>;</span> <span style='color:#800080; '>}</span>
-    <span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>string</span> FirstName <span style='color:#800080; '>{</span> <span style='color:#800000; font-weight:bold; '>get</span><span style='color:#800080; '>;</span> <span style='color:#800000; font-weight:bold; '>set</span><span style='color:#800080; '>;</span> <span style='color:#800080; '>}</span>
-    <span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>string</span> LastName <span style='color:#800080; '>{</span> <span style='color:#800000; font-weight:bold; '>get</span><span style='color:#800080; '>;</span> <span style='color:#800000; font-weight:bold; '>set</span><span style='color:#800080; '>;</span> <span style='color:#800080; '>}</span>
-    <span style='color:#800000; font-weight:bold; '>public</span> DateTime DOB <span style='color:#800080; '>{</span> <span style='color:#800000; font-weight:bold; '>get</span><span style='color:#800080; '>;</span> <span style='color:#800000; font-weight:bold; '>set</span><span style='color:#800080; '>;</span> <span style='color:#800080; '>}</span>
-    <span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>string</span> Address <span style='color:#800080; '>{</span> <span style='color:#800000; font-weight:bold; '>get</span><span style='color:#800080; '>;</span> <span style='color:#800000; font-weight:bold; '>set</span><span style='color:#800080; '>;</span> <span style='color:#800080; '>}</span>
-<span style='color:#800080; '>}</span>
-</pre>
-<u>Creating Context:</u>
-<br />
-<br />
-<pre>
-<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>class</span> PersonContext <span style='color:#808030; '>:</span> DbContext
-<span style='color:#800080; '>{</span>
-    <span style='color:#800000; font-weight:bold; '>public</span> DbSet person
-    <span style='color:#800080; '>{</span>
-    <span style='color:#800000; font-weight:bold; '>get</span><span style='color:#800080; '>;</span>
-    <span style='color:#800000; font-weight:bold; '>set</span><span style='color:#800080; '>;</span>
-    <span style='color:#800080; '>}</span> 
-<span style='color:#800080; '>}</span>
-</pre>
-<p>
-    The simplest way to start using the classes for data access is to define a context that derives from <u>System.Data.Entity.DbContext</u> and exposes a typed DbSet for each class in my model.
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url(https://github.com/guntidheerajkumar.png)" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <p>Code First allows you to define your model using C# or VB.Net classes, optionally additional configuration can be performed using attributes on your classes and properties or by using a Fluent API. Your model can be used to generate a database schema or to map to an existing database.</p>
+    <ul>
+        <li>Develop without ever having to open a designer or define an XML mapping file</li>
+        <li>Define your model objects by simply writing “plain old classes” with no base classes required</li>
+        <li>Use a “convention over configuration” approach that enables database persistence without explicitly configuring anything</li>
+        <li>Optionally override the convention-based persistence and use a fluent code API to fully customize the persistence mapping</li>
+    </ul>
+    <script src="https://gist.github.com/guntidheerajkumar/15488dd75d5d9c097ceaf4cf13264c6c.js"></script>
+    <u>Creating Context:</u>
+    <br />
+    <br />
+    <script src="https://gist.github.com/guntidheerajkumar/f7d61fda50c1e1c6074015c0bc20203a.js"></script>
+    <p>
+        The simplest way to start using the classes for data access is to define a context that derives from <u>System.Data.Entity.DbContext</u> and exposes a typed DbSet for each class in my model.
 
-    DbSet Class Represents an entity set that is used to perform create, read, update, and delete operations.
+        DbSet Class Represents an entity set that is used to perform create, read, update, and delete operations.
 
-    DbSet and DbContext can be inherited from the namespace <u>Microsoft.Data.Entity.CTP</u>
+        DbSet and DbContext can be inherited from the namespace <u>Microsoft.Data.Entity.CTP</u>
 
-    You can download ADO.NET Entity Framework Community Technology Preview (CTP) 4 <a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&id=8812"> here</a>
-</p>
-<pre>
-<span style='color:#800000; font-weight:bold; '>protected</span> <span style='color:#800000; font-weight:bold; '>override</span> <span style='color:#800000; font-weight:bold; '>void</span> OnModelCreating<span style='color:#808030; '>(</span>System<span style='color:#808030; '>.</span>Data<span style='color:#808030; '>.</span>Entity<span style='color:#808030; '>.</span>ModelConfiguration<span style='color:#808030; '>.</span>ModelBuilder modelBuilder<span style='color:#808030; '>)</span>
-<span style='color:#800080; '>{</span>
-       modelBuilder<span style='color:#808030; '>.</span>IncludeMetadataInDatabase <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>false</span><span style='color:#800080; '>;</span>
-<span style='color:#800080; '>}</span>
-</pre>
-<p>Model builder is used to map CLR class to a db schema. This code centric approach to building an Entity Data Model (EDM) model is known as Code First.
+        You can download ADO.NET Entity Framework Community Technology Preview (CTP) 4 <a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&id=8812"> here</a>
+    </p>
+    <script src="https://gist.github.com/guntidheerajkumar/8542fc641337d4055e57aa15908ab771.js"></script>
+    <p>
+        Model builder is used to map CLR class to a db schema. This code centric approach to building an Entity Data Model (EDM) model is known as Code First.
 
-IncludeMetadataInDatabase is a property which is of bool type. Whenever dbcontext object is created automatically a db is created with respect to the clr classes, this includes even EDM meta data table which tracks the model changes. If we specify IncludeMetadataInDatabase property as false then it won't track the model changes.
+        IncludeMetadataInDatabase is a property which is of bool type. Whenever dbcontext object is created automatically a db is created with respect to the clr classes, this includes even EDM meta data table which tracks the model changes. If we specify IncludeMetadataInDatabase property as false then it won't track the model changes.
 
-Model Builder class has one more pluggable component which manages the pluralization of entity classes.</p>
-<pre>
-<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>class</span> PersonInitializer <span style='color:#808030; '>:</span> CreateDatabaseOnlyIfNotExists
-<span style='color:#800080; '>{</span>
-    <span style='color:#800000; font-weight:bold; '>protected</span> <span style='color:#800000; font-weight:bold; '>override</span> <span style='color:#800000; font-weight:bold; '>void</span> Seed<span style='color:#808030; '>(</span>PersonContext context<span style='color:#808030; '>)</span>
-    <span style='color:#800080; '>{</span>
-        Person persons <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> Person
-        <span style='color:#800080; '>{</span>
-                 FirstName <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>ExampleName</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
-                 LastName <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>ExampleLastName</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
-                 DOB <span style='color:#808030; '>=</span> DateTime<span style='color:#808030; '>.</span>Parse<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>1983-08-23</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>,</span>
-                 Address <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>India</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
-        <span style='color:#800080; '>}</span><span style='color:#800080; '>;</span>
-          context<span style='color:#808030; '>.</span>person<span style='color:#808030; '>.</span>Add<span style='color:#808030; '>(</span>persons<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-          context<span style='color:#808030; '>.</span>SaveChanges<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-    <span style='color:#800080; '>}</span>
-<span style='color:#800080; '>}</span>
-</pre>
-<p>
-    Person Initializer class is created if user wants to create any predefined data for the person table. CreateDatabaseOnlyIfNotExists class can be used for creating database if it doesn't exists in disk. In Global.asax we need to initialize the PersonInitializer class to create predefined data.
-</p>
-<pre>
-<span style='color:#800000; font-weight:bold; '>void</span> Application_Start<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>object</span> sender<span style='color:#808030; '>,</span> EventArgs e<span style='color:#808030; '>)</span>
-<span style='color:#800080; '>{</span>
-     System<span style='color:#808030; '>.</span>Data<span style='color:#808030; '>.</span>Entity<span style='color:#808030; '>.</span>Infrastructure<span style='color:#808030; '>.</span>Database<span style='color:#808030; '>.</span>SetInitializer<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>new</span> PersonInitializer<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-<span style='color:#800080; '>}</span>
-</pre>
-<p>When ever the context object is created automatically based on model compact database will be created with respect to the CLR class created (person).
+        Model Builder class has one more pluggable component which manages the pluralization of entity classes.
+    </p>
+    <script src="https://gist.github.com/guntidheerajkumar/b9b9d83a3a256a7bc9d637bf29352a36.js"></script>
+    <p>
+        Person Initializer class is created if user wants to create any predefined data for the person table. CreateDatabaseOnlyIfNotExists class can be used for creating database if it doesn't exists in disk. In Global.asax we need to initialize the PersonInitializer class to create predefined data.
+    </p>
+    <script src="https://gist.github.com/guntidheerajkumar/53100b203f6fab07b9d760d9f42d2acf.js"></script>
+    <p>
+        When ever the context object is created automatically based on model compact database will be created with respect to the CLR class created (person).
 
-When the object is initialized it verifies the context name with connection settings in web.config with respect to that connection a compact database will be created in the local disk.</p>
-<br />
-<img src="~/Images/config-1.png" class="img-responsive" />
-<br />
-<br />
-<a class="btn btn-danger" href="http://www.box.com/s/181a3404af8adbaff1fb">
-     Sample</a>
+        When the object is initialized it verifies the context name with connection settings in web.config with respect to that connection a compact database will be created in the local disk.
+    </p>
+    <br />
+    <img src="~/Images/config-1.png" class="img-responsive" />
+    <br />
+    <br />
+    <a class="btn btn-danger" href="http://www.box.com/s/181a3404af8adbaff1fb">
+        Sample
+    </a>
+</article>

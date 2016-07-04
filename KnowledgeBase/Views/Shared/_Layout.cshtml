@@ -5,141 +5,123 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="knowledge Base, xamarin, iOS, asp.net, dependency, injection, unity, Google Authentication, OAuth, caller attributes, ravendb, nosql,live time, linq, entity framework, wcf, iis, mvc, software, programming, asynchronous, play sound, uisearchbar, tableview, dialog,  animations, extensions, ios8, pull to refresh, custom fonts, floating text, push notifications" />
+    <meta name="keywords" content="knowledge Base, xamarin, iOS, asp.net, dependency, injection, unity, Google Authentication, OAuth, caller attributes, ravendb, nosql,live time, linq, entity framework, wcf, iis, mvc, software, programming, asynchronous, play sound, uisearchbar, tableview, dialog,  animations, extensions, ios8, pull to refresh, custom fonts, floating text, push notifications, serilog, custom cell ios" />
     <meta name="author" content="Dheeraj Kumar Gunti">
     <meta name="description" content="Knowledge base is an beginner, intermediate educating platform in technology. We are trying to bring
           examples in simple way that it can be easily learnt and implemented." />
     <meta name="robots" content="index, follow">
     <meta name="revisit-after" content="1 month">
     <title>Knowledge Base</title>
-    @Styles.Render("~/Content/css")
     @*<script src="//fast.eager.io/pX0EM8Ab9z.js"></script>*@
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery-2.2.3.min.js"></script>
+    <link href="~/Content/main.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({
             google_ad_client: "ca-pub-2632970577965066",
             enable_page_level_ads: true
         });
     </script>
-
 </head>
 <body>
-    <div class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="@Url.Action(Routes.ActionMethod.ToString(), Routes.Controller.ToString())" class="navbar-brand">Knowledge Base</a>
-            </div>
-            <div class="navbar-collapse collapse">
+    <header id="header">
+        <div id="main-placeholder">
+            <div class="container" role="banner">
+                <a href="#"><p class="logo">@Html.ActionLink("Knowledge Base", Routes.ActionMethod, Routes.Controller)</p></a>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        <br />
-        <br />
-        <br />
-        <div class="row">
-            <div class="col-lg-1">
-                <br />
-            </div>
-            <div class="col-lg-8">
-                <br />
-                <br />
-                <div role="navigation" aria-label="breadcrumbs navigation" id="navigationMenu">
-                    @if (ViewBag.Title != "Home Page" && ViewBag.Title != "ThankYou" && ViewBag.Title != "Comments" && ViewBag.Title != "About")
+        <div id="sub-header" class="container" cmpgrp="breadcrumb" role="navigation" aria-label="breadcrumb">
+            @if (ViewBag.Title != "Home Page" && ViewBag.Title != "ThankYou" && ViewBag.Title != "Comments" && ViewBag.Title != "About")
+            {
+                <ul class="breadcrumbs">
+                    <li>
+                        @Html.ActionLink("Home", Routes.ActionMethod, Routes.Controller)
+                    </li>
+
+                    @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
                     {
-                    <div>
-                        <div>
-
-                            @Html.ActionLink("Home", Routes.ActionMethod, Routes.Controller)
-
-                            @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
-                                {
-                                @:/ @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index", ViewContext.RouteData.Values["controller"].ToString())
-                                        }
-                            @if (ViewContext.RouteData.Values["action"].ToString() != "Index")
-                                {
-                                    if (KBArticles.GetListArticles().ToList().Select(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).Count() > 0)
-                                    {
-                                        if (KBArticles.GetListArticles().Where(x => x.ArticleName == "BooksDetail").ToList().Count == 0)
-                                        { }
-                                        else
-                                        {
-                                @:/ @Html.ActionLink(KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().ArticleName, KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().ArticleName, ViewContext.RouteData.Values["controller"].ToString())
-                                                }
-                                    }
-                                    else
-                                    {
-                                @:/ @Html.ActionLink(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString())
-                                            }
-                                }
+                        <li>
+                            @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index", ViewContext.RouteData.Values["controller"].ToString())
+                        </li>
+                    }
+                    @if (ViewContext.RouteData.Values["action"].ToString() != "Index")
+                    {
+                        if (KBArticles.GetListArticles().ToList().Select(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).Count() > 0)
+                        {
+                            <li>
+                                @Html.ActionLink(KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().ArticleName, KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().ArticleName, ViewContext.RouteData.Values["controller"].ToString())
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                @Html.ActionLink(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString())
+                            </li>
+                        }
+                    }
+                </ul>
+            }
+        </div>
+    </header>
+    <div class="containerpage" pgarea="body">
+        <div id="toc" cmpgrp="left toc" role="navigation" aria-label="main navigation">
+            <nav id="sidebar">
+                <ol>
+                    <li class="toc-level-0">
+                        <div class="toc-content">
+                            <a href="~/MVC/Index">ASP.NET MVC</a>
                         </div>
-                    </div>
-                    }
+                    </li>
+                    <li class="toc-level-0">
+                        <div class="toc-content">
+                            <a href="~/EntityFramework/Index">Entity Framework</a>
+                        </div>
+                    </li>
+                    <li class="toc-level-0">
+                        <div class="toc-content">
+                            <a href="~/XamariniOS/Index">Xamarin iOS</a>
+                        </div>
+                    </li>
+                    <li class="toc-level-0">
+                        <div class="toc-content">
+                            <a href="~/Books/Index">Books</a>
+                        </div>
+                    </li>
+                    <li class="toc-level-0">
+                        <div class="toc-content">
+                            <a href="~/Home/About">About Me</a>
+                        </div>
+                    </li>
+                    <li class="toc-level-0">
+                        <div class="toc-content">
+                            <a href="~/Articles/Index">All Articles</a>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+        <div id="main" role="main">
+            <div>
+                <div>
+                    @RenderBody()
                 </div>
                 <br />
-                @RenderBody()
                 <br />
                 <br />
-                <div style="padding-top:15px; padding-bottom:20px;">
-                    <br />
-                    <br />
-                    @if (ViewBag.Title != "Home Page" && ViewBag.Title != "ASPNETIndex" &&
-                            ViewBag.Title != "MVCIndex" && ViewBag.Title != "BooksIndex" &&
-                            ViewBag.Title != "BooksDetail" && ViewBag.Title != "DownloadsIndex" &&
-                            ViewBag.Title != "EntityFrameworkIndex" && ViewBag.Title != "Comments" &&
-                            ViewBag.Title != "ThankYou" && ViewBag.Title != "iOSIndex" && ViewBag.Title != "LinqIndex" && ViewBag.Title != "About")
-                    {
-                    <div id="disqus_thread"></div>
-                    <script type="text/javascript">
-                            /* * * CONFIGURATION VARIABLES * * */
-                            var disqus_shortname = 'knowledge-base';
-
-                            /* * * DON'T EDIT BELOW THIS LINE * * */
-                            (function () {
-                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                            })();
-                    </script>
-                    }
-                    <br />
-                    <br />
-                </div>
-
-            </div>
-            <div class="col-lg-3" style="padding-top:50px;">
-                <div class="sidebarMain">
-                    <a href="~/Home/About" class="btn btn-info">About Me</a>
-                    <br />
-                    <br />
-                    <a href="~/MVC/Index" class="btn btn-success">MVC</a>
-                    <br />
-                    <br />
-                    <a href="~/EntityFramework/Index" class="btn btn-danger">Entity Framework</a>
-                    <br />
-                    <br />
-                    <a href="~/XamariniOS/Index" class="btn btn-info">Xamarin</a>
-                    <br />
-                    <br />
-                    <a href="~/Books/Index" class="btn btn-danger">Books</a>
-                </div>
+                <br />
             </div>
         </div>
-        <br />
-        <br />
-        <a href="#" class="scrollToTop">Scroll&nbsp;To&nbsp;Top <span class="glyphicon glyphicon-arrow-up"></span></a>
     </div>
-
-    <!-- /#wrapper -->
-    <!-- jQuery -->
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="~/Scripts/bootstrap.min.js"></script>
+    @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>*@
+    <script src="~/Scripts/readingTime.min.js"></script>
+    <script>
+        $(function () {
+            $('article').readingTime({
+                wordCountTarget: '.words',
+            });
+        });
+    </script>
 </body>
 </html>

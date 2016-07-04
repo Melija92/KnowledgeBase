@@ -3,183 +3,196 @@
 }
 
 <h1>MVC (Model View Controller) Architectue</h1>
-<p>
-    One of the most fundamental approaches in software engineering is the Layered architecture. It implies dividing a system into several interacting layers with certain limitations imposed on how layers may interacts Layered architecture finds its application in various systems for example net protocols (TCP/IP layers), operating systems (three layers: core, drivers, applications) and others. A particular case of layered architecture is the 3-tier architecture with its variations: Model-View-Controller and Model-View-Presenter. Before considering MVP (and MVC) let us discuss the general 3-tier architecture and its difference to the conventional programming style. A straightforward (and widely used) approach in designing applications is the 2-tier architecture. According to it an application consists of a presentation layer and a domain layer. Domain layer classes represent the problem domain entities (e.g. customer, order) and are usually bound to some database access facilities. Presentation classes in 2-tier architecture have the following responsibilities:
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url(https://github.com/guntidheerajkumar.png)" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <p>
+        One of the most fundamental approaches in software engineering is the Layered architecture. It implies dividing a system into several interacting layers with certain limitations imposed on how layers may interacts Layered architecture finds its application in various systems for example net protocols (TCP/IP layers), operating systems (three layers: core, drivers, applications) and others. A particular case of layered architecture is the 3-tier architecture with its variations: Model-View-Controller and Model-View-Presenter. Before considering MVP (and MVC) let us discuss the general 3-tier architecture and its difference to the conventional programming style. A straightforward (and widely used) approach in designing applications is the 2-tier architecture. According to it an application consists of a presentation layer and a domain layer. Domain layer classes represent the problem domain entities (e.g. customer, order) and are usually bound to some database access facilities. Presentation classes in 2-tier architecture have the following responsibilities:
+        <br />
+        <ul>
+            <li>Receive user input</li>
+            <li>Make necessary calls to the domain tier</li>
+            <li>Decide what to show next to the user</li>
+            <li>Display output</li>
+        </ul>
+        <br />
+        These responsibilities are rather vast and, as a system grows, may result in a bloated presentation layer. Moreover they logically can be divided into two groups: actually presentation logic (code for perceiving input and displaying output) and application logic (communication with the domain tier and application flow decisions). These responsibilities require different programming skills and should better be not mixed in a single module/class. A quite natural solution is to split this too broad presentation layer into two: presentation and application logic
+        <br />
+    </p>
     <br />
-    <ul>
-        <li>Receive user input</li>
-        <li>Make necessary calls to the domain tier</li>
-        <li>Decide what to show next to the user</li>
-        <li>Display output</li>
-    </ul>
-    <br />
-    These responsibilities are rather vast and, as a system grows, may result in a bloated presentation layer. Moreover they logically can be divided into two groups: actually presentation logic (code for perceiving input and displaying output) and application logic (communication with the domain tier and application flow decisions). These responsibilities require different programming skills and should better be not mixed in a single module/class. A quite natural solution is to split this too broad presentation layer into two: presentation and application logic
-    <br />
-</p>
-<br />
 
-<img src="~/Images/MVC/MVC_1.png" class="img-responsive" />
-<br />
-<br />
+    <img src="~/Images/MVC/MVC_1.png" class="img-responsive" />
+    <br />
+    <br />
 
-<p>
-    3-tier architecture is rather abstract. While it declares an existence of three layers, it says nothing about classes in these layers and their interaction. A much more precise form have two 3-tier architecture variations: Model-View-Controller and Model-View-Presenter. Let us proceed to their discussion. The Model-View-Controller (MVC) architectural pattern separates an application into three main components: the model, the view, and the controller. The ASP.NET MVC framework provides an alternative to the ASP.NET Web Forms pattern for creating MVC-based Web applications. The ASP.NET MVC framework is a lightweight, highly testable presentation framework that (as with Web Forms-based applications) is integrated with existing ASP.NET features, such as master pages and membership-based authentication. The MVC framework is defined in the System.Web.Mvc namespace and is a fundamental, supported part of the System.Web namespace.
+    <p>
+        3-tier architecture is rather abstract. While it declares an existence of three layers, it says nothing about classes in these layers and their interaction. A much more precise form have two 3-tier architecture variations: Model-View-Controller and Model-View-Presenter. Let us proceed to their discussion. The Model-View-Controller (MVC) architectural pattern separates an application into three main components: the model, the view, and the controller. The ASP.NET MVC framework provides an alternative to the ASP.NET Web Forms pattern for creating MVC-based Web applications. The ASP.NET MVC framework is a lightweight, highly testable presentation framework that (as with Web Forms-based applications) is integrated with existing ASP.NET features, such as master pages and membership-based authentication. The MVC framework is defined in the System.Web.Mvc namespace and is a fundamental, supported part of the System.Web namespace.
+        <br />
+        <br />
+        <b>Model</b> The model manages the behavior and data of the application domain, responds to requests for information about its state (usually from the view), and responds to instructions to change state (usually from the controller).<br />
+        <b>View</b> The view manages the display of information.<br />
+        <b>Controller</b> The controller interprets the mouse and keyboard inputs from the user, informing the model and/or the view to change as appropriate.
+    </p>
     <br />
     <br />
-    <b>Model</b> The model manages the behavior and data of the application domain, responds to requests for information about its state (usually from the view), and responds to instructions to change state (usually from the controller).<br />
-    <b>View</b> The view manages the display of information.<br />
-    <b>Controller</b> The controller interprets the mouse and keyboard inputs from the user, informing the model and/or the view to change as appropriate.
-</p>
-<br />
-<br />
-<img src="~/Images/MVC/MVC_2.png" class="img-responsive" />
-<br />
-<br />
-<p>
-    Figure explains the structural relationship between the three objects.
+    <img src="~/Images/MVC/MVC_2.png" class="img-responsive" />
     <br />
     <br />
-    It is important to note that both the view and the controller depend on the model. However, the model depends on neither the view nor the controller. This is one the key benefits of the separation. This separation allows the model to be built and tested independent of the visual presentation. The separation between view and controller is secondary in many rich-client applications, and, in fact, many user interface frameworks implement the roles as one object. In Web applications, on the other hand, the separation between view (the browser) and controller (the server-side components handling the HTTP request) is very well defined.
+    <p>
+        Figure explains the structural relationship between the three objects.
+        <br />
+        <br />
+        It is important to note that both the view and the controller depend on the model. However, the model depends on neither the view nor the controller. This is one the key benefits of the separation. This separation allows the model to be built and tested independent of the visual presentation. The separation between view and controller is secondary in many rich-client applications, and, in fact, many user interface frameworks implement the roles as one object. In Web applications, on the other hand, the separation between view (the browser) and controller (the server-side components handling the HTTP request) is very well defined.
+        <br />
+        <ul>
+            <li>It is highly extensible and pluggable.</li>
+            <li>It includes a very powerful URL mapping component that enables you to build applications with clean URLs.</li>
+            <li>The ASP.NET MVC framework fully supports existing ASP.NET features like forms/windows authentication, URL authorization, membership/roles, output and data caching, session/profile state management, health monitoring, configuration system, the provider architecture, etc.</li>
+            <li>It enables clean separation of concerns, testability, and Test Driven Development by default.</li>
+            <li>It makes it easier to manage complexity by dividing an application into the model, the view, and the controller.</li>
+            <li>It does not use view state or server-based forms. This makes the MVC framework ideal for developers who want full control over the behaviour of an application.</li>
+            <li>It works well for Web applications that are supported by large teams of developers and Web designers who need a high degree of control over the application behaviour.</li>
+            <li>An extensible and pluggable framework. The components of the ASP.NET MVC framework are designed so that they can be easily replaced or customized.</li>
+            <li>Additionally, rather than the default ASP.NET post back model, any interactions are routed to the controllers using the ASP.NET Routing mechanism. Views can be mapped to REST-friendly URLs.</li>
+        </ul>
+        <br />
+        Following is a sample step by step process flow for creating a MVC Application
+        <br />
+    </p>
     <br />
-    <ul>
-        <li>It is highly extensible and pluggable.</li>
-        <li>It includes a very powerful URL mapping component that enables you to build applications with clean URLs.</li>
-        <li>The ASP.NET MVC framework fully supports existing ASP.NET features like forms/windows authentication, URL authorization, membership/roles, output and data caching, session/profile state management, health monitoring, configuration system, the provider architecture, etc.</li>
-        <li>It enables clean separation of concerns, testability, and Test Driven Development by default.</li>
-        <li>It makes it easier to manage complexity by dividing an application into the model, the view, and the controller.</li>
-        <li>It does not use view state or server-based forms. This makes the MVC framework ideal for developers who want full control over the behaviour of an application.</li>
-        <li>It works well for Web applications that are supported by large teams of developers and Web designers who need a high degree of control over the application behaviour.</li>
-        <li>An extensible and pluggable framework. The components of the ASP.NET MVC framework are designed so that they can be easily replaced or customized.</li>
-        <li>Additionally, rather than the default ASP.NET post back model, any interactions are routed to the controllers using the ASP.NET Routing mechanism. Views can be mapped to REST-friendly URLs.</li>
-    </ul>
     <br />
-    Following is a sample step by step process flow for creating a MVC Application
+    <p><b>Step 1</b></p>
     <br />
-</p>
-<br />
-<br />
-<p><b>Step 1</b></p>
-<br />
-<img src="~/Images/MVC/MVC_3.gif" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 2</b></p>
-<br />
-<img src="~/Images/MVC/MVC_4.gif" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 3</b></p>
-<br />
-<img src="~/Images/MVC/MVC_5.gif" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 4</b></p>
-<br />
-<img src="~/Images/MVC/MVC_6.gif" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 5</b></p>
-<br />
-<img src="~/Images/MVC/MVC_7.gif" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 6</b></p>
-<br />
-<img src="~/Images/MVC/MVC_8.jpg" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 7</b></p>
-<br />
-<img src="~/Images/MVC/MVC_9.jpg" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 8</b></p>
-<br />
-<img src="~/Images/MVC/MVC_10.jpg" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 9</b></p>
-<br />
-<img src="~/Images/MVC/MVC_11.jpg" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 10</b></p>
-<br />
-<img src="~/Images/MVC/MVC_12.jpg" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 11</b></p>
-<br />
-<img src="~/Images/MVC/MVC_13.jpg" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 12</b></p>
-<br />
-<img src="~/Images/MVC/MVC_14.jpg" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 13</b></p>
-<br />
-<img src="~/Images/MVC/MVC_15.jpg" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 14</b></p>
-<br />
-<img src="~/Images/MVC/MVC_16.jpg" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 15</b></p>
-<br />
-<img src="~/Images/MVC/MVC_17.jpg" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 16</b></p>
-<br />
-<img src="~/Images/MVC/MVC_18.jpg" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 17</b></p>
-<br />
-<img src="~/Images/MVC/MVC_19.jpg" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 18</b></p>
-<br />
-<img src="~/Images/MVC/MVC_20.jpg" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 19</b></p>
-<br />
-<img src="~/Images/MVC/MVC_21.jpg" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 20</b></p>
-<br />
-<img src="~/Images/MVC/MVC_22.jpg" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 21</b></p>
-<br />
-<img src="~/Images/MVC/MVC_23.jpg" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 22</b></p>
-<br />
-<img src="~/Images/MVC/MVC_24.jpg" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 23</b></p>
-<br />
-<img src="~/Images/MVC/MVC_25.jpg" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 24</b></p>
-<br />
-<img src="~/Images/MVC/MVC_26.jpg" class="img-responsive" />
-<br />
-<br />
-<p><b>Step 25</b></p>
-<br />
-<img src="~/Images/MVC/MVC_27.jpg" class="img-responsive" /><br />
-<br />
-<a href="http://www.box.net/shared/t673sr5cy4" class="btn btn-danger"> Sample</a>
+    <img src="~/Images/MVC/MVC_3.gif" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 2</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_4.gif" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 3</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_5.gif" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 4</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_6.gif" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 5</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_7.gif" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 6</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_8.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 7</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_9.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 8</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_10.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 9</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_11.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 10</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_12.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 11</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_13.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 12</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_14.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 13</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_15.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 14</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_16.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 15</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_17.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 16</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_18.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 17</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_19.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 18</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_20.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 19</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_21.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 20</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_22.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 21</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_23.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 22</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_24.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 23</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_25.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 24</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_26.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p><b>Step 25</b></p>
+    <br />
+    <img src="~/Images/MVC/MVC_27.jpg" class="img-responsive" /><br />
+    <br />
+    <a href="http://www.box.net/shared/t673sr5cy4" class="btn btn-danger"> Sample</a>
+    </article>

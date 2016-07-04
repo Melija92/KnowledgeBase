@@ -12,5 +12,7 @@ namespace KnowledgeBase.Models
         public string ArticleURL { get; set; }
 
         public string Article { get; set; }
+
+        public string Tag { get; set; }
     }
 }

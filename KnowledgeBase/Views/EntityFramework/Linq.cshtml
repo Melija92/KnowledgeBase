@@ -3,39 +3,50 @@
 }
 
 <h2>Language Integrated Query (LINQ)</h2>
-
-<p>
-    LINQ (Language Integrated Query) is a uniform programming model for any kind of data. LINQ enables you to query and manipulate data with a consistent model that is independent from data sources. LINQ is the methodology that simplifies and unifies the implementation of any kind of data access. LINQ does not force you to use a specific architecture; it facilitates the implementation of several existing architectures for accessing data.
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url(https://github.com/guntidheerajkumar.png)" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <p>
+        LINQ (Language Integrated Query) is a uniform programming model for any kind of data. LINQ enables you to query and manipulate data with a consistent model that is independent from data sources. LINQ is the methodology that simplifies and unifies the implementation of any kind of data access. LINQ does not force you to use a specific architecture; it facilitates the implementation of several existing architectures for accessing data.
+        <br />
+        <br />
+        Following is the example for how to create an application by using LINQ.
+        <br />
+        <br />
+        Create an empty ASP.NET application and create a database named Person through SQL Express or else connect with SQL server studio edition. Create a table named tblPerson with the following fields.
+        <br />
+    </p>
+    <br />
+    <img src="~/Images/LINQ/Linq_2.jpg" class="img-responsive" />
     <br />
     <br />
-    Following is the example for how to create an application by using LINQ.
+    <p>Once the schema is done. Right click on the solution and select add new item and choose LINQ to SQL Classes template as below.</p>
     <br />
+    <img src="~/Images/LINQ/Linq_1.jpg" class="img-responsive" />
     <br />
-    Create an empty ASP.NET application and create a database named Person through SQL Express or else connect with SQL server studio edition. Create a table named tblPerson with the following fields.
+    <p>Once the .dbml file is added to your application then Object Relational Designer will open so that we can attach the database schema to the LINQ designer. Drag and drop the table from the database explorer to Object Relational Designer.</p>
     <br />
-</p>
-<br />
-<img src="~/Images/LINQ/Linq_2.jpg" class="img-responsive" />
-<br />
-<br />
-<p>Once the schema is done. Right click on the solution and select add new item and choose LINQ to SQL Classes template as below.</p>
-<br />
-<img src="~/Images/LINQ/Linq_1.jpg" class="img-responsive" />
-<br />
-<p>Once the .dbml file is added to your application then Object Relational Designer will open so that we can attach the database schema to the LINQ designer. Drag and drop the table from the database explorer to Object Relational Designer.</p>
-<br />
-<img src="~/Images/LINQ/Linq_3.jpg" class="img-responsive" />
-<br />
-<p>
-    We will now move on to how to interact the database with the help LINQ programming.
-    Following is the LINQ query which returns all the person details
-</p>
+    <img src="~/Images/LINQ/Linq_3.jpg" class="img-responsive" />
+    <br />
+    <p>
+        We will now move on to how to interact the database with the help LINQ programming.
+        Following is the LINQ query which returns all the person details
+    </p>
 <pre>
 PersonLinqDataContext dbContext <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> PersonLinqDataContext<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
 <span style='color:#800000; font-weight:bold; '>var</span> PersonData <span style='color:#808030; '>=</span> from c <span style='color:#800000; font-weight:bold; '>in</span> dbContext<span style='color:#808030; '>.</span>TblPersons
                     select c<span style='color:#800080; '>;</span>
 </pre>
-<p>Following is the LINQ query which inserts data in to database.</p>
+    <p>Following is the LINQ query which inserts data in to database.</p>
 <pre>
 <span style='color:#696969; '>// Creating the object for PersonLinqDataContext</span>
             PersonLinqDataContext dbContext <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> PersonLinqDataContext<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
@@ -53,7 +64,7 @@ PersonLinqDataContext dbContext <span style='color:#808030; '>=</span> <span sty
 <span style='color:#696969; '>// to implement the changes to the database.</span>
             dbContext<span style='color:#808030; '>.</span>SubmitChanges<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
 </pre>
-<p>Following is the LINQ Query which updates data in to database.</p>
+    <p>Following is the LINQ Query which updates data in to database.</p>
 <pre>
 <span style='color:#696969; '>// Creating the object for PersonLinqDataContext</span>
         PersonLinqDataContext dbContext <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> PersonLinqDataContext<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
@@ -72,11 +83,11 @@ PersonLinqDataContext dbContext <span style='color:#808030; '>=</span> <span sty
 <span style='color:#696969; '>// we are submitting the changes.</span>
         dbContext<span style='color:#808030; '>.</span>SubmitChanges<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
 </pre>
-<p>Based on the update process wrote above the details in the database are modified as below.</p>
-<br />
-<img src="~/Images/LINQ/Linq_4.jpg" class="img-responsive" />
-<br /><br />
-<p>Following is the LINQ query which deletes the data from the database based on ID</p>
+    <p>Based on the update process wrote above the details in the database are modified as below.</p>
+    <br />
+    <img src="~/Images/LINQ/Linq_4.jpg" class="img-responsive" />
+    <br /><br />
+    <p>Following is the LINQ query which deletes the data from the database based on ID</p>
 <pre>
 <span style='color:#696969; '>// Creating the object for PersonLinqDataContext</span>
         PersonLinqDataContext dbContext <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> PersonLinqDataContext<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
@@ -92,5 +103,6 @@ PersonLinqDataContext dbContext <span style='color:#808030; '>=</span> <span sty
         dbContext<span style='color:#808030; '>.</span>TblPersons<span style='color:#808030; '>.</span>DeleteOnSubmit<span style='color:#808030; '>(</span>PersonData<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
 <span style='color:#696969; '>// we are submitting the changes.</span>
         dbContext<span style='color:#808030; '>.</span>SubmitChanges<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-</pre> 
-<p>The above is the simple example of how we use LINQ for CRUD operations.</p>
+</pre>
+    <p>The above is the simple example of how we use LINQ for CRUD operations.</p>
+</article>

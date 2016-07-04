@@ -4,41 +4,53 @@
 }
 
 <h1>Caller Info Attributes in CSharp</h1>
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url(https://github.com/guntidheerajkumar.png)" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <p>There are lot of cool features in C#. We will discuss one of them in this article. Caller Info Attributes are one of the nice features which are used to pass caller information implicitly to a method.</p>
 
-<p>There are lot of cool features in C#. We will discuss one of them in this article. Caller Info Attributes are one of the nice features which are used to pass caller information implicitly to a method.</p>
+    <p>This feature helps in logging the complete information about the caller to any specific method. In this article we will try to use caller info attributes in Logging details when any error occurs.</p>
 
-<p>This feature helps in logging the complete information about the caller to any specific method. In this article we will try to use caller info attributes in Logging details when any error occurs.</p>
+    <p>There are three important attributes in this aspect.</p>
 
-<p>There are three important attributes in this aspect.</p>
+    <ul>
+        <li>CallerMemberName</li>
+        <li>CallerFilePath</li>
+        <li>CallerLineNumber</li>
+    </ul>
 
-<ul>
-    <li>CallerMemberName</li>
-    <li>CallerFilePath</li>
-    <li>CallerLineNumber</li>
-</ul>
+    <p><b>CallerMember</b> - It Allows you to obtain the method or property name of the caller to a method.</p>
 
-<p><b>CallerMember</b> - It Allows you to obtain the method or property name of the caller to a method.</p>
+    <p><b>CallerFilePath</b> - It Allows you yo obtain the full path of the source file that contains the caller. Thihs is basically a file path at the time of compile.</p>
 
-<p><b>CallerFilePath</b> - It Allows you yo obtain the full path of the source file that contains the caller. Thihs is basically a file path at the time of compile.</p>
+    <p><b>CallerLineNumber</b> - Allows you to obtain the line number in the source file at which the method is called.</p>
+    (Courtesy - VS Docs)
+    <br />
+    <p>Lets see a simple example.</p>
 
-<p><b>CallerLineNumber</b> - Allows you to obtain the line number in the source file at which the method is called.</p>
-(Courtesy - VS Docs)
-<br />
-<p>Lets see a simple example.</p>
+    <p>I am creating a small helper call which takes exeption object as one parameter and the other parameters are caller info attributes.</p>
 
-<p>I am creating a small helper call which takes exeption object as one parameter and the other parameters are caller info attributes.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/e3e932a13cc76631d60e.js"></script>
 
-<script src="https://gist.github.com/guntidheerajkumar/e3e932a13cc76631d60e.js"></script>
+    <p>We are using this helper class in one of the method where we are trying to creating an error to see the output of the helper method.</p>
 
-<p>We are using this helper class in one of the method where we are trying to creating an error to see the output of the helper method.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/151b35160bc63cea979d.js"></script>
 
-<script src="https://gist.github.com/guntidheerajkumar/151b35160bc63cea979d.js"></script>
+    <p>We surrounded the piece of code in try catch block to catch the exception. Run the application and lets see the output.</p>
 
-<p>We surrounded the piece of code in try catch block to catch the exception. Run the application and lets see the output.</p>
+    <img src="~/Images/CallerInfoAttributes.png" class="img-responsive" />
+    <br />
+    <p>This is a simple way of getting the complete information about the caller and can be easily logged to identify the exact place where we got the error.</p>
 
-<img src="~/Images/CallerInfoAttributes.png" class="img-responsive" />
-<br />
-<p>This is a simple way of getting the complete information about the caller and can be easily logged to identify the exact place where we got the error.</p>
+    <p>Thanks and Enjoy Coding.... </p>
 
-<p>Thanks and Enjoy Coding.... </p>
-
+    </article>

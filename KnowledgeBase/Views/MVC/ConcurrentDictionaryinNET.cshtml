@@ -3,36 +3,48 @@
 }
 
 <h1>Usage Concurrent Dictionary in .NET</h1>
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url(https://github.com/guntidheerajkumar.png)" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <p>Hi All,</p>
 
-<p>Hi All,</p>
+    <p>Welcome back to Knowledge Base.</p>
 
-<p>Welcome back to Knowledge Base.</p>
+    <p>When we are working with Dictionary Object we need to take care that it should be thread-safe. In earlier versions of .NET Framework (Before 4.0) we need to go with locking mechanism for handling object when we are dealing with multiple threads.</p>
 
-<p>When we are working with Dictionary Object we need to take care that it should be thread-safe. In earlier versions of .NET Framework (Before 4.0) we need to go with locking mechanism for handling object when we are dealing with multiple threads.</p>
+    <p>In .NET Framework 4.5 onwards, we got one more kind of Dictionary which is ConcurrentDictionary (<a href="http://msdn.microsoft.com/en-us/library/xfhwa508(v=vs.100).aspx" target="_blank">MSDN</a>). Name itself indicates Concurrency (In simple terms can be handled in multiple requests).</p>
 
-<p>In .NET Framework 4.5 onwards, we got one more kind of Dictionary which is ConcurrentDictionary (<a href="http://msdn.microsoft.com/en-us/library/xfhwa508(v=vs.100).aspx" target="_blank">MSDN</a>). Name itself indicates Concurrency (In simple terms can be handled in multiple requests).</p>
+    <p>ConcurrentDictionary can be found at System.Collections.Concurrent namespace.</p>
 
-<p>ConcurrentDictionary can be found at System.Collections.Concurrent namespace.</p>
+    <p>ConcurrentDictionary can be easily used for all the CRUD operations on multiple threads.</p>
 
-<p>ConcurrentDictionary can be easily used for all the CRUD operations on multiple threads.</p>
+    <p>We have couple of methods which we can use in performing operations.</p>
 
-<p>We have couple of methods which we can use in performing operations.</p>
+    <ul style="line-height:30px;">
+        <li> <b>TryAdd</b> - Attempts to add the specified key and value to the ConcurrentDictionary. Return true if the key/value pair was added to the ConcurrentDictionary successfully. If the key already exists, this method returns false.</li>
+        <li> <b>TryGetValue</b> - Attempts to get the value associated with the specified key from the ConcurrentDictionary. Returns true if the key was found in the ConcurrentDictionary otherwise, false.</li>
+        <li><b> TryRemove</b> - Attempts to remove and return the value with the specified key from the ConcurrentDictionary. Returns true if an object was removed successfully. otherwise, false.</li>
+        <li><b> TryUpdate</b> - Compares the existing value for the specified key with a specified value, and if they are equal, updates the key with a third value. Returns true if the value with key was equal to comparisonValue and replaced with newValue. otherwise, false.</li>
+    </ul>
 
-<ul style="line-height:30px;">
-    <li> <b>TryAdd</b> - Attempts to add the specified key and value to the ConcurrentDictionary. Return true if the key/value pair was added to the ConcurrentDictionary successfully. If the key already exists, this method returns false.</li>
-    <li> <b>TryGetValue</b> - Attempts to get the value associated with the specified key from the ConcurrentDictionary. Returns true if the key was found in the ConcurrentDictionary otherwise, false.</li>
-    <li><b> TryRemove</b> - Attempts to remove and return the value with the specified key from the ConcurrentDictionary. Returns true if an object was removed successfully. otherwise, false.</li>
-    <li><b> TryUpdate</b> - Compares the existing value for the specified key with a specified value, and if they are equal, updates the key with a third value. Returns true if the value with key was equal to comparisonValue and replaced with newValue. otherwise, false.</li>
-</ul>
+    <p>
+        IsEmpty - It is similar to Object.Count = 0 and it won't return negative numbers. It return empty when there are no elements in the dictionary.
+    </p>
 
-<p>
-    IsEmpty - It is similar to Object.Count = 0 and it won't return negative numbers. It return empty when there are no elements in the dictionary.
-</p>
+    <p>
+        Working on specific process like this is it make the system work in multi threaded environments and need to have collection available at any point of time with out it being corrupted. We call them has fail-safe methods.
+    </p>
 
-<p>
-    Working on specific process like this is it make the system work in multi threaded environments and need to have collection available at any point of time with out it being corrupted. We call them has fail-safe methods.
-</p>
+    <p><b>Simple Example:</b></p>
 
-<p><b>Simple Example:</b></p>
-
-<script src="https://gist.github.com/guntidheerajkumar/3fe3b3d27bcdd6944a83.js"></script>
+    <script src="https://gist.github.com/guntidheerajkumar/3fe3b3d27bcdd6944a83.js"></script>
+    </article>

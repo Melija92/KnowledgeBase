@@ -3,14 +3,26 @@
 }
 
 <h1>Working with Asynchronous Downloading</h1>
-<br />
-<p>Here is the Sample application which downloads image asynchronously and shows download progress.</p>
-<p>Create an iOS Empty Solution and Add a view controller.</p>
-<p>Add an UIButton and UIImage to the View Controller in Interface Builder and Create outlets as shown in the below image.</p>
-<br />
-<img src="~/Images/Async_ios/Async_1.png" class="img-responsive" />
-<br />
-<p>Below is the sample code,</p>
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url(https://github.com/guntidheerajkumar.png)" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <br />
+    <p>Here is the Sample application which downloads image asynchronously and shows download progress.</p>
+    <p>Create an iOS Empty Solution and Add a view controller.</p>
+    <p>Add an UIButton and UIImage to the View Controller in Interface Builder and Create outlets as shown in the below image.</p>
+    <br />
+    <img src="~/Images/Async_ios/Async_1.png" class="img-responsive" />
+    <br />
+    <p>Below is the sample code,</p>
 <pre>
 <span style='color:#800000; font-weight:bold; '>using</span> System<span style='color:#800080; '>;</span>
 <span style='color:#800000; font-weight:bold; '>using</span> Foundation<span style='color:#800080; '>;</span>
@@ -51,18 +63,16 @@ async <span style='color:#800000; font-weight:bold; '>void</span> downloadAsync 
     <span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>.</span>downloadBtn<span style='color:#808030; '>.</span>SetTitle <span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Cancel</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> UIControlState<span style='color:#808030; '>.</span>Normal<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
     <span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>.</span>downloadBtn<span style='color:#808030; '>.</span>TouchUpInside <span style='color:#808030; '>-</span><span style='color:#808030; '>=</span> downloadAsync<span style='color:#800080; '>;</span>
     <span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>.</span>downloadBtn<span style='color:#808030; '>.</span>TouchUpInside <span style='color:#808030; '>+</span><span style='color:#808030; '>=</span> cancelDownload<span style='color:#800080; '>;</span>
-
     <span style='color:#800000; font-weight:bold; '>try</span> <span style='color:#800080; '>{</span>
-        <span style='color:#696969; '>//Downloding data asynchronously</span>
+    <span style='color:#696969; '>//Downloding data asynchronously</span>
         bytes <span style='color:#808030; '>=</span> await webClient<span style='color:#808030; '>.</span>DownloadDataTaskAsync <span style='color:#808030; '>(</span>url<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
     <span style='color:#800080; '>}</span> <span style='color:#800000; font-weight:bold; '>catch</span> <span style='color:#808030; '>(</span>OperationCanceledException<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
         Console<span style='color:#808030; '>.</span>WriteLine <span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Task Canceled!</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-        <span style='color:#800000; font-weight:bold; '>return</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>return</span><span style='color:#800080; '>;</span>
     <span style='color:#800080; '>}</span> <span style='color:#800000; font-weight:bold; '>catch</span> <span style='color:#808030; '>(</span>Exception e<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
         Console<span style='color:#808030; '>.</span>WriteLine <span style='color:#808030; '>(</span>e<span style='color:#808030; '>.</span>ToString <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-        <span style='color:#800000; font-weight:bold; '>return</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>return</span><span style='color:#800080; '>;</span>
     <span style='color:#800080; '>}</span>
-
     <span style='color:#696969; '>//Storing the downloaded file in the local directory</span>
     <span style='color:#800000; font-weight:bold; '>string</span> documentsPath <span style='color:#808030; '>=</span> Environment<span style='color:#808030; '>.</span>GetFolderPath <span style='color:#808030; '>(</span>Environment<span style='color:#808030; '>.</span>SpecialFolder<span style='color:#808030; '>.</span>Personal<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
     <span style='color:#800000; font-weight:bold; '>string</span> localFilename <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>downloaded.png</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span>
@@ -70,11 +80,9 @@ async <span style='color:#800000; font-weight:bold; '>void</span> downloadAsync 
     FileStream fs <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> FileStream <span style='color:#808030; '>(</span>localPath<span style='color:#808030; '>,</span> FileMode<span style='color:#808030; '>.</span>OpenOrCreate<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
     await fs<span style='color:#808030; '>.</span>WriteAsync <span style='color:#808030; '>(</span>bytes<span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> bytes<span style='color:#808030; '>.</span>Length<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
     Console<span style='color:#808030; '>.</span>WriteLine <span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>localPath:</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> localPath<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-
     <span style='color:#696969; '>//Resizing image is time costing, using async to avoid blocking the UI thread</span>
     UIImage image <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>null</span><span style='color:#800080; '>;</span>
     CGSize imageViewSize <span style='color:#808030; '>=</span> imageView<span style='color:#808030; '>.</span>Frame<span style='color:#808030; '>.</span>Size<span style='color:#800080; '>;</span>
-
     await Task<span style='color:#808030; '>.</span>Run <span style='color:#808030; '>(</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#800080; '>{</span>
     image <span style='color:#808030; '>=</span> UIImage<span style='color:#808030; '>.</span>FromFile <span style='color:#808030; '>(</span>localPath<span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>Scale <span style='color:#808030; '>(</span>imageViewSize<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
     <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
@@ -106,7 +114,6 @@ async <span style='color:#800000; font-weight:bold; '>void</span> downloadAsync 
     <span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>.</span>downloadBtn<span style='color:#808030; '>.</span>TouchUpInside <span style='color:#808030; '>+</span><span style='color:#808030; '>=</span> downloadAsync<span style='color:#800080; '>;</span>
     <span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>.</span>downloadBtn<span style='color:#808030; '>.</span>SetTitle <span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Download</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> UIControlState<span style='color:#808030; '>.</span>Normal<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
     <span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>.</span>progressView<span style='color:#808030; '>.</span>Progress <span style='color:#808030; '>=</span> <span style='color:#008000; '>0.0</span><span style='color:#006600; '>f</span><span style='color:#800080; '>;</span>
-
     <span style='color:#800000; font-weight:bold; '>new</span> UIAlertView <span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Canceled</span><span style='color:#800000; '>"</span>
     <span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Download has been canceled.</span><span style='color:#800000; '>"</span>
     <span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>null</span>
@@ -115,15 +122,16 @@ async <span style='color:#800000; font-weight:bold; '>void</span> downloadAsync 
 <span style='color:#800080; '>}</span>
 </pre>
 
-<p><b>Output:</b></p>
-<br />
-<p><b><u>Image 1</u></b></p>
-<img src="~/Images/Async_ios/Async_2.jpg" class="img-responsive" />
-<br /><br />
-<p><b><u>Image 2</u></b></p>
-<img src="~/Images/Async_ios/Async_3.jpg" class="img-responsive" />
-<br /><br />
-<p><b><u>Image 3</u></b></p>
-<img src="~/Images/Async_ios/Async_4.jpg" class="img-responsive" />
-<br /><br />
-<p>Enjoy Coding... </p>
+    <p><b>Output:</b></p>
+    <br />
+    <p><b><u>Image 1</u></b></p>
+    <img src="~/Images/Async_ios/Async_2.jpg" class="img-responsive" />
+    <br /><br />
+    <p><b><u>Image 2</u></b></p>
+    <img src="~/Images/Async_ios/Async_3.jpg" class="img-responsive" />
+    <br /><br />
+    <p><b><u>Image 3</u></b></p>
+    <img src="~/Images/Async_ios/Async_4.jpg" class="img-responsive" />
+    <br /><br />
+    <p>Enjoy Coding... </p>
+    </article>

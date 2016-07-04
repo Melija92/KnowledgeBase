@@ -4,36 +4,49 @@
 }
 
 <h1>Working With Application Settings</h1>
-<br />
-<p>For every application there will be settings option which will be located at <span class="well well-sm">Settings > General > Application Name</span> </p>
-<p>Here is the small example where we will see how to create a Settings section.</p>
-<p>Open Xamarin Studio. Click on Empty Solution and create a new Solution.</p>
-<img src="~/Images/iOSAppSettings/Setting_1.png" class="img-responsive" />
-<br />
-<br />
-<p>Once the application skeleton is created. Right click and add new file.</p>
-<img src="~/Images/iOSAppSettings/Setting_2.png" class="img-responsive" />
-<br />
-<br />
-<p>Choose iOS section and select "Setting Bundle". The default name will be Root.plist.</p>
-<img src="~/Images/iOSAppSettings/Setting_3.png" class="img-responsive" />
-<br />
-<br />
-<p>Once the file is added to the solution it will be looked as below.</p> 
-<img src="~/Images/iOSAppSettings/Setting_5.png" class="img-responsive" />
-<br />
-<br />
-<p>Root.plist is like a normal property list as Info.plist. But here we will be specifying only items which should show on Settings section.</p>
-<img src="~/Images/iOSAppSettings/Setting_6.png" class="img-responsive" />
-<br />
-<br />
-<p>In this example we have created three property entries "UserName", "Password", "Gender".</p>
-<p>To Add more properties click on Add new Entry and choose the type of entry.</p>
-<p>Once the property listing is done. Here is the code snippet to access the Settings.</p>
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url(https://github.com/guntidheerajkumar.png)" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <br />
+    <p>For every application there will be settings option which will be located at <span class="well well-sm">Settings > General > Application Name</span> </p>
+    <p>Here is the small example where we will see how to create a Settings section.</p>
+    <p>Open Xamarin Studio. Click on Empty Solution and create a new Solution.</p>
+    <img src="~/Images/iOSAppSettings/Setting_1.png" class="img-responsive" />
+    <br />
+    <br />
+    <p>Once the application skeleton is created. Right click and add new file.</p>
+    <img src="~/Images/iOSAppSettings/Setting_2.png" class="img-responsive" />
+    <br />
+    <br />
+    <p>Choose iOS section and select "Setting Bundle". The default name will be Root.plist.</p>
+    <img src="~/Images/iOSAppSettings/Setting_3.png" class="img-responsive" />
+    <br />
+    <br />
+    <p>Once the file is added to the solution it will be looked as below.</p>
+    <img src="~/Images/iOSAppSettings/Setting_5.png" class="img-responsive" />
+    <br />
+    <br />
+    <p>Root.plist is like a normal property list as Info.plist. But here we will be specifying only items which should show on Settings section.</p>
+    <img src="~/Images/iOSAppSettings/Setting_6.png" class="img-responsive" />
+    <br />
+    <br />
+    <p>In this example we have created three property entries "UserName", "Password", "Gender".</p>
+    <p>To Add more properties click on Add new Entry and choose the type of entry.</p>
+    <p>Once the property listing is done. Here is the code snippet to access the Settings.</p>
 <pre>
 <span style='color:#800000; font-weight:bold; '>var</span> username <span style='color:#808030; '>=</span> NSUserDefaults<span style='color:#808030; '>.</span>StandardUserDefaults<span style='color:#808030; '>.</span>StringForKey <span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Username</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
 <span style='color:#800000; font-weight:bold; '>var</span> password <span style='color:#808030; '>=</span> NSUserDefaults<span style='color:#808030; '>.</span>StandardUserDefaults<span style='color:#808030; '>.</span>StringForKey <span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Password</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
 <span style='color:#800000; font-weight:bold; '>var</span> gender <span style='color:#808030; '>=</span> NSUserDefaults<span style='color:#808030; '>.</span>StandardUserDefaults<span style='color:#808030; '>.</span>StringForKey <span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Gender</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-</pre>​
-<br /><br /><br />
-<p>Enjoy Coding.... :)</p>
+</pre>
+    <br /><br /><br />
+    <p>Enjoy Coding.... :)</p>
+</article>
