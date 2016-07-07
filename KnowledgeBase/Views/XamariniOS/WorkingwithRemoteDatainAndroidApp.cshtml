@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "WorkingwithRemoteDatainAndroidApp";
+}
+
+<h2>Working with Remote Data in Android Application</h2>
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url(https://github.com/guntidheerajkumar.png)" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <p>Hi All, Welcome back to Knowledge Base.</p>
+
+    <p>Today we will see how to pull data from a remote server. The data will be in json format and the resultant data we will be consuming in our android application.</p>
+
+    <p>In this sample we are creating a PCL library in which we are dealing with remote data and the resultant method will be used in Android Application.</p>
+
+    <p>First we will start with creating a PCL Library. In this example we are using a remote url for loading data (<a href="http://country.io/names.json">http://country.io/names.json</a>). You can choose your own remote server.</p>
+
+    <p>Based on the remote json data we are creating a class with two properties - CountryCode and CountryName.</p>
+
+    <script src="https://gist.github.com/guntidheerajkumar/dccd8beff00d89b070544bb212246313.js"></script>
+
+    <p>Once the class is created with the properties. We will now start creating a ViewModel which does the business logic for us. </p>
+
+    <script src="https://gist.github.com/guntidheerajkumar/99081cf0cbb71df283fd593676ef481c.js"></script>
+
+    <p>Now we got out PCL ready with one method which returns Countries.</p>
+
+    <p>Now we will start creating a android project. Add new project and select Android, in that choose blank app. It creates basic template for us. </p>
+
+    <p>We will now edit the <u>axml</u> file to accomadate a list where we are going to display all the countries.</p>
+
+    <script src="https://gist.github.com/guntidheerajkumar/bef9590ae0dc8b567876fbee47f3e673.js"></script>
+
+    <p>We will map the content view with <u>Main.axml</u> in MainActivity using SetContentView and passing the Layout resource id, it will be mapped accordingly.</p> 
+
+    <script src="https://gist.github.com/guntidheerajkumar/15dccbd580efdcbb3df5a34343a5dabf.js"></script>
+
+    <p>Now we need to add reference to the PCL library in to our Android Project. In OnCreate method, before that we will create an object for <b>CountriesViewModel</b>. We are creating one more object of type List which accomodates all the countries which are coming from the method.</p>
+
+    <p>Now we will identify the listview which we have created in axml file using FindViewById method.</p>
+
+    <p>Now we will call the <b>GetCountriesData</b> method. As we have used Dictionary as the return type, we will remap the data to a list view by using normal foreach loop.</p>
+
+    <p>In Android application we are going to deal with data using adapters. In this sample we are going to use BaseAdapter of type List.</p>
+
+    <script src="https://gist.github.com/guntidheerajkumar/9529dcdbb8b27882b4b535f52241a60f.js"></script>
+
+    <p>Once the adapter is created and we will map it to listview adapter. Run the application once you are done.</p>
+    <br />
+    <img src="~/Images/AndroidApplication_1.PNG" class="img-responsive" />
+    <br />
+    <br />
+    <p>Happy Coding...... </p>
+</article>

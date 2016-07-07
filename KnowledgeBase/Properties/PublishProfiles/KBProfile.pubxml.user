@@ -19,7 +19,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/02/2016 20:50:20</publishTime>
     </File>
     <File Include="bin/KnowledgeBase.dll">
-      <publishTime>05/29/2016 22:59:08</publishTime>
+      <publishTime>07/05/2016 20:32:08</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>05/02/2016 20:50:20</publishTime>
@@ -79,13 +79,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/02/2016 20:50:14</publishTime>
     </File>
     <File Include="Content/bootstrap.css">
-      <publishTime>05/29/2016 22:56:34</publishTime>
+      <publishTime>07/04/2016 19:23:18</publishTime>
     </File>
     <File Include="Content/bootstrap.css.map">
       <publishTime>05/02/2016 20:50:14</publishTime>
     </File>
     <File Include="Content/bootstrap.min.css">
-      <publishTime>05/29/2016 22:57:03</publishTime>
+      <publishTime>07/04/2016 19:23:19</publishTime>
     </File>
     <File Include="Content/bootstrap.min.css.map">
       <publishTime>05/02/2016 20:50:14</publishTime>
@@ -96,14 +96,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/jquery-ui.css">
       <publishTime>05/02/2016 20:50:14</publishTime>
     </File>
+    <File Include="Content/main.css">
+      <publishTime>07/07/2016 21:13:30</publishTime>
+    </File>
     <File Include="Content/scrollToTop.js">
       <publishTime>05/02/2016 20:50:14</publishTime>
     </File>
     <File Include="Content/simple-sidebar.css">
-      <publishTime>05/14/2016 21:40:54</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>05/29/2016 21:35:49</publishTime>
+      <publishTime>06/24/2016 18:22:11</publishTime>
     </File>
     <File Include="Content/themes/base/accordion.css">
       <publishTime>05/02/2016 20:50:14</publishTime>
@@ -226,7 +229,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/02/2016 20:50:14</publishTime>
     </File>
     <File Include="Images/319.GIF">
-      <publishTime>05/02/2016 20:50:14</publishTime>
+      <publishTime>06/29/2016 23:04:52</publishTime>
     </File>
     <File Include="Images/alert_control_1.jpg">
       <publishTime>05/02/2016 20:50:14</publishTime>
@@ -278,6 +281,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Images/CallerInfoAttributes.png">
       <publishTime>05/02/2016 20:50:14</publishTime>
+    </File>
+    <File Include="Images/Capture.PNG">
+      <publishTime>06/29/2016 22:12:28</publishTime>
     </File>
     <File Include="Images/CollectionViewiOS.jpg">
       <publishTime>05/02/2016 20:50:14</publishTime>
@@ -374,6 +380,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Images/deploy_6.JPG">
       <publishTime>05/02/2016 20:50:14</publishTime>
+    </File>
+    <File Include="Images/Dheeraj kumar.jpg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Images/DynamicData/DynamicData_1.jpg">
       <publishTime>05/02/2016 20:50:14</publishTime>
@@ -512,6 +521,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Images/EF/ModelFirst_9.jpg">
       <publishTime>05/02/2016 20:50:14</publishTime>
+    </File>
+    <File Include="Images/email.png">
+      <publishTime>07/04/2016 21:56:45</publishTime>
     </File>
     <File Include="Images/encrypting_webconfig_1.png">
       <publishTime>05/02/2016 20:50:14</publishTime>
@@ -675,6 +687,69 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Images/MasterPage/MasterPage_9.jpg">
       <publishTime>05/02/2016 20:50:14</publishTime>
     </File>
+    <File Include="Images/mobile.png">
+      <publishTime>06/18/2016 22:58:28</publishTime>
+    </File>
+    <File Include="Images/NETCore/Core_1.PNG">
+      <publishTime>06/24/2016 18:29:13</publishTime>
+    </File>
+    <File Include="Images/NETCore/Core_2.PNG">
+      <publishTime>06/24/2016 18:29:13</publishTime>
+    </File>
+    <File Include="Images/NETCore/Core_3.PNG">
+      <publishTime>06/24/2016 18:29:13</publishTime>
+    </File>
+    <File Include="Images/NETCore/Seq_1.PNG">
+      <publishTime>06/24/2016 18:29:13</publishTime>
+    </File>
+    <File Include="Images/NETCore/Seq_2.PNG">
+      <publishTime>06/24/2016 18:29:13</publishTime>
+    </File>
+    <File Include="Images/NETCore/Seq_3.PNG">
+      <publishTime>06/24/2016 18:29:13</publishTime>
+    </File>
+    <File Include="Images/NETCore/Seq_4.PNG">
+      <publishTime>06/24/2016 18:29:13</publishTime>
+    </File>
+    <File Include="Images/NETCore/Seq_5.PNG">
+      <publishTime>06/24/2016 18:29:13</publishTime>
+    </File>
+    <File Include="Images/nodata.png">
+      <publishTime>06/29/2016 22:30:12</publishTime>
+    </File>
+    <File Include="Images/OAuth/OAuth_1.PNG">
+      <publishTime>06/18/2016 22:33:29</publishTime>
+    </File>
+    <File Include="Images/OAuth/OAuth_10.PNG">
+      <publishTime>06/18/2016 22:33:29</publishTime>
+    </File>
+    <File Include="Images/OAuth/OAuth_11.PNG">
+      <publishTime>06/18/2016 22:33:29</publishTime>
+    </File>
+    <File Include="Images/OAuth/OAuth_2.PNG">
+      <publishTime>06/18/2016 22:33:29</publishTime>
+    </File>
+    <File Include="Images/OAuth/OAuth_3.PNG">
+      <publishTime>06/18/2016 22:33:29</publishTime>
+    </File>
+    <File Include="Images/OAuth/OAuth_4.PNG">
+      <publishTime>06/18/2016 22:33:29</publishTime>
+    </File>
+    <File Include="Images/OAuth/OAuth_5.PNG">
+      <publishTime>06/18/2016 22:33:29</publishTime>
+    </File>
+    <File Include="Images/OAuth/OAuth_6.PNG">
+      <publishTime>06/18/2016 22:33:29</publishTime>
+    </File>
+    <File Include="Images/OAuth/OAuth_7.PNG">
+      <publishTime>06/18/2016 22:33:29</publishTime>
+    </File>
+    <File Include="Images/OAuth/OAuth_8.PNG">
+      <publishTime>06/18/2016 22:33:29</publishTime>
+    </File>
+    <File Include="Images/OAuth/OAuth_9.PNG">
+      <publishTime>06/18/2016 22:33:29</publishTime>
+    </File>
     <File Include="Images/PushSharp/PushSharp_1.png">
       <publishTime>05/02/2016 20:50:14</publishTime>
     </File>
@@ -738,6 +813,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Images/Searching.gif">
       <publishTime>05/02/2016 20:50:14</publishTime>
     </File>
+    <File Include="Images/searching.png">
+      <publishTime>06/29/2016 22:30:12</publishTime>
+    </File>
     <File Include="Images/spiffygif_32x32.gif">
       <publishTime>05/02/2016 20:50:14</publishTime>
     </File>
@@ -749,6 +827,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Images/TracingMVC/WarningTracer.png">
       <publishTime>05/02/2016 20:50:14</publishTime>
+    </File>
+    <File Include="Images/twitter.png">
+      <publishTime>07/04/2016 21:56:45</publishTime>
     </File>
     <File Include="Images/UISearchBar/UISearchBar_1.png">
       <publishTime>05/02/2016 20:50:14</publishTime>
@@ -850,10 +931,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/02/2016 20:50:14</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.js">
-      <publishTime>05/14/2016 16:22:16</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.min.js">
-      <publishTime>05/14/2016 16:22:16</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.min.js.map">
       <publishTime>05/02/2016 20:50:14</publishTime>
@@ -869,6 +950,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Scripts/modernizr-2.8.3.js">
       <publishTime>05/02/2016 20:50:14</publishTime>
+    </File>
+    <File Include="Scripts/readingTime.min.js">
+      <publishTime>07/04/2016 19:30:02</publishTime>
     </File>
     <File Include="Scripts/respond.js">
       <publishTime>05/02/2016 20:50:14</publishTime>
@@ -886,7 +970,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/02/2016 20:50:14</publishTime>
     </File>
     <File Include="Scripts/_references.js">
-      <publishTime>05/14/2016 16:22:16</publishTime>
+      <publishTime>07/04/2016 19:31:16</publishTime>
+    </File>
+    <File Include="Views/Articles/Index.cshtml">
+      <publishTime>07/04/2016 20:48:16</publishTime>
     </File>
     <File Include="Views/ASPNET/Index.cshtml">
       <publishTime>05/02/2016 20:50:17</publishTime>
@@ -895,31 +982,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/29/2016 20:52:52</publishTime>
     </File>
     <File Include="Views/Books/Index.cshtml">
-      <publishTime>05/29/2016 20:50:38</publishTime>
+      <publishTime>06/29/2016 23:08:22</publishTime>
     </File>
     <File Include="Views/EntityFramework/AuditingwithEntityFramework.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 21:02:16</publishTime>
     </File>
     <File Include="Views/EntityFramework/CodeFirstwithEntityFramework.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 21:05:00</publishTime>
     </File>
     <File Include="Views/EntityFramework/CreatingModeFirstwithEntityFramework.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:18:50</publishTime>
     </File>
     <File Include="Views/EntityFramework/EntityFramework.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:19:02</publishTime>
     </File>
     <File Include="Views/EntityFramework/Index.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:45:40</publishTime>
     </File>
     <File Include="Views/EntityFramework/InheritanceWithEntityFramework.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:19:13</publishTime>
     </File>
     <File Include="Views/EntityFramework/Linq.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:19:24</publishTime>
     </File>
     <File Include="Views/EntityFramework/LoadingObjectsinEntityFramework.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:19:34</publishTime>
     </File>
     <File Include="Views/Feedback/Comments.cshtml">
       <publishTime>05/02/2016 20:50:17</publishTime>
@@ -928,7 +1015,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/02/2016 20:50:17</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
-      <publishTime>05/29/2016 21:26:59</publishTime>
+      <publishTime>07/07/2016 21:05:03</publishTime>
     </File>
     <File Include="Views/Home/Contact.cshtml">
       <publishTime>05/02/2016 20:50:17</publishTime>
@@ -940,112 +1027,118 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/02/2016 20:50:17</publishTime>
     </File>
     <File Include="Views/MVC/ASPNETApplicationsUsingWaitHandles.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:54:24</publishTime>
     </File>
     <File Include="Views/MVC/ASPNETMasterPages.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:20:02</publishTime>
     </File>
     <File Include="Views/MVC/ASPNETRouting.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:56:44</publishTime>
     </File>
     <File Include="Views/MVC/AuditLogActionFilterinMVC.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:59:10</publishTime>
     </File>
     <File Include="Views/MVC/BriefaboutDesignPatterns.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:20:35</publishTime>
     </File>
     <File Include="Views/MVC/BuildingandDeploymentofASPNETApplication.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:20:45</publishTime>
     </File>
     <File Include="Views/MVC/BulletedListGridView.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:20:54</publishTime>
     </File>
     <File Include="Views/MVC/CallerInfoAttributesinCSharp.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:21:03</publishTime>
     </File>
     <File Include="Views/MVC/ConcurrentDictionaryinNET.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:21:13</publishTime>
     </File>
     <File Include="Views/MVC/CreatingAlertControlinASPNET.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 21:06:23</publishTime>
     </File>
     <File Include="Views/MVC/CreatingPopupusingCSSwithASPNET.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 21:11:15</publishTime>
     </File>
     <File Include="Views/MVC/CreatingWCFServiceApplication.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:21:46</publishTime>
     </File>
     <File Include="Views/MVC/CreatingXSDandXMLinNET.cshtml">
-      <publishTime>05/29/2016 21:09:41</publishTime>
+      <publishTime>07/04/2016 20:21:56</publishTime>
     </File>
     <File Include="Views/MVC/CustomAuthorizeAttribute.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:22:10</publishTime>
     </File>
     <File Include="Views/MVC/CustomExceptionsinCSharp.cshtml">
-      <publishTime>05/29/2016 21:11:06</publishTime>
+      <publishTime>07/04/2016 20:22:22</publishTime>
     </File>
     <File Include="Views/MVC/DynamicDatawithASPNET.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:22:36</publishTime>
     </File>
     <File Include="Views/MVC/EncryptingQueryString.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 21:18:46</publishTime>
     </File>
     <File Include="Views/MVC/EncryptingWebConfigusingCommandLineArguments.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:23:02</publishTime>
     </File>
     <File Include="Views/MVC/ExceptionHandlingMVC.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 21:23:36</publishTime>
     </File>
     <File Include="Views/MVC/ExportingGridViewtoPDFEXCELWORD.cshtml">
-      <publishTime>05/29/2016 21:15:10</publishTime>
+      <publishTime>07/04/2016 20:23:26</publishTime>
     </File>
     <File Include="Views/MVC/GenerateWordDocumentinNET.cshtml">
-      <publishTime>05/29/2016 21:14:05</publishTime>
+      <publishTime>07/04/2016 20:23:34</publishTime>
+    </File>
+    <File Include="Views/MVC/GeneratingUniqueKeysandRandomPasswords.cshtml">
+      <publishTime>07/04/2016 20:23:46</publishTime>
     </File>
     <File Include="Views/MVC/Index.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:45:28</publishTime>
     </File>
     <File Include="Views/MVC/LiveDateTimeUsingJQuery.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:24:08</publishTime>
     </File>
     <File Include="Views/MVC/MVCArchitecture.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:24:27</publishTime>
     </File>
     <File Include="Views/MVC/OpeningConfirmationboxfromserverside.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:24:35</publishTime>
     </File>
     <File Include="Views/MVC/RazorEngine.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:24:47</publishTime>
     </File>
     <File Include="Views/MVC/RazorEnginewithWebmatrix.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:24:59</publishTime>
     </File>
     <File Include="Views/MVC/Removingrepetitivecharactersfromthestring.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:25:14</publishTime>
     </File>
     <File Include="Views/MVC/RequestProcessinginIIS.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:25:27</publishTime>
     </File>
     <File Include="Views/MVC/ShowingLivetimeinWebPageusingJavascript.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:25:38</publishTime>
     </File>
     <File Include="Views/MVC/TracinginMVC.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:25:47</publishTime>
     </File>
     <File Include="Views/MVC/WindowsCommunicationFoundation.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:26:01</publishTime>
     </File>
     <File Include="Views/MVC/WorkingWithDependencyInjection.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:26:11</publishTime>
     </File>
     <File Include="Views/MVC/WorkingWithMongoDBinMVCApplication.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:26:22</publishTime>
     </File>
     <File Include="Views/MVC/WorkingWithRavenDB.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:26:34</publishTime>
+    </File>
+    <File Include="Views/MVC/WorkingwithSeriLoginNETCoreApplication.cshtml">
+      <publishTime>07/04/2016 20:26:42</publishTime>
     </File>
     <File Include="Views/MVC/WorkingWithViewEnginesinMVC.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:26:53</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>05/02/2016 20:50:17</publishTime>
@@ -1054,64 +1147,73 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/02/2016 20:50:17</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>05/29/2016 21:28:27</publishTime>
+      <publishTime>07/06/2016 21:53:40</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 19:41:53</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>05/02/2016 21:03:15</publishTime>
     </File>
     <File Include="Views/XamariniOS/AlternativeCollectionViewsiOS.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:51:28</publishTime>
     </File>
     <File Include="Views/XamariniOS/CreatingCustomTableViewCells.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 21:10:06</publishTime>
     </File>
     <File Include="Views/XamariniOS/CreatingCustomView.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:27:32</publishTime>
     </File>
     <File Include="Views/XamariniOS/CreatingFirstApplication.cshtml">
-      <publishTime>05/11/2016 16:27:12</publishTime>
+      <publishTime>07/04/2016 20:28:24</publishTime>
     </File>
     <File Include="Views/XamariniOS/CreatingSectionedTableViewWithAlphabeticalOrder.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 21:15:33</publishTime>
     </File>
     <File Include="Views/XamariniOS/CreatingXibLessApplication.cshtml">
       <publishTime>05/11/2016 16:27:32</publishTime>
     </File>
     <File Include="Views/XamariniOS/DrawingCirclewithCALayer.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 21:16:37</publishTime>
     </File>
     <File Include="Views/XamariniOS/DrawingCirclewithZoomAnimation.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 21:17:17</publishTime>
+    </File>
+    <File Include="Views/XamariniOS/GoogleAuthenticationinMobileApplication.cshtml">
+      <publishTime>07/04/2016 20:29:21</publishTime>
     </File>
     <File Include="Views/XamariniOS/Index.cshtml">
       <publishTime>05/14/2016 16:43:55</publishTime>
     </File>
+    <File Include="Views/XamariniOS/PlayingStreamingAudioiniOSApplication.cshtml">
+      <publishTime>07/04/2016 20:29:31</publishTime>
+    </File>
+    <File Include="Views/XamariniOS/ReadingPlistFile.cshtml">
+      <publishTime>07/04/2016 19:34:17</publishTime>
+    </File>
     <File Include="Views/XamariniOS/WorkingonAnimationsBubbleAnimation.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:29:48</publishTime>
     </File>
     <File Include="Views/XamariniOS/WorkingonAnimationsShakingView.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:29:59</publishTime>
     </File>
     <File Include="Views/XamariniOS/WorkingOnFloatingTextField.cshtml">
       <publishTime>05/02/2016 20:50:17</publishTime>
     </File>
     <File Include="Views/XamariniOS/WorkingonPulltoRefresh.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:30:12</publishTime>
     </File>
     <File Include="Views/XamariniOS/WorkingWithAppSettings.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:30:23</publishTime>
     </File>
     <File Include="Views/XamariniOS/WorkingwithAsynchronousDownloading.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:30:44</publishTime>
     </File>
     <File Include="Views/XamariniOS/WorkingWithAudioPlayingSoundsiniOSApplication.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:30:53</publishTime>
     </File>
     <File Include="Views/XamariniOS/WorkingWithCustomFonts.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:31:04</publishTime>
     </File>
     <File Include="Views/XamariniOS/WorkingwithExtensionsiniOS8.cshtml">
       <publishTime>05/02/2016 20:50:17</publishTime>
@@ -1120,10 +1222,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/11/2016 16:27:46</publishTime>
     </File>
     <File Include="Views/XamariniOS/WorkingWithPushNotifications.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 20:31:21</publishTime>
     </File>
     <File Include="Views/XamariniOS/WorkingWithSearchBar.cshtml">
-      <publishTime>05/02/2016 20:50:17</publishTime>
+      <publishTime>07/04/2016 21:25:46</publishTime>
     </File>
     <File Include="Views/XamariniOS/WorkingWithSQLiteDatabase.cshtml">
       <publishTime>05/02/2016 20:50:17</publishTime>
@@ -1135,7 +1237,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/02/2016 20:50:17</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/29/2016 21:31:13</publishTime>
+      <publishTime>07/05/2016 20:32:10</publishTime>
     </File>
   </ItemGroup>
 </Project>

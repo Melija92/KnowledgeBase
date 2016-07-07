@@ -560,6 +560,23 @@ namespace KnowledgeBase
                 Article = "GeneratingUniqueKeysandRandomPasswords",
                 Tag = "MVC"
             });
+
+            Names.Add(new ArticlesList
+            {
+                ArticleName = "Working with Remote Data in Android Application",
+                ArticleURL = "../XamariniOS/WorkingwithRemoteDatainAndroidApp",
+                Article = "WorkingwithRemoteDatainAndroidApp",
+                Tag = "Xamarin"
+            });
+
+            Names.Add(new ArticlesList
+            {
+                ArticleName = "Working with Display Attribute in PCL",
+                ArticleURL = "../XamariniOS/WorkingwithDisplayAttributeinPCL",
+                Article = "WorkingwithDisplayAttributeinPCL",
+                Tag = "Xamarin"
+            });
+
             return Names;
         }
     }

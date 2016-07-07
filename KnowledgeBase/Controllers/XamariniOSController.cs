@@ -164,6 +164,18 @@ namespace KnowledgeBase.Controllers
         public ActionResult ReadingPlistFile()
         {
             return View();
-        }   
+        }
+
+        [OutputCache(Duration = 3600, VaryByParam = "none", Location = OutputCacheLocation.Client, NoStore = true)]
+        public ActionResult WorkingwithRemoteDatainAndroidApp()
+        {
+            return View();
+        }
+
+        [OutputCache(Duration = 3600, VaryByParam = "none", Location = OutputCacheLocation.Client, NoStore = true)]
+        public ActionResult WorkingwithDisplayAttributeinPCL()
+        {
+            return View();
+        }
     }
 }

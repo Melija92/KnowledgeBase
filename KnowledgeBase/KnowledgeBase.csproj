@@ -168,6 +168,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\AndroidApplication_1.PNG" />
     <Content Include="Images\email.png" />
     <Content Include="Images\nodata.png" />
     <Content Include="Images\319.GIF" />
@@ -396,6 +397,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="bundleconfig.json" />
+    <None Include="Properties\PublishProfiles\codeformobile - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\KBProfile.pubxml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.3.js" />
@@ -500,6 +502,8 @@
     <Content Include="Views\XamariniOS\ReadingPlistFile.cshtml" />
     <Content Include="Views\MVC\GeneratingUniqueKeysandRandomPasswords.cshtml" />
     <Content Include="Views\Articles\Index.cshtml" />
+    <Content Include="Views\XamariniOS\WorkingwithRemoteDatainAndroidApp.cshtml" />
+    <Content Include="Views\XamariniOS\WorkingwithDisplayAttributeinPCL.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

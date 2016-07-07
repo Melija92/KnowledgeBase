@@ -16,7 +16,7 @@ namespace KnowledgeBase
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "XamariniOS", action = "ReadingPlistFile", id = UrlParameter.Optional }
+                defaults: new { controller = "XamariniOS", action = "WorkingwithRemoteDatainAndroidApp", id = UrlParameter.Optional }
             );
         }
     }
