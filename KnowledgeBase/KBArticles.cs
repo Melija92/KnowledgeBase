@@ -8,7 +8,7 @@ using System.Web;
 
 namespace KnowledgeBase
 {
-    /// <summary> 
+    /// <summary>
     /// KB Articles
     /// </summary>
     public static class KBArticles
@@ -224,7 +224,7 @@ namespace KnowledgeBase
                 Article = "CreatingModeFirstwithEntityFramework",
                 Tag = "Entitiy Framework"
             });
-             
+
             Names.Add(new ArticlesList
             {
                 ArticleName = "Razor Engine",
@@ -416,7 +416,7 @@ namespace KnowledgeBase
                 Article = "AlternativeCollectionViewsiOS",
                 Tag = "Xamarin"
             });
-             
+
             Names.Add(new ArticlesList
             {
                 ArticleName = "Creating Sectioned TableView With Alphabetical Order",
@@ -574,6 +574,22 @@ namespace KnowledgeBase
                 ArticleName = "Working with Display Attribute in PCL",
                 ArticleURL = "../XamariniOS/WorkingwithDisplayAttributeinPCL",
                 Article = "WorkingwithDisplayAttributeinPCL",
+                Tag = "Xamarin"
+            });
+
+            Names.Add(new ArticlesList
+            {
+                ArticleName = "Working with NSDate and DateTime in iOS",
+                ArticleURL = "../XamariniOS/WorkingwithNSDateandDateTimeinXamariniOS",
+                Article = "WorkingwithNSDateandDateTimeinXamariniOS",
+                Tag = "Xamarin"
+            });
+
+            Names.Add(new ArticlesList
+            {
+                ArticleName = "Working with Local Notifications in iOS",
+                ArticleURL = "../XamariniOS/WorkingwithLocalNotificationsinXamariniOS",
+                Article = "WorkingwithLocalNotificationsinXamariniOS",
                 Tag = "Xamarin"
             });
 
