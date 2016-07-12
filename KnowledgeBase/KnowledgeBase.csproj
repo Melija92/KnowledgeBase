@@ -389,6 +389,7 @@
     <Content Include="Images\WCF_1\8.jpg" />
     <Content Include="Images\WCF_1\9.jpg" />
     <Content Include="Images\WCF_Bindings.jpg" />
+    <Content Include="Scripts\articlesearch.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap.min.js.map" />

@@ -1070,9 +1070,9 @@ table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table
     padding: 1em;
     line-height: 1.4em;
     vertical-align: top;
-    border-width: 1px 0 0 0;
+    /*border-width: 1px 0 0 0;
     border-style: solid;
-    border-color: #e3e3e3;
+    border-color: #e3e3e3;*/
 }
 
 table > thead > tr > th {

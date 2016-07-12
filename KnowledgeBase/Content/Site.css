@@ -3,9 +3,9 @@
 body {
     /*padding-top: 50px;*/
     padding-bottom: 20px;
-     overflow-y: scroll;
-        overflow-x: hidden;
-        font-family: 'Segoe UI Light'; 
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-family: 'Segoe UI Light';
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -14,20 +14,20 @@ body {
     padding-right: 15px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
+/* Override the default bootstrap behavior where horizontal description lists
+   will truncate terms that are too long to fit in the left column
 */
 .dl-horizontal dt {
     white-space: normal;
 }
 
-/* Set width on the form input elements since they're 100% wide by default 
+/* Set width on the form input elements since they're 100% wide by default
 input,
 select,
 textarea {
     max-width: 320px;
 }*/
-  
+
 
 .firstcharacter {
     float: left;
@@ -37,7 +37,7 @@ textarea {
     padding-top: 4px;
     padding-right: 8px;
     padding-left: 3px;
-    font-family: 'Segoe UI Light'; 
+    font-family: 'Segoe UI Light';
 }
 
 .feed_item {
@@ -52,7 +52,7 @@ textarea {
 
 .feed_item_date {
 }
- 
+
 .widthtext {
     width: 500px;
 }
@@ -111,7 +111,7 @@ textarea {
     bottom: 75px;
     right: 40px;
     display: none;
-    z-index:3000;
+    z-index: 3000;
 }
 
     .scrollToTop:hover {
@@ -120,32 +120,31 @@ textarea {
 
 .panel-info {
     border-color: #2C3E50;
-    border:0;
+    border: 0;
 }
 
     .panel-info > .panel-heading {
         background-color: white;
         border-color: #ffffff;
-        color:#2C3E50;
+        color: #2C3E50;
         text-transform: uppercase;
-        font-weight:bold;
+        font-weight: bold;
         border-bottom: 1px solid #2C3E50;
     }
 
-    .panel-info > .panel-heading a {
-        text-transform:lowercase;
-    }
+        .panel-info > .panel-heading a {
+            text-transform: lowercase;
+        }
 
-    .panel-body{
-        padding:5px;
-    }
+.panel-body {
+    padding: 5px;
+}
 
 #corner a {
     position: absolute;
     bottom: -84px;
     right: 24px;
     color: #D03A2E;
-    
     font: normal 18px/30px Helvetica, sans-serif;
     text-decoration: none;
 }
@@ -153,7 +152,7 @@ textarea {
 #corner {
     position: fixed;
     bottom: -10px;
-    z-index:8000;
+    z-index: 8000;
     right: -10px;
     transform: translateX(0);
     -webkit-transform: translate(0, 0);
@@ -173,20 +172,71 @@ textarea {
 }
 
 .inputgroup .input {
-    max-width:600px !important;
+    max-width: 600px !important;
 }
- 
 
-.panel .panel-heading
-{
-    overflow:hidden;
-} 
+
+.panel .panel-heading {
+    overflow: hidden;
+}
 
 /*h2 {
-    font-family: 'Segoe UI Light'; 
-    padding-bottom: 10px; 
+    font-family: 'Segoe UI Light';
+    padding-bottom: 10px;
 }*/
- 
+
 .sidebarMain {
-    position: fixed;  
+    position: fixed;
+}
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow: hidden; /* Disable horizontal scroll */
+    transition: 0.3s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    top: 3%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: left; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+.overlay-content a {
+    color:white !important;
+}
+
+/* Position the close button (top right corner) */
+.closebtn {
+    position: absolute;
+    top: 15px !important;
+    right: 25px !important;
+    text-decoration:none;
+    font-size: 40px !important; /* Override the font-size specified earlier (36px) for all navigation links */
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px;
+        text-decoration:none;
+    }
+
+    .closebtn {
+        font-size: 40px !important;
+        top: 15px;
+        right: 25px;
+        text-decoration:none;
+    }
 }

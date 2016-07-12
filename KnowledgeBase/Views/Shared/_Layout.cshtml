@@ -4,11 +4,11 @@
 <html>
 <head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8" />
-    <meta property="og:title" content="Knowledge Base"/>
+    <meta property="og:title" content="Knowledge Base" />
     <meta property="og:description" content="Knowledge base is an beginner, intermediate educating platform in technology. We are trying to bring
-          examples in simple way that it can be easily learnt and implemented."/>
-    <meta property="og:url" content="http://www.guntidheerajkumar.com/"/>
-    <meta property="og:site_name" content="Knowledge Base"/>
+          examples in simple way that it can be easily learnt and implemented." />
+    <meta property="og:url" content="http://www.guntidheerajkumar.com/" />
+    <meta property="og:site_name" content="Knowledge Base" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="http://www.guntidheerajkumar.com" />
@@ -31,9 +31,48 @@
     <link href="~/Content/main.css" rel="stylesheet" />
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/articlesearch.js"></script>
 </head>
 <body>
-
+    <div id="articleNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeArticles()">&times;</a>
+        <div class="overlay-content">
+            <div style="margin-left:10%; margin-right:10%;">
+                <div>
+                    <input type="text" class="form-control pull-right" id="search" placeholder="Search Articles" />
+                </div>
+                <br />
+                <br />
+                <br />
+                <div>
+                    <table id="table" style="width:100%; overflow-y:auto;">
+                        @foreach (var x in KBArticles.GetListArticles().ToList().Where(x => x.ArticleName != "Index" && x.ArticleName != "BooksDetail").OrderBy(a => a.ArticleName))
+                        {
+                            <tr>
+                                <td style="padding:10px;">
+                                    <span class="glyphicon glyphicon-menu-right">
+                                    </span>&nbsp;&nbsp;
+                                    <a style="text-decoration:none; color:#2C3E50;" href="@x.ArticleURL">@x.ArticleName</a>
+                                    @if (x.Tag == "Xamarin")
+                                    {
+                                        <span class="label label-success">@x.Tag</span>
+                                    }
+                                    @if (x.Tag == "MVC")
+                                    {
+                                        <span class="label label-info">@x.Tag</span>
+                                    }
+                                    @if (x.Tag == "Entitiy Framework")
+                                    {
+                                        <span class="label label-danger">@x.Tag</span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
     <header id="header">
         <div id="main-placeholder">
             <div class="container" role="banner">
@@ -99,12 +138,12 @@
                     </li>
                     <li class="toc-level-0">
                         <div class="toc-content">
-                            <a href="~/Home/About">About Me</a>
+                            <a href="/Home/About">About Me</a>
                         </div>
                     </li>
                     <li class="toc-level-0">
                         <div class="toc-content">
-                            <a href="~/Articles/Index">All Articles</a>
+                            <a href="#" onclick="openArticles()">All Articles</a>
                         </div>
                     </li>
                 </ol>
@@ -120,19 +159,18 @@
                 <br />
                 <br />
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- KnowledgeBase -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4802285325029828"
-     data-ad-slot="6474686595"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+                <!-- KnowledgeBase -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-4802285325029828"
+                     data-ad-slot="6474686595"
+                     data-ad-format="auto"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         </div>
     </div>
-    @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>*@
     <script src="~/Scripts/readingTime.min.js"></script>
     <script>
         $(function () {
@@ -141,6 +179,5 @@
             });
         });
     </script>
-
 </body>
 </html>
