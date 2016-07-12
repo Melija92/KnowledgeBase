@@ -593,6 +593,14 @@ namespace KnowledgeBase
                 Tag = "Xamarin"
             });
 
+            Names.Add(new ArticlesList
+            {
+                ArticleName = "Working with Entity Framework in .Net Core",
+                ArticleURL = "../MVC/WorkingwithEntityFrameworkinNetCore",
+                Article = "WorkingwithEntityFrameworkinNetCore",
+                Tag = "MVC"
+            });
+
             return Names;
         }
     }

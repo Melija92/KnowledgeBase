@@ -506,6 +506,7 @@
     <Content Include="Views\XamariniOS\WorkingwithDisplayAttributeinPCL.cshtml" />
     <Content Include="Views\XamariniOS\WorkingwithLocalNotificationsinXamariniOS.cshtml" />
     <Content Include="Views\XamariniOS\WorkingwithNSDateandDateTimeinXamariniOS.cshtml" />
+    <Content Include="Views\MVC\WorkingwithEntityFrameworkinNetCore.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
