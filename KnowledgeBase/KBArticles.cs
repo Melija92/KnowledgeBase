@@ -601,6 +601,13 @@ namespace KnowledgeBase
                 Tag = "MVC"
             });
 
+            Names.Add(new ArticlesList
+            {
+                ArticleName = "Working with Azure Storage in Web Application",
+                ArticleURL = "../MVC/WorkingwithAzureStorageinWebApplication",
+                Article = "WorkingwithAzureStorageinWebApplication",
+                Tag = "MVC"
+            });
             return Names;
         }
     }

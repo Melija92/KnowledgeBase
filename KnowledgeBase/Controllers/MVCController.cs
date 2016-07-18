@@ -242,5 +242,11 @@ namespace KnowledgeBase.Controllers
         {
             return View();
         }
+
+        [OutputCache(Duration = 3600, VaryByParam = "none", Location = OutputCacheLocation.Client, NoStore = true)]
+        public ActionResult WorkingwithAzureStorageinWebApplication()
+        {
+            return View();
+        }
     }
 }

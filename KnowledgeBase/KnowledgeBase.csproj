@@ -169,6 +169,12 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\AndroidApplication_1.PNG" />
+    <Content Include="Images\AzureStorage\AzureStorage_1.PNG" />
+    <Content Include="Images\AzureStorage\AzureStorage_2.PNG" />
+    <Content Include="Images\AzureStorage\AzureStorage_3.PNG" />
+    <Content Include="Images\AzureStorage\AzureStorage_4.PNG" />
+    <Content Include="Images\AzureStorage\AzureStorage_5.PNG" />
+    <Content Include="Images\AzureStorage\AzureStorage_6.PNG" />
     <Content Include="Images\email.png" />
     <Content Include="Images\nodata.png" />
     <Content Include="Images\319.GIF" />
@@ -508,6 +514,7 @@
     <Content Include="Views\XamariniOS\WorkingwithLocalNotificationsinXamariniOS.cshtml" />
     <Content Include="Views\XamariniOS\WorkingwithNSDateandDateTimeinXamariniOS.cshtml" />
     <Content Include="Views\MVC\WorkingwithEntityFrameworkinNetCore.cshtml" />
+    <Content Include="Views\MVC\WorkingwithAzureStorageinWebApplication.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
