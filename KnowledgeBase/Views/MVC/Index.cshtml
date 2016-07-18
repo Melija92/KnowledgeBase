@@ -5,8 +5,8 @@
 
 <script type="text/javascript">
     $(function () {
-        var $rows = $('#table tr');
-        $('#search').keyup(function () {
+        var $rows = $('#mvctable tr');
+        $('#mvcsearch').keyup(function () {
 
             var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
                 reg = RegExp(val, 'i'),
@@ -22,13 +22,13 @@
 
 <div>
     <div>
-        <input type="text" class="form-control pull-right" id="search" placeholder="Search Articles" />
+        <input type="text" class="form-control pull-right" id="mvcsearch" placeholder="Search Articles" />
 
     </div>
     <br />
     <br /><br />
     <div>
-        <table id="table" class="table-hover" style="width:100%;">
+        <table id="mvctable" class="table-hover" style="width:100%;">
             @foreach (var x in KBArticles.GetMVCList().ToList())
             {
                 <tr>

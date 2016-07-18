@@ -4,8 +4,8 @@
 
 <script type="text/javascript">
     $(function () {
-        var $rows = $('#table tr');
-        $('#search').keyup(function () {
+        var $rows = $('#xamarintable tr');
+        $('#xamarinsearch').keyup(function () {
 
             var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
                 reg = RegExp(val, 'i'),
@@ -22,13 +22,13 @@
 <div class="col-sm-12">
     <div>
         <div>
-            <input type="text" class="form-control pull-right" id="search" placeholder="Search Articles" />
+            <input type="text" class="form-control pull-right" id="xamarinsearch" placeholder="Search Articles" />
         </div>
         <br />
         <br />
         <br />
         <div>
-            <table class="table-hover" style="width:100%;" id="table">
+            <table class="table-hover" style="width:100%;" id="xamarintable">
                 @foreach (var x in KBArticles.GetXamariniOSList().ToList())
                 {
                     <tr>

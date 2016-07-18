@@ -3,8 +3,8 @@
 }
 <script type="text/javascript">
     $(function () {
-        var $rows = $('#table tr');
-        $('#search').keyup(function () {
+        var $rows = $('#eftable tr');
+        $('#Efsearch').keyup(function () {
 
             var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
                 reg = RegExp(val, 'i'),
@@ -19,14 +19,14 @@
 </script>
 <div>
     <div>
-        <input type="text" class="form-control pull-right" id="search" placeholder="Search Articles" />
+        <input type="text" class="form-control pull-right" id="Efsearch" placeholder="Search Articles" />
     </div>
     <br />
     <br />
     <br />
 
     <div>
-        <table id="table" class="table-hover" style="width:100%;">
+        <table id="eftable" class="table-hover" style="width:100%;">
             @foreach (var x in KBArticles.GetEntityFrameworkList().ToList())
             {
                 <tr>
