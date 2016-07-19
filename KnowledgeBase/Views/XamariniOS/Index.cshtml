@@ -3,6 +3,11 @@
 }
 
 <script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#xamarinsearch').focus();
+    });
+
     $(function () {
         var $rows = $('#xamarintable tr');
         $('#xamarinsearch').keyup(function () {
@@ -22,7 +27,7 @@
 <div class="col-sm-12">
     <div>
         <div>
-            <input type="text" class="form-control pull-right" id="xamarinsearch" placeholder="Search Articles" />
+            <input type="text" class="form-control pull-right searchBackgroundInner" id="xamarinsearch" placeholder="Search Articles" />
         </div>
         <br />
         <br />

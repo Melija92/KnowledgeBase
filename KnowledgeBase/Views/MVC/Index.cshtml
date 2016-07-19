@@ -4,7 +4,12 @@
 }
 
 <script type="text/javascript">
+    $(document).ready(function () {
+        $('#mvcsearch').focus();
+    });
+
     $(function () {
+
         var $rows = $('#mvctable tr');
         $('#mvcsearch').keyup(function () {
 
@@ -21,8 +26,9 @@
 </script>
 
 <div>
+    <br />
     <div>
-        <input type="text" class="form-control pull-right" id="mvcsearch" placeholder="Search Articles" />
+        <input type="text" class="form-control pull-right searchBackgroundInner" id="mvcsearch" placeholder="Search Articles" />
 
     </div>
     <br />

@@ -1368,9 +1368,9 @@ body {
         display: inline-block;
         border: 0;
         margin-top: 0.7em;
-        margin-left: 2.7em;
-        width: 210px;
-        font-size: 1.2em;
+        width: 100%;
+        text-align:center;
+        font-size: 1.5em;
         line-height: 1.1em;
         text-shadow: none;
         background-size: 100px 23px;
@@ -1400,14 +1400,16 @@ body {
     border-width: 1px 0 1px 0;
     border-style: dotted none solid none;
     border-color: #e3e3e3;
+    text-align:center;
+    width:100%;
 }
 
 .breadcrumbs {
     position: relative;
     height: auto;
-    float: left;
     margin: 0;
     padding: 0 1em 0 4em;
+    text-align:center;
     font-size: 0.8em;
     white-space: nowrap;
     list-style: none;
@@ -1529,6 +1531,12 @@ body {
     display: none;
 }
 
+@media only screen and (min-width: 1920px) {
+    body {
+        font-size:1em;
+    }
+}
+
 @media only screen and (min-width: 1024px) {
     #menu-bar {
         display: block !important;
@@ -1642,17 +1650,28 @@ h1 {
 
 #sub-header {
     border: 0;
+    font-weight:bold;
 }
 
 #menu-nav {
     padding: 1em 1em 0 1em;
 }
 
-#sidebar, #main, #social {
+#sidebar {
+    position: relative;
+    float: left;
+    text-align:right;
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#main {
+    border-left:1px solid lightgrey;
     position: relative;
     float: left;
     width: 100%;
-    padding-left: 1em;
+    padding-left: 1.5em;
     padding-right: 1em;
 }
 

@@ -15,7 +15,7 @@
     <meta name="twitter:title" content="Knowledge Base" />
     <meta name="twitter:description" content="Knowledge base is an beginner, intermediate educating platform in technology. We are trying to bring
           examples in simple way that it can be easily learnt and implemented." />
-    <meta name="twitter:image" content="https://github.com/guntidheerajkumar.png" />
+    <meta name="twitter:image" content="'../../Images/avatar.png'" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="knowledge Base, xamarin, pcl, portable class libraries, android, httpclient, iOS, asp.net, dependency, injection, unity, Google Authentication, OAuth, caller attributes, ravendb, nosql,live time, linq, entity framework, wcf, iis, mvc, software, programming, asynchronous, play sound, uisearchbar, tableview, dialog,  animations, extensions, ios8, pull to refresh, custom fonts, floating text, push notifications, serilog, custom cell ios" />
@@ -39,7 +39,7 @@
         <div class="overlay-content">
             <div style="margin-left:10%; margin-right:10%;">
                 <div>
-                    <input type="text" class="form-control pull-right" id="search" placeholder="Search Articles" />
+                    <input type="text" class="form-control pull-right searchBackground" id="search" placeholder="Search.." />
                 </div>
                 <br />
                 <br />
@@ -50,9 +50,9 @@
                         {
                             <tr>
                                 <td style="padding:10px;">
-                                    <span class="glyphicon glyphicon-menu-right">
+                                    <span class="glyphicon glyphicon-menu-right" style="color:white;">
                                     </span>&nbsp;&nbsp;
-                                    <a style="text-decoration:none; color:#2C3E50;" href="@x.ArticleURL">@x.ArticleName</a>
+                                    <a style="text-decoration:none; color:#2C3E50; font-size:1.2em;" href="@x.ArticleURL">@x.ArticleName</a>
                                     @if (x.Tag == "Xamarin")
                                     {
                                         <span class="label label-success">@x.Tag</span>
@@ -98,13 +98,13 @@
                         if (KBArticles.GetListArticles().ToList().Select(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).Count() > 0)
                         {
                             <li>
-                                @Html.ActionLink(KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().ArticleName, KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().ArticleName, ViewContext.RouteData.Values["controller"].ToString())
+                                @Html.ActionLink(KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().ArticleName, KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().Article, ViewContext.RouteData.Values["controller"].ToString())
                             </li>
                         }
                         else
                         {
                             <li>
-                                @Html.ActionLink(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString())
+                                @Html.ActionLink(KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().ArticleName, KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().Article, ViewContext.RouteData.Values["controller"].ToString())
                             </li>
                         }
                     }
@@ -138,7 +138,7 @@
                     </li>
                     <li class="toc-level-0">
                         <div class="toc-content">
-                            <a href="/Home/About">About Me</a>
+                            <a href="https://about.me/dgunti" target="_blank">About Me</a>
                         </div>
                     </li>
                     <li class="toc-level-0">

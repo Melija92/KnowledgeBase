@@ -2,6 +2,10 @@
     ViewBag.Title = "EntityFrameworkIndex";
 }
 <script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#Efsearch').focus();
+    });
     $(function () {
         var $rows = $('#eftable tr');
         $('#Efsearch').keyup(function () {
@@ -19,7 +23,7 @@
 </script>
 <div>
     <div>
-        <input type="text" class="form-control pull-right" id="Efsearch" placeholder="Search Articles" />
+        <input type="text" class="form-control pull-right searchBackgroundInner" id="Efsearch" placeholder="Search Articles" />
     </div>
     <br />
     <br />

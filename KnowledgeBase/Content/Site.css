@@ -95,7 +95,7 @@ textarea {
     width: 100%;
     text-align: center;
     font-size: larger;
-    padding-top: 80px;
+    padding-top: 60px;
 }
 
 
@@ -224,6 +224,27 @@ textarea {
     right: 25px !important;
     text-decoration:none;
     font-size: 40px !important; /* Override the font-size specified earlier (36px) for all navigation links */
+}
+
+.searchBackground {
+    background-color: #191919; /* Black w/opacity */
+    font-size:3em;
+    border:0;
+    color:white;
+    padding-bottom:15px;
+}
+
+.searchBackgroundInner {
+    background-color: white; /* Black w/opacity */
+    font-size:2em;
+    border:0;
+    color:black;
+    padding-bottom:15px;
+}
+
+input[type="text"] {
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */

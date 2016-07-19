@@ -169,6 +169,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\AndroidApplication_1.PNG" />
+    <Content Include="Images\avatar.png" />
     <Content Include="Images\AzureStorage\AzureStorage_1.PNG" />
     <Content Include="Images\AzureStorage\AzureStorage_2.PNG" />
     <Content Include="Images\AzureStorage\AzureStorage_3.PNG" />
