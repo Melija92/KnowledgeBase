@@ -27,3 +27,31 @@ $(function () {
         }
     });
 });
+
+$(document).ready(function () {
+    $('#typed-strings').hide();
+});
+
+
+$(function () {
+    $("#typed").typed({
+        stringsElement: $('#typed-strings'),
+        typeSpeed: 30,
+        backDelay: 500,
+        loop: true,
+        contentType: 'html',
+        loopCount: false,
+        callback: function () { callbackfunc(); },
+        resetCallback: function () { newTyped(); }
+    });
+
+    $(".reset").click(function () {
+        $("#typed").typed('reset');
+    });
+
+});
+
+
+function newTyped() { /* A new typed object */ }
+
+function callbackfunc() { console.log("Callback"); }

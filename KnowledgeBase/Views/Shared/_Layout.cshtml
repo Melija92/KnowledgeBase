@@ -32,6 +32,7 @@
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" />
     <script type="text/javascript" src="~/Scripts/articlesearch.js"></script>
+    <script src="~/Scripts/typed.min.js"></script>
 </head>
 <body>
     <div id="articleNav" class="overlay">
@@ -76,7 +77,16 @@
     <header id="header">
         <div id="main-placeholder">
             <div class="container" role="banner">
-                <a href="#"><p class="logo">@Html.ActionLink("Knowledge Base", Routes.ActionMethod, Routes.Controller)</p></a>
+                @*@Html.ActionLink("Knowledge Base", Routes.ActionMethod, Routes.Controller)*@
+                <div class="type-wrap">
+                    <div id="typed-strings" hidden>
+                        <span><strong>Knowledge Base</strong></span>
+                        <p>Explore.... Practice.... Learn.... </p>
+                    </div>
+                    <p class="logo">
+                        <span id="typed" style="white-space:pre;"></span>
+                    </p>
+                </div>
             </div>
         </div>
         <div id="sub-header" class="container" cmpgrp="breadcrumb" role="navigation" aria-label="breadcrumb">

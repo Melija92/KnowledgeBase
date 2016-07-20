@@ -412,6 +412,7 @@
     <Content Include="Scripts\jquery-2.2.3.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\readingTime.min.js" />
+    <Content Include="Scripts\typed.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\MVC\WorkingWithViewEnginesinMVC.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
