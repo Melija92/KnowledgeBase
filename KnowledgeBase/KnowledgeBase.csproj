@@ -408,6 +408,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="bundleconfig.json" />
     <None Include="Properties\PublishProfiles\codeformobile - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Godaddy FTP.pubxml" />
     <None Include="Properties\PublishProfiles\KBProfile.pubxml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.3.js" />
