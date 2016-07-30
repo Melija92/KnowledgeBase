@@ -2483,11 +2483,11 @@ label {
   margin-bottom: 5px;
   font-weight: bold;
 }
-input[type="search"] {
+/*input[type="search"] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}
+}*/
 input[type="radio"],
 input[type="checkbox"] {
   margin: 4px 0 0;
