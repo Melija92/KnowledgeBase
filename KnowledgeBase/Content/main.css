@@ -1040,7 +1040,7 @@ table {
     table-layout: auto;
     width: 100%;
     max-width: 100%;
-    font-size: 0.9em;
+    font-size: 1.1em;
 }
 
 @media only screen and (max-width: 769px) {
@@ -1371,7 +1371,7 @@ body {
         border: 0;
         margin-top: 0.7em;
         width: 100%;
-        text-align:center;
+        text-align: center;
         font-size: 1.5em;
         line-height: 1.1em;
         text-shadow: none;
@@ -1402,8 +1402,8 @@ body {
     border-width: 1px 0 1px 0;
     border-style: dotted none solid none;
     border-color: #e3e3e3;
-    text-align:center;
-    width:100%;
+    text-align: center;
+    width: 100%;
 }
 
 .breadcrumbs {
@@ -1411,7 +1411,7 @@ body {
     height: auto;
     margin: 0;
     padding: 0 1em 0 4em;
-    text-align:center;
+    text-align: center;
     font-size: 0.8em;
     white-space: nowrap;
     list-style: none;
@@ -1535,7 +1535,7 @@ body {
 
 @media only screen and (min-width: 1920px) {
     body {
-        font-size:1em;
+        font-size: 1em;
     }
 }
 
@@ -1652,7 +1652,8 @@ h1 {
 
 #sub-header {
     border: 0;
-    font-weight:bold;
+    font-weight: bold;
+    font-size: 1.4em;
 }
 
 #menu-nav {
@@ -1662,14 +1663,14 @@ h1 {
 #sidebar {
     position: relative;
     float: left;
-    text-align:right;
+    text-align: right;
     width: 100%;
     padding-left: 1em;
     padding-right: 1em;
 }
 
 #main {
-    border-left:1px solid lightgrey;
+    border-left: 1px solid lightgrey;
     position: relative;
     float: left;
     width: 100%;
@@ -2160,38 +2161,83 @@ h1 {
     }
 
 
-    /* code for animated blinking cursor */
-        .typed-cursor{
-            opacity: 1;
-            font-weight: 100;
-            -webkit-animation: blink 0.7s infinite;
-            -moz-animation: blink 0.7s infinite;
-            -ms-animation: blink 0.7s infinite;
-            -o-animation: blink 0.7s infinite;
-            animation: blink 0.7s infinite;
-        }
-        @-keyframes blink{
-            0% { opacity:1; }
-            50% { opacity:0; }
-            100% { opacity:1; }
-        }
-        @-webkit-keyframes blink{
-            0% { opacity:1; }
-            50% { opacity:0; }
-            100% { opacity:1; }
-        }
-        @-moz-keyframes blink{
-            0% { opacity:1; }
-            50% { opacity:0; }
-            100% { opacity:1; }
-        }
-        @-ms-keyframes blink{
-            0% { opacity:1; }
-            50% { opacity:0; }
-            100% { opacity:1; }
-        }
-        @-o-keyframes blink{
-            0% { opacity:1; }
-            50% { opacity:0; }
-            100% { opacity:1; }
-        }
+/* code for animated blinking cursor */
+.typed-cursor {
+    opacity: 1;
+    font-weight: 100;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    -ms-animation: blink 0.7s infinite;
+    -o-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+
+@-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
