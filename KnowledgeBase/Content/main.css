@@ -1,5 +1,7 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+
 html, body {
-    font-family: "Segoe UI","Segeo WP",Tahoma,Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-family: "Ubuntu", "Segoe UI","Segeo WP",Tahoma,Arial,"Helvetica Neue",Helvetica,sans-serif;
 }
 
 code, kbd, pre, samp {
@@ -7,7 +9,7 @@ code, kbd, pre, samp {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Segoe UI","Segeo WP",Tahoma,Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-family: "Ubuntu", "Segoe UI","Segeo WP",Tahoma,Arial,"Helvetica Neue",Helvetica,sans-serif;
 }
 
 [class^="icon-"], [class*=" icon-"], .alert h5:before {
@@ -126,14 +128,14 @@ div#headerWrapper {
     }
 
 .ofb-container, .ofb-container > .ofb-feedback > .ofb-form > textarea, .ofb-ui-font {
-    font-family: "Segoe UI","Segoe WP",Tahoma,Arial,sans-serif !important;
+    font-family: "Ubuntu", "Segoe UI","Segoe WP",Tahoma,Arial,sans-serif !important;
 }
 
 .ofb-container-var111 button,
 .ofb-container-var112 button,
 .ofb-container-var113 button,
 .ofb-container-var222 button {
-    font-family: "Segoe UI","Segoe WP",Tahoma,Arial,sans-serif !important;
+    font-family: "Ubuntu", "Segoe UI","Segoe WP",Tahoma,Arial,sans-serif !important;
     font-size: 0.63rem !important;
     letter-spacing: 1px !important;
     font-weight: 600 !important;

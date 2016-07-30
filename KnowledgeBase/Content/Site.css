@@ -1,11 +1,11 @@
-﻿/*@import url(https://fonts.googleapis.com/css?family=Lato);*/
+﻿@import url(https://fonts.googleapis.com/css?family=Ubuntu);
 
 body {
     /*padding-top: 50px;*/
     padding-bottom: 20px;
     overflow-y: scroll;
     overflow-x: hidden;
-    font-family: 'Segoe UI Light';
+    font-family: 'Ubuntu';
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -37,7 +37,7 @@ textarea {
     padding-top: 4px;
     padding-right: 8px;
     padding-left: 3px;
-    font-family: 'Segoe UI Light';
+    font-family: 'Ubuntu';
 }
 
 .feed_item {
