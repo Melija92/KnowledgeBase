@@ -2,28 +2,6 @@
     ViewBag.Title = "iOSIndex";
 }
 
-<script type="text/javascript">
-
-    $(document).ready(function () {
-        $('#xamarinsearch').focus();
-    });
-
-    $(function () {
-        var $rows = $('#xamarintable tr');
-        $('#xamarinsearch').keyup(function () {
-
-            var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
-                reg = RegExp(val, 'i'),
-                text;
-
-            $rows.show().filter(function () {
-                text = $(this).text().replace(/\s+/g, ' ');
-                return !reg.test(text);
-            }).hide();
-        });
-    });
-</script>
-
 <div class="col-sm-12">
     <div>
         <div>
@@ -46,6 +24,3 @@
         </div>
     </div>
 </div>
-<script src="~/Videos/index_videolb/jquery.tools.min.js" type="text/javascript"></script>
-<script src="~/Videos/index_videolb/videolightbox.js" type="text/javascript"></script>
-<!-- End VideoLightBox.com BODY section -->

@@ -159,11 +159,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\autocomplete.js" />
+    <Content Include="Content\autocomplete.min.js">
+      <DependentUpon>autocomplete.js</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css">
       <DependentUpon>bootstrap.css</DependentUpon>
     </Content>
     <Content Include="Content\main.css" />
+    <Content Include="Content\main.min.css">
+      <DependentUpon>main.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.min.css">
+      <DependentUpon>Site.css</DependentUpon>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -399,6 +408,9 @@
     <Content Include="Images\WCF_1\9.jpg" />
     <Content Include="Images\WCF_Bindings.jpg" />
     <Content Include="Scripts\articlesearch.js" />
+    <Content Include="Scripts\articlesearch.min.js">
+      <DependentUpon>articlesearch.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap.min.js.map" />
@@ -435,7 +447,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\ASPNET\Index.cshtml" />
     <Content Include="Views\Books\BooksDetail.cshtml" />
     <Content Include="Views\Books\Index.cshtml" />
     <Content Include="Views\EntityFramework\AuditingwithEntityFramework.cshtml" />
@@ -446,9 +457,6 @@
     <Content Include="Views\EntityFramework\InheritanceWithEntityFramework.cshtml" />
     <Content Include="Views\EntityFramework\Linq.cshtml" />
     <Content Include="Views\EntityFramework\LoadingObjectsinEntityFramework.cshtml" />
-    <Content Include="Views\Feedback\Comments.cshtml" />
-    <Content Include="Views\Feedback\ThankYou.cshtml" />
-    <Content Include="Views\Linq\Index.cshtml" />
     <Content Include="Views\MVC\ASPNETApplicationsUsingWaitHandles.cshtml" />
     <Content Include="Views\MVC\ASPNETMasterPages.cshtml" />
     <Content Include="Views\MVC\ASPNETRouting.cshtml" />

@@ -4,20 +4,6 @@
     ViewBag.Title = "BooksIndex";
 }
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#SearchTerm').focus();
-    });
-
-    $(function () {
-        $("input").keydown(function (e) {
-            if (e.keyCode == 13) {
-                $("#loading").fadeIn();
-            }
-        });
-    });
-</script>
-
 @using (Ajax.BeginForm("Index", FormMethod.Post, new AjaxOptions { UpdateTargetId = "tableRefresh" }, new { @class = "form-horizontal", role = "form" }))
 {
     <div id="tableRefresh">
@@ -25,8 +11,7 @@
         <div>
             @Html.TextBoxFor(m => m.SearchTerm, new { @class = "form-control pull-right searchBackgroundInner", autocomplete = "off", placeholder = "Search Books .... " })
         </div>
-        <br />
-        <div style="width:100%; border-bottom:1px solid gray;"> &nbsp;</div>
+        <div style="width:100%; border-bottom:1px dotted gray;"> &nbsp;</div>
         @if (Model != null)
                 {
             <table style="width:100%; line-height:35px;" class="table-hover">
@@ -46,14 +31,14 @@
             </table>
             <br />
             <hr />
-                    <nav>
-                        <ul class="pager">
-                            @for (int i = 1; i < Convert.ToInt32(Model.BookData.Total) / 10; i++)
-                            {
-                                <li><a href="@Url.Action("Index", new { searchTerm = TempData["SearchTerm"], pageNumber = @i })">@i</a></li>
-                            }
-                        </ul>
-                    </nav>
+            <nav>
+                <ul class="pager">
+                    @for (int i = 1; i < Convert.ToInt32(Model.BookData.Total) / 10; i++)
+                    {
+                        <li><a href="@Url.Action("Index", new { searchTerm = TempData["SearchTerm"], pageNumber = @i })">@i</a></li>
+                    }
+                </ul>
+            </nav>
         }
         else
         {
@@ -61,7 +46,7 @@
                 <br />
                 <br />
                 <br />
-                <p style="text-align:center;">No Results to show</p>
+                <p style="text-align:center; font-size:1.2em;">Oops... No Results to show.. Please refine your search and try again..</p>
             </div>
         }
     </div>

@@ -4,5 +4,29 @@
     "inputFiles": [
       "Content/bootstrap.css"
     ]
+  },
+  {
+    "outputFileName": "Content/main.min.css",
+    "inputFiles": [
+      "Content/main.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/Site.min.css",
+    "inputFiles": [
+      "Content/Site.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/autocomplete.min.js",
+    "inputFiles": [
+      "Content/autocomplete.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/articlesearch.min.js",
+    "inputFiles": [
+      "Scripts/articlesearch.js"
+    ]
   }
 ]

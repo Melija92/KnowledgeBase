@@ -55,3 +55,81 @@ $(function () {
 function newTyped() { /* A new typed object */ }
 
 function callbackfunc() { console.log("Callback"); }
+
+/// Book Search
+
+$(document).ready(function () {
+    $('#SearchTerm').focus();
+});
+
+$(function () {
+    $("input").keydown(function (e) {
+        if (e.keyCode == 13) {
+            $("#loading").fadeIn();
+        }
+    });
+});
+
+/// Xamarin
+
+$(document).ready(function () {
+    $('#xamarinsearch').focus();
+});
+
+$(function () {
+    var $rows = $('#xamarintable tr');
+    $('#xamarinsearch').keyup(function () {
+
+        var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+            reg = RegExp(val, 'i'),
+            text;
+
+        $rows.show().filter(function () {
+            text = $(this).text().replace(/\s+/g, ' ');
+            return !reg.test(text);
+        }).hide();
+    });
+});
+
+
+//Entity Framework
+
+$(document).ready(function () {
+    $('#Efsearch').focus();
+});
+$(function () {
+    var $rows = $('#eftable tr');
+    $('#Efsearch').keyup(function () {
+
+        var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+            reg = RegExp(val, 'i'),
+            text;
+
+        $rows.show().filter(function () {
+            text = $(this).text().replace(/\s+/g, ' ');
+            return !reg.test(text);
+        }).hide();
+    });
+});
+
+//// MVC
+
+$(document).ready(function () {
+    $('#mvcsearch').focus();
+});
+
+$(function () {
+
+    var $rows = $('#mvctable tr');
+    $('#mvcsearch').keyup(function () {
+
+        var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+            reg = RegExp(val, 'i'),
+            text;
+
+        $rows.show().filter(function () {
+            text = $(this).text().replace(/\s+/g, ' ');
+            return !reg.test(text);
+        }).hide();
+    });
+});
