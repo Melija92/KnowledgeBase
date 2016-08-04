@@ -608,6 +608,14 @@ namespace KnowledgeBase
                 Article = "WorkingwithAzureStorageinWebApplication",
                 Tag = "MVC"
             });
+
+            Names.Add(new ArticlesList
+            {
+                ArticleName = "Leveraging Dynamic CSharp in Application",
+                ArticleURL = "../MVC/LeveragingDynamicCsharpinApplication",
+                Article = "LeveragingDynamicCsharpinApplication",
+                Tag = "MVC"
+            });
             return Names;
         }
     }

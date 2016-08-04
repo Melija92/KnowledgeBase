@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "LeveragingDynamicCsharpinApplication";
+}
+
+<h1>Leveraging Dynamic CSharp in Application</h1>
+
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url('../../Images/avatar.png')" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <p>From VS2010, we got to see a new type in the framework called <b>dynamic</b>. This is a static type. When ever we assign any value to the object of type dynamic, at compile time it identifies the type of value that got assigned to the object and it works accordingly.</p>
+    <p>If the assignment is wrong, we don't incur any kind of errors at compile time, we experience them at run time when working with dynamic type.</p>
+    <p>here in this tutorial in which we will see working with dynamic type in some of the cases. We can leverage dynamic type in lot of cases but in this tutorial we are covering three examples.</p>
+
+    <p>Lets say we have a StringBuilder class which performs string operations. In the below piece of code we see we are trying to use Reflection to identify specific method and invoking that. Where as if we use dynamic type its very simple and can be written with simple code.</p>
+    <p>Here we are trying to invoke a member <b>AppendLine</b> and we are invoking it as a method with some arguments which obviously is a string parameter which is to be appended. </p>
+    <p>When working with dynamic type, we specify the method straightforwardly which returns the result with cleaner code. </p>
+    <script src="https://gist.github.com/guntidheerajkumar/8728a472a50103d54bb5cabaf37cda73.js"></script>
+
+    <p>When we are working on any office applications like, excel or word etc. Its very complicated to derive them in to the application as we need to deal with Interop assemblies and its quite mess in the code too..</p>
+    <p>Using dynamic type we can achieve this with out having any Interop assemblies. In the below sample we see we are getting a excel type object and mapping that to a dynamic type and performing excel operations on that.</p>
+    <p>We are using <b>Activator.CreateInstance</b> which in turn creates an object of specific type. In this case its an <b>Excel.Application</b>.</p>
+    <p>We are performing all the excel related operations on the dynamic type object. The only care that we need to take case sensitiveness. Which results in runtime errors.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/536952690a701598543c4e2aba325dc7.js"></script>
+
+    <p>When we are dealing with json data and when we consume them in our application, its needed that we need to have a concrete class of that type when we deserialize them which can hold the data. </p>
+    <p>When working with dynamic type there is no need of going with a strongly typed deserialization and we can achieve the same results with out having a seperate class which can hold the data.</p>
+    <p>In the below example, we are having a json string and we are using dynamic type of customer and storing the json data as an object and manipulating the properties under it.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/bacd8d1bb2e2815d258e4133e07c6a95.js"></script>
+
+    <p>We can leverage dynamic type in lot of places. We got to dynamic classes, dynamic methods which are very helpful in the application.</p>
+</article>

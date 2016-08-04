@@ -529,6 +529,7 @@
     <Content Include="Views\XamariniOS\WorkingwithNSDateandDateTimeinXamariniOS.cshtml" />
     <Content Include="Views\MVC\WorkingwithEntityFrameworkinNetCore.cshtml" />
     <Content Include="Views\MVC\WorkingwithAzureStorageinWebApplication.cshtml" />
+    <Content Include="Views\MVC\LeveragingDynamicCsharpinApplication.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
