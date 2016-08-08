@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "ASP.NET Applications Using Wait Handles";
+}
+
+<h1>ASP.NET Applications Using Wait Handles</h1>
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url('../../Images/avatar.png')" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <p>
+        The callback and polling models for handling asynchronous operations are useful when your application is processing only one asynchronous operation at a time. The Wait models provide a more flexible way of processing multiple asynchronous operations. There are two Wait models, named for the WaitHandle methods used to implement them: the Wait (Any) model and the Wait (All) model.
+        <br />
+        <br />
+        To use either Wait model, you need to use the AsyncWaitHandle property of the IAsyncResult object returned by the BeginExecuteNonQuery, BeginExecuteReader, or BeginExecuteXmlReader methods. The WaitAny and WaitAll methods both require you to send the WaitHandle objects as an argument, grouped together in an array.
+        <br />
+        <br />
+
+        Both Wait methods monitor the asynchronous operations, waiting for completion. The WaitAny method waits for any of the operations to complete or time out. Once you know a particular operation is complete, you can process its results and then continue waiting for the next operation to complete or time out. The WaitAll method waits for all of the processes in the array of WaitHandle instances to complete or time out before continuing.
+        <br />
+        <br />
+
+        Following is the example for handling asynchronous operations.
+    </p>
+    <script src="https://gist.github.com/guntidheerajkumar/346d7bcc9dce3552baa20e3f0eac6ef0.js"></script>
+    <script src="https://gist.github.com/guntidheerajkumar/16855acb6b4a4f78d2489b99c8006186.js"></script>
+    <p>
+        ThreadPool.QueueUserWorkItem - Queues a method for execution. The method executes when a thread pool thread becomes available. <br /><br />
+        AutoResetEvent - The AutoResetEvent class represents a local wait handle event that resets automatically when signaled, after releasing a single waiting thread.
+    </p>
+</article>

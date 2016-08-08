@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "WorkingWithViewEnginesinMVC";
+}
+
+<h1>Working With View Engines in MVC</h1>
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url('../../Images/avatar.png')" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <p>Hi All, Welcome back to knowledge Base.</p>
+
+    <p>In MVC we have two types of rendering engines</p>
+
+    <ul>
+        <li>
+            ASPX Engine
+        </li>
+        <li>
+            Razor Engine
+        </li>
+    </ul>
+
+    <p>Both are enabled by default in all MVC applications. We can enable and disable view engines based on the application type that we work.</p>
+
+    <p>If you see, when you run an MVC application and specify an Action for which there is no view associated then you will see the below result which inturn displays all the types of engines. If we are working with Razor then we should display only Razor Engine. Using the below code snippet we can make only Razor engine to work for our application.</p>
+
+    <img src="~/Images/View_1.png" width="500" height="400" class="img-responsive" />
+    <br />
+    <script src="https://gist.github.com/guntidheerajkumar/758d15103b92385cc9e9.js"></script>
+
+    <p>This will increase in performance of our MVC application.</p>
+
+    <p>Fine. We have resolved one issue with respect to holding one view engine for our application. In the above error page we see .cshtml and .vbhtml extensions. But if our application is dealing with only one extension then removing other will give correct picture of execution.</p>
+
+    <p>Following is the code snippet which makes application to look only for one specific extension. In this example we have considered .cshtml.</p>
+
+    <script src="https://gist.github.com/guntidheerajkumar/ef53e20fd9f7f1d7115a.js"></script>
+
+    <p>In the above snippet where we have specified to use RazorEngine, we now specify our custom engine so that Application now will work on Razor engine and will take only .cshtml as file types.</p>
+
+    <p>Enjoy coding......</p>
+</article>

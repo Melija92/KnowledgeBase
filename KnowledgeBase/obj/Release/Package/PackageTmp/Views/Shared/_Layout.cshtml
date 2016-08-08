@@ -1,0 +1,203 @@
+﻿@using KnowledgeBase.Models
+
+<!DOCTYPE html>
+<html>
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8" />
+    <meta property="og:title" content="Knowledge Base" />
+    <meta property="og:description" content="Knowledge base is an beginner, intermediate educating platform in technology. We are trying to bring
+          examples in simple way that it can be easily learnt and implemented." />
+    <meta property="og:url" content="http://www.guntidheerajkumar.com/" />
+    <meta property="og:site_name" content="Knowledge Base" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="http://www.guntidheerajkumar.com" />
+    <meta name="twitter:title" content="Knowledge Base" />
+    <meta name="twitter:description" content="Knowledge base is an beginner, intermediate educating platform in technology. We are trying to bring
+          examples in simple way that it can be easily learnt and implemented." />
+    <meta name="twitter:image" content="../../Images/avatar.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="knowledge Base, xamarin, pcl, portable class libraries, android, httpclient, iOS, asp.net, dependency, injection, unity, Google Authentication, OAuth, caller attributes, ravendb, nosql,live time, linq, entity framework, wcf, iis, mvc, software, programming, asynchronous, play sound, uisearchbar, tableview, dialog,  animations, extensions, ios8, pull to refresh, custom fonts, floating text, push notifications, serilog, custom cell ios" />
+    <meta name="author" content="Dheeraj Kumar Gunti">
+    <meta name="description" content="Knowledge base is an beginner, intermediate educating platform in technology. We are trying to bring
+          examples in simple way that it can be easily learnt and implemented." />
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="1 month">
+    <title>Knowledge Base - Dheeraj Kumar Gunti</title>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script src="~/Scripts/jquery-2.2.3.min.js"></script>
+    <link href="~/Content/main.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/articlesearch.min.js"></script>
+    <script src="~/Scripts/typed.min.js"></script>
+</head>
+<body>
+    <div id="articleNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeArticles()">&times;</a>
+        <div class="overlay-content">
+            <div style="margin-left:10%; margin-right:10%;">
+                <div>
+                    <input type="text" class="form-control pull-right searchBackground" id="search" placeholder="Search.." />
+                </div>
+                <br />
+                <br />
+                <br />
+                <div>
+                    <table id="table" style="width:100%; overflow-y:auto;">
+                        @foreach (var x in KBArticles.GetListArticles().ToList().Where(x => x.ArticleName != "Index" && x.ArticleName != "BooksDetail").OrderBy(a => a.ArticleName))
+                        {
+                            <tr>
+                                <td style="padding:10px;">
+                                    <span class="glyphicon glyphicon-menu-right" style="color:white;">
+                                    </span>&nbsp;&nbsp;
+                                    <a style="text-decoration:none; color:#2C3E50; font-size:1.2em;" href="@x.ArticleURL">@x.ArticleName</a>
+                                    @if (x.Tag == "Xamarin")
+                                    {
+                                        <span class="label label-success">@x.Tag</span>
+                                    }
+                                    @if (x.Tag == "MVC")
+                                    {
+                                        <span class="label label-info">@x.Tag</span>
+                                    }
+                                    @if (x.Tag == "Entitiy Framework")
+                                    {
+                                        <span class="label label-danger">@x.Tag</span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header id="header">
+        <div id="main-placeholder">
+            <div class="container" role="banner">
+                <div class="type-wrap">
+                    <div id="typed-strings" hidden>
+                        <span><strong>Knowledge Base</strong></span>
+                        <p>Explore.... Practice.... Learn.... </p>
+                    </div>
+                    <p class="logo">
+                        <span id="typed" style="white-space:pre;"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="sub-header" class="container" cmpgrp="breadcrumb" role="navigation" aria-label="breadcrumb">
+            @if (ViewBag.Title != "Home Page" && ViewBag.Title != "ThankYou" && ViewBag.Title != "Comments" && ViewBag.Title != "About")
+            {
+                <ul class="breadcrumbs">
+                    <li>
+                        @Html.ActionLink("Home", Routes.ActionMethod, Routes.Controller)
+                    </li>
+
+                    @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
+                    {
+                        <li>
+                            @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index", ViewContext.RouteData.Values["controller"].ToString())
+                        </li>
+                    }
+                    @if (ViewContext.RouteData.Values["action"].ToString() != "Index")
+                    {
+                        if (KBArticles.GetListArticles().ToList().Select(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).Count() > 0)
+                        {
+                            <li>
+                                @Html.ActionLink(KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().ArticleName, KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().Article, ViewContext.RouteData.Values["controller"].ToString())
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                @Html.ActionLink(KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().ArticleName, KBArticles.GetListArticles().Where(x => x.Article == ViewContext.RouteData.Values["action"].ToString()).FirstOrDefault().Article, ViewContext.RouteData.Values["controller"].ToString())
+                            </li>
+                        }
+                    }
+                </ul>
+            }
+        </div>
+    </header>
+    <div class="containerpage" pgarea="body">
+        <div id="toc" cmpgrp="left toc" role="navigation" aria-label="main navigation">
+            <nav id="sidebar">
+                <ol>
+                    <li class="toc-level-0">
+                        <div class="toc-content">
+                            <a href="~/MVC/Index">ASP.NET MVC &amp; C#</a>
+                        </div>
+                    </li>
+                    <li class="toc-level-0">
+                        <div class="toc-content">
+                            <a href="~/EntityFramework/Index">Entity Framework</a>
+                        </div>
+                    </li>
+                    <li class="toc-level-0">
+                        <div class="toc-content">
+                            <a href="~/XamariniOS/Index">Xamarin</a>
+                        </div>
+                    </li>
+                    <li class="toc-level-0">
+                        <div class="toc-content">
+                            <a href="~/Books/Index">Books</a>
+                        </div>
+                    </li>
+                    <li class="toc-level-0">
+                        <div class="toc-content">
+                            <a href="https://about.me/dgunti" target="_blank">About Me</a>
+                        </div>
+                    </li>
+                    <li class="toc-level-0">
+                        <div class="toc-content">
+                            <a href="#" onclick="openArticles()">All Articles</a>
+                        </div>
+                    </li>
+                    <li>
+                        <br />
+                        <br />
+                        <br />
+                        <script async src="https://apis.google.com/js/platform.js"></script>
+                        <div class="g-ytsubscribe" data-channelid="UCJTeWIq67Q5oTgfN4YgXlkw" data-layout="full" data-count="default"></div>
+                        <br />
+                        <br />
+                        <a href="https://twitter.com/iamdheerajg" class="twitter-follow-button" data-show-count="false" data-size="large" target="_blank">Follow &#64;iamdheerajg</a>
+                        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        <br />
+                        <br />
+                        <a class="twitter-share-button" data-size="large" href="https://twitter.com/intent/tweet">Tweet</a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+        <div id="main" role="main">
+            <div>
+                <div>
+                    @RenderBody()
+                </div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- KnowledgeBase -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-4802285325029828"
+                     data-ad-slot="6474686595"
+                     data-ad-format="auto"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/readingTime.min.js"></script>
+    <script>
+        $(function () {
+            $('article').readingTime({
+                wordCountTarget: '.words',
+            });
+        });
+    </script>
+</body>
+</html>

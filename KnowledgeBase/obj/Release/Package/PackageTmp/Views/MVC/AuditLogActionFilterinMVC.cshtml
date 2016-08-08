@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "AuditLogActionFilterinMVC";
+}
+
+<h1>Audit Log Action Filter in MVC</h1>
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url('../../Images/avatar.png')" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <p>Hi All,</p>
+
+    <p>Welcome back to Knowledge Base. Hope everyone are doing great.</p>
+
+    <p>These days in Application development life cycle, there is one component which is playing an important role that is auditing. There are lot of specifications and processes involved in auditing mechanism. If we take an scenario with respect to using MVC framework, we can add this process in identifying the actions auditing and data auditing.</p>
+
+    <p>In this tutorial we will see how can we perform action auditing. We can go with either writing them in a file or database table.</p>
+
+    <p>In MVC we have a concept called Filters. There are types which we can go and use them in MVC application like Authorize Filter, Error Filter, Action filter etc. In this scenario of audit logging we will use Action Filter as one way of approach.</p>
+
+    <p>Action Filter will execute in two ways, one when action execution starts and another when action execution ends.</p>
+
+    <p>Step 1: Create a custom class and name it as AuditLogActionFilter (Example) and inherit this class from ActionFilterAttribute abstract class.</p>
+
+    <p>There are multiple methods in ActionFilterAttribute class.</p>
+
+    <script src="https://gist.github.com/guntidheerajkumar/031adc8d6b40d70c9ff6.js"></script>
+
+    <p>
+        For our scenario we can go with OnActionExecuted and OnActionExecuting. We need to override these methods to accomplish our functionality.
+    </p>
+
+    <p>
+        Step 2: Override OnActionExecuted and OnActionExecuting methods.
+    </p>
+
+    <script src="https://gist.github.com/guntidheerajkumar/2b08d5ec7fcb565c7687.js"></script>
+
+    <p>
+        filterContext object can be used in fetching context related information of the action.
+    </p>
+
+    <script src="https://gist.github.com/guntidheerajkumar/6b44c48bb3a5679a980b.js"></script>
+
+    <script src="https://gist.github.com/guntidheerajkumar/2a6585ec65fbf58a9452acfd2bb0e961.js"></script>
+
+    <p>
+        In the above code snippet we are trying to fetch the RouteData information. We can use related properties based on how and what we need to store in the log.
+    </p>
+
+    <p>
+        We can indicate to user whether the action executed successfully or not also using the below snippet which we need to add in OnActionExecuted method.
+    </p>
+
+    <script src="https://gist.github.com/guntidheerajkumar/1710c7c8775896890ec52f8db8bbecfe.js"></script>
+
+    <p>
+        Complete methods look like this (We can extend the process based on our need)
+    </p>
+
+    <script src="https://gist.github.com/guntidheerajkumar/f39b78a2dd398c745f39899033120e8d.js"></script>
+
+    <script src="https://gist.github.com/guntidheerajkumar/d1ba7357927c9824450f.js"></script>
+
+    <script src="https://gist.github.com/guntidheerajkumar/da63cb7c824c1c924e22.js"></script>
+
+    <p>
+        We can use this Filter across all the ActionMethods in our application.
+    </p>
+
+
+    <script src="https://gist.github.com/guntidheerajkumar/e0b71f8bd46e3b45382d.js"></script>
+
+    <p>
+        ActionType can be used in making the log more meaningful.
+    </p>
+
+    <p>Download the Class File from here.</p>
+
+    <script src="https://gist.github.com/guntidheerajkumar/8d837119d2ded516b035.js"></script>
+</article>

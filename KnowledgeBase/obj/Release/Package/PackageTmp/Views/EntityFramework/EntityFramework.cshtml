@@ -1,0 +1,156 @@
+﻿@{
+    ViewBag.Title = "Entity Framework";
+}
+
+<h1>Entity Framework</h1>
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url('../../Images/avatar.png')" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <p>
+        The ADO.NET Entity Framework is an Object/Relational Mapping (ORM) framework that enables developers to work with relational data as domain-specific objects, eliminating the need for most of the data access plumbing code that developers usually need to write. Using the Entity Framework, developers issue queries using LINQ, then retrieve and manipulate data as strongly typed objects. The Entity Framework’s ORM implementation provides services like change tracking, identity resolution, lazy loading, and query translation so that developers can focus on their application-specific business logic rather than the data access fundamentals.
+        <br />
+        <br />
+        High-level capabilities of the Entity Framework:
+        <br />
+        <ul>
+            <li>  Works with a variety of database servers (including Microsoft SQL Server, Oracle, and DB2).</li>
+            <li>Includes a rich mapping engine that can handle real-world database schemas and works well with stored procedures.</li>
+            <li>Provides integrated Visual Studio tools to visually create entity models and to auto-generate models from an existing database. New databases can be deployed from a model, which can also be hand-edited for full control.</li>
+            <li>Integrates well into all the .NET application programming models including ASP.NET, Windows Presentation Foundation (WPF), Windows Communication Foundation (WCF), and WCF Data Services (formerly ADO.NET Data Services)</li>
+        </ul>
+    </p>
+    <br />
+    <br />
+    <img src="~/Images/EF/EF_1.png" class="img-responsive" />
+    <br />
+    <br />
+    <p>
+        The Entity Framework is built on the existing ADO.NET provider model, with existing providers being updated additively to support the new Entity Framework functionality. Because of this, existing applications built on ADO.NET can be carried forward to the Entity Framework easily with a programming model that is familiar to ADO.NET developers.
+        <br />
+        <br />
+        Using the Entity Framework to write data-oriented applications provides the following benefits:
+        <br />
+        <ul>
+            <li>Reduced development time: the framework provides the core data access capabilities so developers can concentrate on application logic.</li>
+            <li>Developers can work in terms of a more application-centric object model, including types with inheritance, complex members, and relationships. In .NET Framework 4, the Entity Framework also supports Persistence Ignorance through Plain Old CLR Objects (POCO) entities.</li>
+            <li>Applications are freed from hard-coded dependencies on a particular data engine or storage schema by supporting a conceptual model that is independent of the physical/storage model.</li>
+            <li>Mappings between the object model and the storage-specific schema can change without changing the application code.</li>
+            <li>Language-Integrated Query support (called LINQ to Entities) provides IntelliSense and compile-time syntax validation for writing queries against a conceptual model.</li>
+            <li>The Entity Framework uses the Entity Data Model (EDM) to describe the application-specific object or “conceptual” model against which the developer programs. The EDM builds on the widely known Entity Relationship model (introduced by Dr. Peter Chen) to raise the abstraction level above logical database schemas. The EDM was developed with the primary goal of becoming the common data model across a suite of developer and server technologies from Microsoft. Thus an EDM created for use with the Entity Framework can also be leveraged with WCF Data Services (formerly ADO.NET Data Services), Windows Azure Table Storage, SharePoint 2010, SQL Server Reporting Services, and SQL Server PowerPivot for Excel, with more coming in the future.</li>
+        </ul>
+        <br />
+        Example on Creating Application using Entity Framework
+        <br />
+    </p>
+    <br />
+    <img src="~/Images/EF/EF_2.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <img src="~/Images/EF/EF_3.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <img src="~/Images/EF/EF_4.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <img src="~/Images/EF/EF_5.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <img src="~/Images/EF/EF_6.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <img src="~/Images/EF/EF_7.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <img src="~/Images/EF/EF_8.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <img src="~/Images/EF/EF_9.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p>Add a grid to the page and a link button for adding a record to the db.</p>
+    <br />
+    <img src="~/Images/EF/EF_10.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p>Create a page for adding and editing record as below.</p>
+    <br />
+    <img src="~/Images/EF/EF_11.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p>In the default.aspx page add the following code for showing data in the grid.</p>
+    <br />
+    <img src="~/Images/EF/EF_12.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p>In AddEdit.aspx Page add the following code for saving the record in to the database.</p>
+    <br />
+    <img src="~/Images/EF/EF_13.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p>Following is the sample data entered in the screen and once click on save this data will be saved to database.</p>
+    <br />
+    <img src="~/Images/EF/EF_14.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p>Once data is saved in to database automatically the data will be populated to the grid.</p>
+    <br />
+    <img src="~/Images/EF/EF_15.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p>For editing record we used a link button and on using onCommand event we are fetching the id of the record and based on that we are redirecting the page to AddEdit.aspx with ID value as querystring.</p>
+    <br />
+    <img src="~/Images/EF/EF_16.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p>Query string value is shown as below.</p>
+    <br />
+    <img src="~/Images/EF/EF_17.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p>When ever the AddEdit Page is loaded when we clicked on Edit button in the Default.aspx page then we need to populate the data in the respective controls using the following code.</p>
+    <br />
+    <img src="~/Images/EF/EF_18.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p>We are using single control for adding and updating record. Based on the querystring value we are doing this process. following is the code for Adding and Updating record.</p>
+    <br />
+    <img src="~/Images/EF/EF_19.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p>Once the data is populated it will be shown as below.</p>
+    <br />
+    <img src="~/Images/EF/EF_20.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p>On Updating the record the new data will be updated to the grid.</p>
+    <br />
+    <img src="~/Images/EF/EF_21.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p>For deleting the record we used one more link button and we are showing a confirmation box to the user, so that to confirm whether the to delete or not using client site script.</p>
+    <br />
+    <img src="~/Images/EF/EF_22.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p>On clicking on delete a message box will be shown to the user for confirmation.</p>
+    <br />
+    <img src="~/Images/EF/EF_23.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p>Following the code written for deleting the record.</p>
+    <br />
+    <img src="~/Images/EF/EF_24.jpg" class="img-responsive" />
+    <br /><br />
+    <a href="http://www.box.net/shared/kdquu9un1g" class="btn btn-danger">
+        Sample
+    </a>
+</article>

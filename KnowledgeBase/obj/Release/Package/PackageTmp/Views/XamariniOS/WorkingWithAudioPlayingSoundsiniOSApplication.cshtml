@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Working With Audio Playing Sounds in iOS Application";
+}
+
+<h1>Working With Audio - Playing Sounds in iOS Application</h1>
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url('../../Images/avatar.png')" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <br />
+    <p>Having some kind of effect to the application brings more user friendly. In that one of the item is playing sound. Here is the small snippet to play a sound in iOS Application.</p>
+<pre>
+<span style='color:#800000; font-weight:bold; '>using</span> AudioToolbox<span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>string</span> NotificationSoundPath <span style='color:#808030; '>=</span> <span style='color:#800000; '>&#64;"</span><span style='color:#0000e6; '>/System/Library/Audio/UISounds/New/Fanfare.caf</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span>
+SystemSound notificationSound <span style='color:#808030; '>=</span> SystemSound<span style='color:#808030; '>.</span>FromFile <span style='color:#808030; '>(</span>NotificationSoundPath<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+notificationSound<span style='color:#808030; '>.</span>AddSystemSoundCompletion <span style='color:#808030; '>(</span>SystemSound<span style='color:#808030; '>.</span>Vibrate<span style='color:#808030; '>.</span>PlaySystemSound<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+notificationSound<span style='color:#808030; '>.</span>PlaySystemSound <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+</article>

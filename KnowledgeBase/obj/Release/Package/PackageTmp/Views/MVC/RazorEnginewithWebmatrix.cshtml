@@ -1,0 +1,201 @@
+﻿@{
+    ViewBag.Title = "Razor Engine with Webmatrix";
+}
+
+<h1>Razor Engine with Web matrix</h1>
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url('../../Images/avatar.png')" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <p>
+        WebMatrix is a task-focused tool that is designed to make it really easy to get started with web development. It minimizes the number of concepts someone needs to learn in order to get simple things done, and includes and integrates all of the pieces necessary to quickly build Web sites. WebMatrix is a bundle of software running on the developer's machine, with the aim of simplifying the process of web application development using Windows. The bundle includes the IIS Express web server, the SQL Server Compact database engine and the ASP.NET Web Pages framework.
+        <br />
+        <br />
+        The ASP.NET Web Pages framework contains the 'Razor' syntax for inline coding of C# and VB within HTML.
+        <br />
+        <br />
+        WebMatrix claims to simplify the website development process because it:
+        <ul>
+            <li>Is a relatively small, free download</li>
+            <li>Allows code to be written using ASP.NET, 'Razor', or PHP</li>
+            <li>Supports HTML5</li>
+            <li>Integrates a web server (IIS Express) and a database engine (SQL Server Compact)</li>
+            <li>Installs and configures components such as PHP or MySQL for Windows users</li>
+            <li>Integrates deployment via FTP or WebDeploy</li>
+            <li>Allows deployment to LAMP-based servers as well as Windows-based servers</li>
+            <li>Includes Search Engine Optimization (SEO) tools</li>
+            <li>Following are the few methods used,</li>
+        </ul>
+        <b>Database.Open Method</b>
+        <br />
+        <br />
+        Opens a connection to a database using the specified file name or using the named connection string. The name associated with the database to open. name can specify an .sdf (SQL Compact data file) or .mdf (SQL Server Master database file) database file that is in the App_Data folder. (Do not include the file-name extension.) Alternatively, name can specify the name of a connection string in the Web.config file. The Open(String) method can connect to a database in two ways. The Open(String) method first searches the Web application's App_Data folder for a database file that matches the name that is passed (without the file-name extension) to the method. If no matching database file is found, the method searches the application's Web.config file for a connection string that matches name.
+    </p>
+<pre>
+Database<span style='color:#808030; '>.</span>Open
+Database<span style='color:#808030; '>.</span>Open<span style='color:#808030; '>(</span>filename<span style='color:#808030; '>)</span> 
+Database<span style='color:#808030; '>.</span>Open<span style='color:#808030; '>(</span>connectionStringName<span style='color:#808030; '>)</span>
+Opens either the specified database file or the database specified <span style='color:#800000; font-weight:bold; '>using</span> a 
+named connection <span style='color:#800000; font-weight:bold; '>string</span> from the Web<span style='color:#808030; '>.</span>config file<span style='color:#808030; '>.</span>
+<span style='color:#696969; '>// Note that no filename extension is specified.</span>
+<span style='color:#800000; font-weight:bold; '>var</span> db <span style='color:#808030; '>=</span> Database<span style='color:#808030; '>.</span>Open<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>SmallBakery</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span> <span style='color:#696969; '>// Opens SmallBakery.sdf in App_Data</span>
+<span style='color:#696969; '>// Opens a database by using a named connection string.</span>
+<span style='color:#800000; font-weight:bold; '>var</span> db <span style='color:#808030; '>=</span> Database<span style='color:#808030; '>.</span>Open<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>SmallBakeryConnectionString</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+Database<span style='color:#808030; '>.</span>OpenConnectionString<span style='color:#808030; '>(</span>connectionString<span style='color:#808030; '>)</span>
+Opens a database <span style='color:#800000; font-weight:bold; '>using</span> the connection <span style='color:#800000; font-weight:bold; '>string</span><span style='color:#808030; '>.</span> <span style='color:#808030; '>(</span>This contrasts with Database<span style='color:#808030; '>.</span>Open<span style='color:#808030; '>,</span> which uses a connection <span style='color:#800000; font-weight:bold; '>string</span> name<span style='color:#808030; '>.</span><span style='color:#808030; '>)</span>
+<span style='color:#800000; font-weight:bold; '>var</span> db <span style='color:#808030; '>=</span> Database<span style='color:#808030; '>.</span>OpenConnectionString<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Data Source=|DataDirectory|\SmallBakery.sdf</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+    <p>
+        <b>Database.Query Method</b>
+        <br />
+        <br />
+        Executes a SQL query that returns a list of rows as the result. This method returns IEnumerable object.
+    </p>
+<pre>
+Database<span style='color:#808030; '>.</span>Query<span style='color:#808030; '>(</span>SQLstatement<span style='color:#808030; '>[</span><span style='color:#808030; '>,</span> parameters<span style='color:#808030; '>]</span><span style='color:#808030; '>)</span>
+Queries the database <span style='color:#800000; font-weight:bold; '>using</span> SQLstatement <span style='color:#808030; '>(</span>optionally passing parameters<span style='color:#808030; '>)</span> and returns the results <span style='color:#800000; font-weight:bold; '>as</span> a collection<span style='color:#808030; '>.</span> 
+<span style='color:#800000; font-weight:bold; '>foreach</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>var</span> result <span style='color:#800000; font-weight:bold; '>in</span> db<span style='color:#808030; '>.</span>Query<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>SELECT * FROM PRODUCT</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+    &#64;result<span style='color:#808030; '>.</span>Name
+<span style='color:#800080; '>}</span> 
+<span style='color:#800000; font-weight:bold; '>foreach</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>var</span> result <span style='color:#808030; '>=</span> db<span style='color:#808030; '>.</span>Query<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>SELECT * FROM PRODUCT WHERE Price > &#64;0</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>20</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span> 
+<span style='color:#800080; '>{</span> &#64;result<span style='color:#808030; '>.</span>Name
+<span style='color:#800080; '>}</span>
+</pre>
+    <p>
+        <b>Database.Execute Method</b>
+        <br />
+        <br />
+        Executes SQLstatement (with optional parameters) such as INSERT, DELETE, or UPDATE and returns a count of affected records.
+    </p>
+<pre>
+Database<span style='color:#808030; '>.</span>Execute<span style='color:#808030; '>(</span>SQLstatement <span style='color:#808030; '>[</span><span style='color:#808030; '>,</span> parameters<span style='color:#808030; '>]</span>
+</pre>
+    <p>
+        <b>Database.GetLastInsertId() Method</b>
+        <br />
+        <br />
+        This method returns the identity column from the most recently inserted row.
+    </p>
+<pre>
+db<span style='color:#808030; '>.</span>Execute<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>INSERT INTO Data (Name) VALUES ('Smith')</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span> 
+<span style='color:#800000; font-weight:bold; '>var</span> id <span style='color:#808030; '>=</span> db<span style='color:#808030; '>.</span>GetLastInsertId<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+    <p>
+        <b>Database.QuerySingle Method</b>
+        <br />
+        <br />
+        Executes SQLstatement (with optional parameters) and returns a single record.
+    </p>
+<pre>
+Database<span style='color:#808030; '>.</span>QuerySingle<span style='color:#808030; '>(</span>SQLstatement <span style='color:#808030; '>[</span><span style='color:#808030; '>,</span> parameters<span style='color:#808030; '>]</span><span style='color:#808030; '>)</span>
+<span style='color:#800000; font-weight:bold; '>var</span> product <span style='color:#808030; '>=</span> db<span style='color:#808030; '>.</span>QuerySingle<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>SELECT * FROM Product WHERE Id = 1</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span> 
+<span style='color:#800000; font-weight:bold; '>var</span> product <span style='color:#808030; '>=</span> db<span style='color:#808030; '>.</span>QuerySingle<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>SELECT * FROM Product WHERE Id = &#64;0</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>1</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+    <p>
+        <b>Href Property</b>
+        <br />
+        <br />
+        Creates a browser-compatible URL from a local file path, with optional additional path parts.
+    </p>
+<pre>
+Href<span style='color:#808030; '>(</span>path <span style='color:#808030; '>[</span><span style='color:#808030; '>,</span> param1 <span style='color:#808030; '>[</span><span style='color:#808030; '>,</span> param2<span style='color:#808030; '>]</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span>
+</pre>
+    <p>
+        <b>IsPost Property</b>
+        <br />
+        <br />
+        Returns true if the request is a POST. (Initial requests are usually a GET.)
+    </p>
+    <p>
+        <b>UrlData[index]</b>
+        <br />
+        <br />
+        Gets additional data from the URL (for example, /MyPage/ExtraData).
+    </p>
+<pre>
+<span style='color:#800000; font-weight:bold; '>var</span> pathInfo <span style='color:#808030; '>=</span> UrlData<span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>
+</pre>
+    <p>
+        Following is the step by step example:
+        <br />
+        <br />
+        Open Webmatrix.
+        <br />
+    </p>
+    <img src="~/Images/Razor/Razor_1.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p>You can download the webmatrix from &nbsp;<a hrel="http://go.microsoft.com/fwlink/?LinkID=286266">Here</a></p>
+    <br />
+    <p>Click on Site from Template option</p>
+    <img src="~/Images/Razor/Razor_2.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p>Specify a meaningful name and click on Ok.</p>
+    <br />
+    <img src="~/Images/Razor/Razor_3.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <img src="~/Images/Razor/Razor_4.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <img src="~/Images/Razor/Razor_5.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <img src="~/Images/Razor/Razor_6.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <img src="~/Images/Razor/Razor_7.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <img src="~/Images/Razor/Razor_8.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <img src="~/Images/Razor/Razor_9.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <img src="~/Images/Razor/Razor_10.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <img src="~/Images/Razor/Razor_11.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p>
+        Create a file on selecting files and click on Create New File.
+        <br />
+        <br />
+        <b>List Details: </b>Following is the code for selecting data.
+    </p>
+    <br />
+    <img src="~/Images/Razor/Razor_12.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p>Create another file to add movie data.</p>
+    <br />
+    <img src="~/Images/Razor/Razor_13.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p>another file to update data.</p>
+    <br />
+    <img src="~/Images/Razor/Razor_14.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <p>
+        You can specify the default document as below.
+    </p>
+    <br />
+    <img src="~/Images/Razor/Razor_15.jpg" class="img-responsive" />
+    <br />
+    <br />
+    <a href="http://www.box.com/s/hlrtugfjlqvc4g7ixkkf" class="btn btn-danger">
+        Sample
+    </a>
+</article>

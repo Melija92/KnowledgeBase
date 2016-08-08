@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "MVCIndex";
+}
+
+<div>
+    <br />
+    <div>
+        <input type="text" class="form-control pull-right searchBackgroundInner" id="mvcsearch" placeholder="Search Articles" />
+    </div>
+    <div style="width:100%; border-bottom:1px dotted gray;"> &nbsp;</div>
+    <br />
+    <div>
+        <table id="mvctable" class="table-hover" style="width:100%;">
+            @foreach (var x in KBArticles.GetMVCList().ToList())
+            {
+                <tr>
+                    <td style="padding:10px;">
+                        <span class="glyphicon glyphicon-menu-right"></span>&nbsp;&nbsp;<a style="text-decoration:none; color:#2C3E50;" href="@x.ArticleURL">@x.ArticleName</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+

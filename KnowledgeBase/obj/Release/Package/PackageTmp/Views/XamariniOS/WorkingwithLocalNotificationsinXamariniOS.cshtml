@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "WorkingwithLocalNotificationsinXamariniOS";
+}
+
+<h2>Working with Local Notifications in iOS</h2>
+
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url('../../Images/avatar.png')" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <p>Hi All, Welcome back to Knowledge Base.</p>
+    <p>Usually in any mobile application which we deal with manipulating data, we need to have a mechanism to indicate to the user about the changes that are been done to the data. Either we can do them by Alerting or by notifying them. </p>
+    <p>In Today's example we will see how to deal with local notifications in iOS application.</p>
+    <p>Create a basic iOS application and in one of the view controller have the below logic where on performing certain actions you need to configure the local notification.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/9a2f579de0a395607f992d0f28cfcc4f.js"></script>
+
+    <p>We have done configuring the Local notification. But our application should notify us when the notification arrives.</p>
+    <p>We will do that AppDelegate. We need to override <u>ReceivedLocalNotification</u> which deals with notifying the user when notification comes.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/3fb58c2328ee98519e8ab6f8c2655a47.js"></script>
+
+    <p>This is the simple way to configure and notify the user when any local notification comes.</p>
+
+    <p>Hapy Coding....</p>
+</article>

@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Working on Animations Bubble Animation";
+}
+
+<h1>Working on Animations Bubble Animation</h1>
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url('../../Images/avatar.png')" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <br />
+    <p>Hi All, Welcome Back.</p>
+    <p>Today we will see how to have a simple animation with bubble image view.</p>
+    <p>Here is the small example to create an simple animation.</p>
+    <p>Open Xamain Studio and Create new Empty Solution. Add new View Controller.</p>
+    <p>Download the below image for the sample.</p>
+    <img src="~/Images/bubble.png" width="100" height="100" />
+    <br />
+    <br />
+    <p>Add the above image to resources.</p>
+    <p>Below is the code snippet for making the bubble to animate.</p>
+<pre>
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>override</span> <span style='color:#800000; font-weight:bold; '>void</span> ViewDidLoad <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>base</span><span style='color:#808030; '>.</span>ViewDidLoad <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>.</span>EdgesForExtendedLayout <span style='color:#808030; '>=</span> UIRectEdge<span style='color:#808030; '>.</span>None<span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>.</span>View<span style='color:#808030; '>.</span>BackgroundColor <span style='color:#808030; '>=</span> UIColor<span style='color:#808030; '>.</span>White<span style='color:#800080; '>;</span>
+	UIImageView view <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> UIImageView <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>new</span> CGRect <span style='color:#808030; '>(</span><span style='color:#008c00; '>100</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>100</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>153</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>153</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	view<span style='color:#808030; '>.</span>Image <span style='color:#808030; '>=</span> UIImage<span style='color:#808030; '>.</span>FromBundle <span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>bubble</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>.</span>View<span style='color:#808030; '>.</span>AddSubview <span style='color:#808030; '>(</span>view<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	CAKeyFrameAnimation pathAnimation <span style='color:#808030; '>=</span> <span style='color:#808030; '>(</span>CAKeyFrameAnimation<span style='color:#808030; '>)</span>CAKeyFrameAnimation<span style='color:#808030; '>.</span>FromKeyPath <span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>position</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	pathAnimation<span style='color:#808030; '>.</span>CalculationMode <span style='color:#808030; '>=</span> CAAnimation<span style='color:#808030; '>.</span>AnimationLinear<span style='color:#800080; '>;</span>
+	pathAnimation<span style='color:#808030; '>.</span>FillMode <span style='color:#808030; '>=</span> CAFillMode<span style='color:#808030; '>.</span>Forwards<span style='color:#800080; '>;</span>
+	pathAnimation<span style='color:#808030; '>.</span>RemovedOnCompletion <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>false</span><span style='color:#800080; '>;</span>
+	pathAnimation<span style='color:#808030; '>.</span>RepeatCount <span style='color:#808030; '>=</span> <span style='color:#008000; '>18.0</span><span style='color:#006600; '>f</span><span style='color:#800080; '>;</span>
+	pathAnimation<span style='color:#808030; '>.</span>Duration <span style='color:#808030; '>=</span> <span style='color:#008000; '>11.0</span><span style='color:#800080; '>;</span>
+	pathAnimation<span style='color:#808030; '>.</span>TimingFunction <span style='color:#808030; '>=</span> CAMediaTimingFunction<span style='color:#808030; '>.</span>FromName <span style='color:#808030; '>(</span>CAMediaTimingFunction<span style='color:#808030; '>.</span>Linear<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	CGPath path <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> CGPath <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	path<span style='color:#808030; '>.</span>AddRect <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>new</span> CGRect <span style='color:#808030; '>(</span>view<span style='color:#808030; '>.</span>Frame<span style='color:#808030; '>.</span>X<span style='color:#808030; '>,</span> view<span style='color:#808030; '>.</span>Frame<span style='color:#808030; '>.</span>Y<span style='color:#808030; '>,</span> <span style='color:#008c00; '>23</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>23</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	pathAnimation<span style='color:#808030; '>.</span>Path <span style='color:#808030; '>=</span> path<span style='color:#800080; '>;</span>
+	view<span style='color:#808030; '>.</span>Layer<span style='color:#808030; '>.</span>AddAnimation <span style='color:#808030; '>(</span>pathAnimation<span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>myCircleAnimation</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>
+    <br />
+    <br />
+    <p>Enjoy Coding.... :)</p>
+</article>

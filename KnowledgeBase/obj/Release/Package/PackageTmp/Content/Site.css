@@ -1,0 +1,262 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Arima+Madurai);
+body {
+    /*padding-top: 50px;*/
+    padding-bottom: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-family: 'Arima Madurai';
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists
+   will truncate terms that are too long to fit in the left column
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default
+input,
+select,
+textarea {
+    max-width: 320px;
+}*/
+
+
+.firstcharacter {
+    float: left;
+    color: #2C3E50;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+    font-family: 'Arima Madurai';
+}
+
+.feed_item {
+}
+
+.feed_item_title {
+    font-style: oblique !important;
+}
+
+.feed_item_description {
+}
+
+.feed_item_date {
+}
+
+.widthtext {
+    width: 500px;
+}
+
+.pager li a {
+    background: white;
+    color: black;
+}
+
+    .pager li a:hover {
+        font-weight: bold;
+        background-color: white;
+        color: black;
+        text-decoration: underline;
+    }
+
+#loading {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.8);
+    z-index: 1000;
+}
+
+#loadingcontent {
+    display: table;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#loadingspinner {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    text-align: center;
+    font-size: larger;
+    padding-top: 60px;
+}
+
+
+.scrollToTop {
+    width: 100px;
+    height: 130px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #444;
+    text-decoration: none;
+    position: fixed;
+    bottom: 75px;
+    right: 40px;
+    display: none;
+    z-index: 3000;
+}
+
+    .scrollToTop:hover {
+        text-decoration: none;
+    }
+
+.panel-info {
+    border-color: #2C3E50;
+    border: 0;
+}
+
+    .panel-info > .panel-heading {
+        background-color: white;
+        border-color: #ffffff;
+        color: #2C3E50;
+        text-transform: uppercase;
+        font-weight: bold;
+        border-bottom: 1px solid #2C3E50;
+    }
+
+        .panel-info > .panel-heading a {
+            text-transform: lowercase;
+        }
+
+.panel-body {
+    padding: 5px;
+}
+
+#corner a {
+    position: absolute;
+    bottom: -84px;
+    right: 24px;
+    color: #D03A2E;
+    font: normal 18px/30px Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+#corner {
+    position: fixed;
+    bottom: -10px;
+    z-index: 8000;
+    right: -10px;
+    transform: translateX(0);
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    border-left: 100px solid transparent;
+    border-Bottom: 100px solid #2C3E50;
+    height: 0;
+    width: 0;
+}
+
+.inputgroup .input {
+    max-width: 600px !important;
+}
+
+
+.panel .panel-heading {
+    overflow: hidden;
+}
+
+/*h2 {
+    font-family: 'Segoe UI Light';
+    padding-bottom: 10px;
+}*/
+
+.sidebarMain {
+    position: fixed;
+}
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow: hidden; /* Disable horizontal scroll */
+    transition: 0.3s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    top: 4%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: left; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+.overlay-content a {
+    color:white !important;
+}
+
+/* Position the close button (top right corner) */
+.closebtn {
+    position: absolute;
+    top: 15px !important;
+    right: 25px !important;
+    text-decoration:none;
+    font-size: 40px !important; /* Override the font-size specified earlier (36px) for all navigation links */
+}
+
+.searchBackground {
+    background-color: #191919; /* Black w/opacity */
+    font-size:2.3em;
+    border:0;
+    color:white;
+    padding-bottom:15px;
+}
+
+.searchBackgroundInner {
+    background-color: white; /* Black w/opacity */
+    font-size:2.3em;
+    border:0;
+    color:black;
+    padding-bottom:15px;
+}
+
+input[type="text"] {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px;
+        text-decoration:none;
+    }
+
+    .closebtn {
+        font-size: 40px !important;
+        top: 15px;
+        right: 25px;
+        text-decoration:none;
+    }
+}

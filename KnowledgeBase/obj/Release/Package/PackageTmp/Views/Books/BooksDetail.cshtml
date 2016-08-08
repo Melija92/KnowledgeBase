@@ -1,0 +1,43 @@
+﻿@model KnowledgeBase.Models.BooksList
+
+@{
+    ViewBag.Title = "BooksDetail";
+}
+
+<div>
+    <div class="col-sm-12">
+        <div class="col-sm-4">
+            <img alt="" src="@Url.Content(Model.Image)"><br />
+        </div>
+        <div class="col-sm-8" style="text-align:justify;">
+            <div class="row">
+                <p><b>Title : </b>@Html.DisplayFor(m => m.Title) </p>
+            </div>
+            <div class="row">
+                <p><b> SubTitle : </b>@Html.DisplayFor(m => m.SubTitle) </p>
+            </div>
+            <div class="row">
+                <p><b> Description : </b>@Html.DisplayFor(m => m.Description) </p>
+            </div>
+            <div class="row">
+                <p><b> Author : </b>@Html.DisplayFor(m => m.Author) </p>
+            </div>
+            <div class="row">
+                <p><b> ISBN : </b>@Html.DisplayFor(m => m.ISBN) </p>
+            </div>
+            <div class="row">
+                <p><b> Number of Pages : </b>@Html.DisplayFor(m => m.Page) </p>
+            </div>
+            <div class="row">
+                <p><b> Published Year : </b>@Html.DisplayFor(m => m.Year) </p>
+            </div>
+            <div class="row">
+                <p><b> Publisher : </b>@Html.DisplayFor(m => m.Publisher) </p>
+            </div>
+            <div class="row">
+                <p>  <a href="@Url.Content(Model.Download)">Click here to Download</a> </p>
+            </div>
+        </div>
+    </div>
+</div>
+

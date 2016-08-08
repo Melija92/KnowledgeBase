@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Creating Custom TableViewCell";
+}
+
+<h1>Creating Custom TableViewCell</h1>
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url('../../Images/avatar.png')" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <br />
+    <p>Hello All, Welcome back again.</p>
+    <p>In General Application development presentation is the key item to be concentrated first. If we have TableViews in our application presenting them in beautiful way is a key challenge. If we want to have custom design for representing list of items with TableViews then we need to go with CustomTableViewCells.</p>
+    <p>Following is the step by step example for creating Custom TableViewCell.</p>
+    <p>Open Xamarin Studio and Create a new Application.</p>
+    <img src="~/Images/iOSCustomTableCell/CustomTableCell_1.png" class="img-responsive" />
+    <br /><br />
+    <p>Once the default skeleton is created. Add a ViewController to the solution.</p>
+    <img src="~/Images/iOSCustomTableCell/CustomTableCell_2.png" class="img-responsive" />
+    <br /><br />
+    <p>Open the View Controller and Create a Sample Class with two properties.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/0bb3b8dddff1c1b40d3a87b8643d9929.js"></script>
+    <p>Create a TableSource which populates all the data to the table.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/58d4d95d807475b15acbfec8c1a6c339.js"></script>
+    <p>On the ViewDidLoad create an object for TableView and create a object for TableViewSource and add the TableView to the ParentView.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/06a41b28afe1b6e43bbeff3ffba78f03.js"></script>
+    <p>Populate some test data to the Person.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/805f88097ebd8f4f7be88cdb7abad90f.js"></script>
+    <p>Right Click on the Project and Add New File and Choose iOS section and Select iPhone Table View Cell</p>
+    <img src="~/Images/iOSCustomTableCell/CustomTableCell_3.png" class="img-responsive" />
+    <br />
+    <br />
+    <p>Once the file is successfully created in the project. Open the .XIB file in Interface Builder and design the scree as below.</p>
+    <img src="~/Images/iOSCustomTableCell/CustomTableCell_4.png" class="img-responsive" />
+    <br />
+    <br />
+    <p>Open the CustomCell.designer.cs file and you can able to see the outlets got created.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/17f21640f085f517a182b9653b960978.js"></script>
+    <p>In the TableView Source GetCell method you can see how we are accessing CustomTableViewCell and its properties.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/386987a769c3649e72ad961182f874f4.js"></script>
+    <br />
+    <b><u>Output:</u></b>
+    <br />
+    <br />
+    <img src="~/Images/iOSCustomTableCell/CustomTableCell_5.jpg" class="img-responsive" width="200" height="300" />
+    <br /><br />
+    <p>Enjoy Coding.... :)</p>
+    </article>

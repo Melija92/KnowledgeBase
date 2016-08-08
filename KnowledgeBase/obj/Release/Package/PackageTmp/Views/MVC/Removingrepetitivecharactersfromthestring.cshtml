@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Removing Repetitive Characters from the string";
+}
+
+<h1>Removing Repetitive Characters from the string</h1>
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url('../../Images/avatar.png')" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <br />
+<pre>
+<span style='color:#800000; font-weight:bold; '>var</span> test <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Thiiiiiiiiiiisssssssss iiiiiisssssss ttttttteeeeessssssssst apppppppppllllliiiiccationnnnn</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span>
+            test<span style='color:#808030; '>.</span>Distinct<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>Select<span style='color:#808030; '>(</span>c <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> c<span style='color:#808030; '>.</span>ToString<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>ToList<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+    <span style='color:#808030; '>.</span>ForEach<span style='color:#808030; '>(</span>c <span style='color:#808030; '>=</span><span style='color:#808030; '>></span>
+    <span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>while</span> <span style='color:#808030; '>(</span>test<span style='color:#808030; '>.</span>Contains<span style='color:#808030; '>(</span>c <span style='color:#808030; '>+</span> c<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+                        test <span style='color:#808030; '>=</span> test<span style='color:#808030; '>.</span>Replace<span style='color:#808030; '>(</span>c <span style='color:#808030; '>+</span> c<span style='color:#808030; '>,</span> c<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+</article>

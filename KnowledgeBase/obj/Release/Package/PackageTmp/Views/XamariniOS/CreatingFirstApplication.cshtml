@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Title = "Creating First Application";
+}
+
+<h1>Creating First iOS Application</h1>
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url('../../Images/avatar.png')" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <p>
+        Hi All,
+        <br />
+        Welcome to the first iOS Application. In this tutorial we will see how to create a basic iPhone application. I will be illustrating in a straight forward way where you will know the basic structure and execution of an iPhone application.
+        <br />
+        <br />
+        Lets get started.
+        <br />
+        <br />
+        First of all for creating an iPhone application with Xamarin Studio you need to register in Xamarin and get a Trail license which works for 30 days. Or else you can have an start up Indie license.
+        <br />
+        <br />
+        Once the setup is completely done, Open the Xamarin Studio.
+        <br />
+        <br />
+        <img src="~/Images/iOS_First/iOS_1.png" class="img-responsive" />
+        <br />
+        <br />
+        Click on New Solution button on the top left corner in the startup screen. You will see an New Solution dialog window. Where you need to choose Unified API and then choose iPhone and select Empty project. Provide a meaningful project name and click on Ok.
+        <br />
+        <br />
+        <img src="~/Images/iOS_First/iOS_2.png" class="img-responsive" />
+        <br />
+        <br />
+
+        There we go.. We are ready with default project structure of iPhone application.
+        <br />
+        <br />
+        <img src="~/Images/iOS_First/iOS_3.png" class="img-responsive" />
+        <br />
+        <br />
+        Lets see what are all there in the application structure.
+        <br />
+        <b>References</b> - Where you see basic reference of an iPhone application. Nothing much as of now we do here.<br />
+        <b>Components</b> - Where you can include third party components from Xamarin. Download them from http://components.xamarin.com<br />
+        <b>Resources</b> - Its basically an asset library where you can include documents, audio files, video files etc. and all the images with respect to your application will be seen here.<br />
+        <b>Info.Plist</b> - This is a property list file where you see all the basic properties of iPhone application.<br />
+        <b>AppDelegate</b> - This is the Initial point of an application execution.
+        <br />
+        Now, we will add a controller to this project. For that right click on the project and select Add and Choose new item.
+        <br />
+        <br />
+        <img src="~/Images/iOS_First/iOS_4.png" class="img-responsive" />
+        <br />
+        <br />
+        <img src="~/Images/iOS_First/iOS_5.png" class="img-responsive" />
+        <br />
+        <br />
+        You see a new controller is added to our project.
+        <br />
+        <br />
+        <img src="~/Images/iOS_First/iOS_6.png" class="img-responsive" />
+        <br />
+        <br />
+        In the above structure you see a class file and a designer file (.xib - XCode Interface Builder). Double click on the .xib file, it opens the file in XCode.
+        <br />
+        <br />
+        <img src="~/Images/iOS_First/iOS_7.png" class="img-responsive" />
+        <br />
+        <br />
+        We will see more about XCode designer in the furthur articles.
+        <br />
+        In the right bottom corner you see control list section which has all the iOS Controls. You can drag and drop the specific control as per your need. Now we will drap and drop a Label(UILabel).
+        <br />
+        We change the properties of the Label from the Property Window as below.
+        <br />
+        <br />
+        <img src="~/Images/iOS_First/iOS_8.png" class="img-responsive" />
+        <br />
+        <br />
+        Save the file and Close XCode. You see here the changes we did to the designer file will be synced to Xamarin Studio.
+        <br />
+        <br />
+        <img src="~/Images/iOS_First/iOS_9.png" class="img-responsive" />
+        <br />
+        <br />
+        Save the Application and Click on Run to see the result in iOS Simulator.
+        <br />
+        <br />
+        <img src="~/Images/iOS_First/iOS_10.png" class="img-responsive" />
+        <br />
+        <br />
+        We can change the properties of application in either Info.Plist or right click on the project and choose Options. For an iOS application, iOS Signing and iOS Application are more important. If you are little bit familier about Profiles and Certificates for an iOS application, here is the place where we choose them for bundling our appliciation. If you are not familier about that Don't worry, you can know about them in the other articles.
+        <br />
+        In iOS Application, we specify version, Name of the application, Bundle Name, Images, Icons etc. We see more about this in further articles.
+        <br />
+        <br />
+        <img src="~/Images/iOS_First/iOS_11.png" class="img-responsive" />
+        <br />
+        <br />
+        <img src="~/Images/iOS_First/iOS_12.png" class="img-responsive" />
+        <br />
+        <br />
+        <img src="~/Images/iOS_First/iOS_13.png" class="img-responsive" />
+        <br />
+        <br />
+        Enjoy Coding your first iOS Application.<br />
+        <br />
+        <a href="https://app.box.com/s/l4asmek1ilslw2v854avdf3ky4nibhdu" class="btn btn-danger">
+            Sample
+        </a>
+        <br />
+        <br />
+    </p>
+</article>
+

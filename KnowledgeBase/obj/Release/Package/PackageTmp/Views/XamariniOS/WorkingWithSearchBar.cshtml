@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Working With Search Bar";
+}
+
+<h1>Working With Search Bar</h1>
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url('../../Images/avatar.png')" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <br />
+    <p>If we have huge data and looking for certain item will be complicated. So we should have search concept for our list of items which filters data based on the key entry.</p>
+    <p>Here is the small sample which users UISearchBar for searching the data in a table.</p>
+    <p>- Create a new solution with one View Controller.</p>
+    <p>- Add a Search bar and TableView to the Controller as shown below.</p>
+    <br />
+    <img src="~/Images/UISearchBar/UISearchBar_1.png" class="img-responsive" />
+    <br />
+    <br />
+    <p>For this sample we are using a list of countries which will be shown in the table and we will filter them based on the key entry.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/e531f8784c697311e4700b6e08c157ad.js"></script>
+    <p>- Create a TableSource.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/5654fc2f06ba54e96ecb81388ba543a6.js"></script>
+    <p>- Bind the Table Source to the UITableView. </p>
+<pre>
+ItemsTableView<span style='color:#808030; '>.</span>Source <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> TableSource <span style='color:#808030; '>(</span>Names<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+    <p>- Write the below events for the UISearchBar to filter the data.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/4d12fd951ade861a9195545d097d17ba.js"></script>
+
+    <p>Enjoy Coding... </p>
+</article>

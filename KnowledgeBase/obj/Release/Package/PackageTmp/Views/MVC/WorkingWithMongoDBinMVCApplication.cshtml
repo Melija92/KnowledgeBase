@@ -1,0 +1,147 @@
+﻿@{
+    ViewBag.Title = "WorkingWithMongoDBinMVCApplication";
+}
+
+<h1>Working With MongoDB in MVC Application</h1>
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url('../../Images/avatar.png')" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <p>NoSQL DB is the one more alternative for traditional db. There are different flavours in NoSQL DB like DynamoDB, mongoDb, CouchDB etc. In this article we will see how to work with Mongodb. You can look for an article in RavenDb here <a href="http://www.guntidheerajkumar.com/MVC/WorkingWithRavenDB" target="_blank">Working With RavenDB</a></p>
+
+    <p>
+        MongoDB is a cross-platform document-oriented database. NoSQL DB's are used to build high performance applications effectively. MongoDb has dynamic schemas and the format is called as BSON.
+    </p>
+
+    <p>
+        First developed by the software company MongoDB Inc. in October 2007 as a component of a planned platform as a service product, the company shifted to an open source development model in 2009, with MongoDB offering commercial support and other services. MongoDB has been adopted as backend software by a number of major websites and services, including Craigslist, eBay, and Foursquare among others. MongoDb is one of the popular database management system and most popular for document stores.
+    </p>
+
+    <p>
+        Lets jump in working with MongoDb in an MVC application.
+    </p>
+
+    <p>
+        Initial step starts with installing and configuration. You can download Monogdb from Mongodb site in 32bit and 64bit flavors.
+    </p>
+
+    <p>
+        <b>32 Bit :</b> <a href="https://www.mongodb.org/dr/fastdl.mongodb.org/win32/mongodb-win32-i386-3.0.7-signed.msi/download" target="_blank">https://www.mongodb.org/dr/fastdl.mongodb.org/win32/mongodb-win32-i386-3.0.7-signed.msi/download</a>
+    </p>
+    <p>
+        <b>64 Bit :</b> <a href="https://www.mongodb.org/dr/fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.0.7-signed.msi/download" target="_blank">https://www.mongodb.org/dr/fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.0.7-signed.msi/download</a>
+    </p>
+
+    <p>
+        Once the download is done, Install the application and please do remeber the location where the mongodb is installed. Typically it installs in C:\Program Files\MongoDb. As we got to know MongoDb is a document database where all the documents are stored in a physical location in hard drive. MongoDb recommends to have a directory named "data\db" in C Drive where all the documents are stored. Mongo offers cloud Manager where you can use PAAS (Platform as a service) for all your data.
+    </p>
+
+    <p>
+        Go To Command Prompt and navigate to installed path of MongoDb as below.
+    </p>
+
+    <p>
+        <strong><i> cd C:\Program Files\MongoDB\Server\3.0\bin</i></strong>
+    </p>
+
+    <p>
+        and run the executable "mongod". This will run the mongodb server in Port 27017.
+    </p>
+
+    <p>
+        So, Initial step of setting up database is done.
+    </p>
+
+    <p>
+        Lets start with small application.
+    </p>
+
+    <p>
+        Create a MVC application and Dowload, Install the MongoDbCsharpDriver
+    </p>
+
+    <p>
+        Install-Package mongocsharpdriver -Version 2.1.1
+    </p>
+
+    <p>
+        This will install
+    </p>
+
+    <ul>
+        <li>
+            MongoDB.Bson
+        </li>
+        <li>
+            MongoDB.Driver.Core
+        </li>
+        <li>
+            MongoDB.Driver
+        </li>
+    </ul>
+
+    <p>
+        Create a class named "Employee" with the below properties.
+    </p>
+
+    <script src="https://gist.github.com/guntidheerajkumar/9849530e8cc20afe9acf.js"></script>
+
+    <p>
+        In the above snippet we have used BsonIgnoreExtraElements, it is used to ignore elements when the class is deserialized.
+    </p>
+
+    <p>
+        Open HomeController and create an object for MongoClient
+    </p>
+    <script src="https://gist.github.com/guntidheerajkumar/95c4239c4891724acf87.js"></script>
+
+    <p>
+        As we got to know like mongodb server runs on 27017 port, so we are specifying that port and as we are running in our local machine so we are targetting localhost here. If the server is running in different machine then we need to specify the server name and the port number.
+    </p>
+    <p>
+        Lets write pull the data from the database
+    </p>
+    <script src="https://gist.github.com/guntidheerajkumar/4f6f9670f8253782b8cb.js"></script>
+
+    <p>
+        Here, using MongoClient object we are using GetDatabase method which takes database name and some database settings (optional) as parameters. If the name provided here is not there in the database then this method will create the database for you.
+    </p>
+    <p>
+        Collection is a group of MongoDB documents. Collections do not enforce a schema. As every collection will have multiple documents with in it and A document is basically a set of key-value pairs. Documents have dynamic schema. Dynamic schema means that documents in the same collection do not need to have the same set of fields or structure, and common fields in a collection's documents may hold different types of data.
+    </p>
+    <p>
+        We are going to fetch the data using GetCollection method from database.
+    </p>
+    <p>
+        Using the find method we are fetching all the employee information and returning it to the view.
+    </p>
+    <p>
+        Lets see how to insert data in to the database.
+    </p>
+    <script src="https://gist.github.com/guntidheerajkumar/a637725034677eb6036b.js"></script>
+
+    <p>
+        We have,
+    </p>
+    <p>
+        InsertOneAsync, DeleteOneAsync, ReplaceOneAsync, UpdateOneAsync, UpdateManyAsync methods which performs all the other CRUD operations.
+    </p>
+    <p>
+        Find the Sample here <a href="https://github.com/guntidheerajkumar/MongoDBSample/archive/master.zip" target="_blank">Download Sample</a>
+    </p>
+    <br />
+    <br />
+    <br />
+    <p>
+        Enjoy Coding.....
+
+    </p>
+</article>

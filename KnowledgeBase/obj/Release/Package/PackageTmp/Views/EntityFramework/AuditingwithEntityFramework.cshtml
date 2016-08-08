@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "AuditingwithEntityFramework";
+}
+
+<h1>Auditing with Entity Framework</h1>
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url('../../Images/avatar.png')" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <p>
+        Tracking of changes to the data can be handled in Entity framework using Self Tracking Entities. This can be identfied by using ObjectStateManager class which has complete information of the entities and their state (Added, Modified, Deleted). We can track the changes using this ObjectStateManager. Following is the example for recording the changes.
+
+        Create a schema in the Database for Audit as below:
+    </p>
+    <script src="https://gist.github.com/guntidheerajkumar/d0cf89fd1e6019678581e285df02b719.js"></script>
+    <p>Create an application add an entity model to your application and include all your objects to the entity model. Once the model (EDMX) is created right click on the entity designer and choose Add Code Generation Item, It opens a dialog where you can choose the Code Generation strategies. Default code generation type is EntityObjectDesigner. Select Self Tracking Entities as your code generation item. It Creates two files in your solution. Model.tt, Model.Context.tt (These are called as T4 (Template Text Transformation) templates) Do Handling changes to the object Model.Context.cs file which has Initialize() method, where you need to write your handler to track changes. In Entity Framework Context.SaveChanges will be used to apply data in database. So we will create a handler for Saving Changes in Model.Context.cs so that at the time of applying data to DB changes will be captured and stored in our Audit Table.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/ac43afab14f988c0ce59669526ec204b.js"></script>
+    <p>Here we are creating an event handler named SaveJournalChanges which tracks the entity changes. We are making a new partial class with the same name as entity class. In that we are changing the save changes functionality to accomplish Audit Process.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/f6d503b94397da39ab11634997ed1276.js"></script>
+    <p>ObjectContext.DetectChanges detects the changes in context object.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/5dedd9c73478828e640fb43a9bff7b3b.js"></script>
+    <p>From UI you can call Context.SaveChanges which inturn calls SaveJournalChanges method.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/a7206a1c7000fb49c06b268ee89d4b9c.js"></script>
+    <br />
+    <br />
+    <a class="btn btn-danger" href="https://github.com/guntidheerajkumar/AuditExample">
+        Sample
+    </a>
+</article>

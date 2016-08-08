@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "ExceptionHandlingMVC";
+}
+
+<h1>Exception Handling in MVC</h1>
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url('../../Images/avatar.png')" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <p>Hello all, Welcome back to Knowledge Base. </p>
+    <p>Today we are going to talk about Exception Handling.... uhhhhhh Key Concept.</p>
+    <p>
+        Exception Handling is the key component in every software program. We are very unfortunate that there will be
+        certain situations where we experience errors. Either it could be with respect to network, data mismatch,
+        casting issue or some thing which cause a booooommmmm error. But we should be cautious in handling those so
+        user won't get distracted. If we won't handle them properly we will see the beautiful red screen with
+        some errors in red......:(
+    </p>
+
+    <p>
+        Lets get started, we will see now how we can handle exceptions in MVC application. In this example, its a simple
+        and one way of doing exception handling. This is just to get understanding and to start implementing exception
+        handling.
+    </p>
+
+    <p>
+        As usual, lets create a MVC application. No Logic nothing, just straight forward a normal MVC application with
+        default skeleton.
+    </p>
+
+    <p>As a first step lets create a MVC View, here we are naming it as ErrorView.cshtml.</p>
+    <p>Create a simple layout for showing up if any error occurs.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/d57ed362a4fc1bbbf397d7e908ceee0a.js"></script>
+
+    <p>
+        Add customerror section in Web.Config. The reason behind this is to intimate the application that we are
+        using custom error handling, so we are turning custom errors "on". We are even specifying the defaultRedirect for our custom errors.
+    </p>
+
+    <script src="https://gist.github.com/guntidheerajkumar/ebe32cf1fccfd9ddc7a25eeec4cde83e.js"></script>
+
+    <p>Now in our controller, we are going to use built-in feature of handling errors by using <b><u>HandleError</u></b> attribute.</p>
+
+    <img src="~/Images/CustomError_1.png" />
+
+    <p>
+        HandleAttribute, has some Named Properties which we need to configure based on our needs. The different named
+        properties are,
+    </p>
+
+    <ul>
+        <li><b> ExceptionType.</b> Specifies the exception type or types that the filter will handle. If this property is not specified, the filter handles all exceptions.</li>
+        <li><b>View. </b>Specifies the name of the view to display.</li>
+        <li><b>Master.</b> Specifies the name of the master view to use, if any.</li>
+        <li><b>Order.</b> Specifies the order in which the filters are applied, if more than one HandleErrorAttribute filter is possible for a method.</li>
+    </ul>
+    <p>(Courtesy: <a href="https://msdn.microsoft.com/en-us/library/system.web.mvc.handleerrorattribute(v=vs.118).aspx" target="_blank">MSDN</a>)</p>
+
+    <p>We are specifying the HandleError attribute in the controller at action level or we can specify them at controller level.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/1dbc48f6976dd7ab772607b73c92b9ed.js"></script>
+
+    <p>We need to register our custom filter in Global.asax.</p>
+
+    <script src="https://gist.github.com/guntidheerajkumar/821683ffd081f0d68833bfd7a11c31b8.js"></script>
+
+    <p>Exception shows as below. We can customize this as per our needs.</p>
+
+    <img src="~/Images/CustomError.png" width="450" height="250" class="img-responsive" />
+
+    <p>Enjoy Coding... </p>
+    </article>

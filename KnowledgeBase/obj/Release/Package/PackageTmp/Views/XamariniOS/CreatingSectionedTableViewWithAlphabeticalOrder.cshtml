@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Creating Sectioned TableView With Alphabetical Order";
+}
+
+<h1>Creating Sectioned TableView With Alphabetical Order</h1>
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url('../../Images/avatar.png')" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <br />
+    <p>
+        Its Very important to have items in Alphabetical Order that are displayed in TableView with respect to easy navigation.
+        Here is the sample which helps in displaying items in Alphabetical Order.
+    </p>
+
+    <p>Create a Solution and Add a new View Controller. </p>
+    <p>Do add a TableView either using Xib or by creating a new instance of tableview and adding it to view.</p>
+    <p>Create two properties,</p>
+    <script src="https://gist.github.com/guntidheerajkumar/95482512cbfd98bd53cae789db0f0411.js"></script>
+    <p>Have some data which populates to the TableView.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/e531f8784c697311e4700b6e08c157ad.js"></script>
+    <p>Specify the source for TableView by create TableSource and Pass the List of items to that.</p>
+
+    <script src="https://gist.github.com/guntidheerajkumar/0fc47de62442cc342e8320f5f1a5d30a.js"></script>
+    <p>Create a TableViewSource.</p>
+    <p>In the TableViewSource has some properties as below,</p>
+    <script src="https://gist.github.com/guntidheerajkumar/2ee933eea6eab734c3f720e97e84c348.js"></script>
+    <p>In the TableViewSource constructor have a logic which gets the section names and add items to that section. Here we are using a dictionary which stores the section and elements which match the criteria in to the sections.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/d2ac0cbd768b569ce73470a5ca29a42a.js"></script>
+    <p>Specify the Number of sections,</p>
+    <script src="https://gist.github.com/guntidheerajkumar/95a8be88f8e7e9bd35870cb481c98214.js"></script>
+    <p>Specify the title of the section,</p>
+    <script src="https://gist.github.com/guntidheerajkumar/d191135805ca7a3921d45164ce430249.js"></script>
+    <p>Specify number of items in each section,</p>
+    <script src="https://gist.github.com/guntidheerajkumar/26649453f93ccbe51b697bd962a17621.js"></script>
+    <p>Bind the data with the item value in GetCell.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/bea9b017d868a097e256472278b7a34a.js"></script>
+    <br />
+    <b><u>Output:</u></b>
+    <br />
+    <br />
+    <img src="~/Images/AlphabeticalOrderTableView.png" width="230" height="400" />
+    <br />
+    <br />
+    <p>Enjoy Coding.... </p>
+</article>
