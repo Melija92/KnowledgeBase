@@ -26,7 +26,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/02/2016 20:50:20</publishTime>
     </File>
     <File Include="bin/KnowledgeBase.dll">
-      <publishTime>08/15/2016 22:58:39</publishTime>
+      <publishTime>08/28/2016 22:18:34</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>05/02/2016 20:50:20</publishTime>
@@ -116,22 +116,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/01/2016 19:30:20</publishTime>
     </File>
     <File Include="Content/bootstrap.css">
-      <publishTime>08/01/2016 19:30:20</publishTime>
+      <publishTime>08/28/2016 22:11:00</publishTime>
     </File>
     <File Include="Content/bootstrap.min.css">
-      <publishTime>08/01/2016 19:30:20</publishTime>
+      <publishTime>08/28/2016 22:10:56</publishTime>
     </File>
     <File Include="Content/main.css">
-      <publishTime>08/08/2016 21:50:42</publishTime>
+      <publishTime>08/28/2016 22:12:12</publishTime>
     </File>
     <File Include="Content/main.min.css">
-      <publishTime>08/01/2016 19:30:20</publishTime>
+      <publishTime>08/28/2016 22:12:13</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>08/01/2016 19:30:20</publishTime>
+      <publishTime>08/28/2016 22:17:30</publishTime>
     </File>
     <File Include="Content/Site.min.css">
-      <publishTime>08/01/2016 19:30:20</publishTime>
+      <publishTime>08/28/2016 22:17:31</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>05/02/2016 20:50:17</publishTime>
@@ -1010,7 +1010,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/01/2016 19:30:20</publishTime>
     </File>
     <File Include="Views/MVC/LeveragingDynamicCsharpinApplication.cshtml">
-      <publishTime>08/08/2016 21:40:44</publishTime>
+      <publishTime>08/16/2016 21:10:38</publishTime>
     </File>
     <File Include="Views/MVC/LiveDateTimeUsingJQuery.cshtml">
       <publishTime>07/19/2016 19:45:50</publishTime>
@@ -1070,7 +1070,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/02/2016 20:50:17</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>08/08/2016 21:48:29</publishTime>
+      <publishTime>08/28/2016 22:14:17</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>07/04/2016 19:41:53</publishTime>
@@ -1172,7 +1172,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/02/2016 20:50:17</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/15/2016 22:58:43</publishTime>
+      <publishTime>08/16/2016 21:11:54</publishTime>
     </File>
   </ItemGroup>
 </Project>
