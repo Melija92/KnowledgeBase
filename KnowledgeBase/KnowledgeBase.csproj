@@ -571,6 +571,7 @@
     <Content Include="Views\MVC\WorkingwithEntityFrameworkinNetCore.cshtml" />
     <Content Include="Views\MVC\WorkingwithAzureStorageinWebApplication.cshtml" />
     <Content Include="Views\MVC\LeveragingDynamicCsharpinApplication.cshtml" />
+    <Content Include="Views\XamariniOS\XamarinObjCBinding.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

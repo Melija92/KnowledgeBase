@@ -17,25 +17,25 @@ namespace KnowledgeBase
 
         public static List<ArticlesList> GetMVCList()
         {
-            var mvcData = GetListArticles().ToList().Where(x => x.ArticleURL.StartsWith("../MVC")).ToList().OrderByDescending(x => x.ArticleName.Contains("MVC")).ToList();
+            var mvcData = GetListArticles().ToList().Where(x => x.Tag == "MVC").ToList();
             return mvcData;
         }
 
         public static List<ArticlesList> GetASPNETList()
         {
-            var aspnetData = GetListArticles().ToList().Where(x => x.ArticleURL.StartsWith("../ASPNET")).ToList();
+            var aspnetData = GetListArticles().ToList().Where(x => x.Tag == "ASPNET").ToList();
             return aspnetData;
         }
 
         public static List<ArticlesList> GetEntityFrameworkList()
         {
-            var efData = GetListArticles().ToList().Where(x => x.ArticleURL.StartsWith("../EntityFramework") || x.ArticleURL.StartsWith("../Linq")).ToList();
+            var efData = GetListArticles().ToList().Where(x => x.Tag == "Entitiy Framework").ToList();
             return efData;
         }
 
         public static List<ArticlesList> GetXamariniOSList()
         {
-            var xamarinData = GetListArticles().ToList().Where(x => x.ArticleURL.StartsWith("../XamariniOS")).ToList();
+            var xamarinData = GetListArticles().ToList().Where(x => x.Tag == "Xamarin").ToList();
             return xamarinData;
         }
 
@@ -214,7 +214,7 @@ namespace KnowledgeBase
                 ArticleName = "Auditing with Entity Framework",
                 ArticleURL = "../EntityFramework/AuditingwithEntityFramework",
                 Article = "AuditingwithEntityFramework",
-                Tag = "Entitiy Framework"
+                Tag = "%"
             });
 
             Names.Add(new ArticlesList
@@ -615,6 +615,13 @@ namespace KnowledgeBase
                 ArticleURL = "../MVC/LeveragingDynamicCsharpinApplication",
                 Article = "LeveragingDynamicCsharpinApplication",
                 Tag = "MVC"
+            });
+            Names.Add(new ArticlesList
+            {
+                ArticleName = "Working on Xamarin Obj-C Binding",
+                ArticleURL = "../XamariniOS/XamarinObjCBinding",
+                Article = "XamarinObjCBinding",
+                Tag = "Xamarin"
             });
             return Names;
         }
