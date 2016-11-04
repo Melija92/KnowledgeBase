@@ -16,7 +16,7 @@ namespace KnowledgeBase
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "MVC", action = "LeveragingDynamicCsharpinApplication", id = UrlParameter.Optional }
+                defaults: new { controller = "XamariniOS", action = "XamarinObjCBinding", id = UrlParameter.Optional }
             );
         }
     }
