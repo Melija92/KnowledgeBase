@@ -28,5 +28,11 @@
     "inputFiles": [
       "Scripts/articlesearch.js"
     ]
+  },
+  {
+    "outputFileName": "Content/w3.min.css",
+    "inputFiles": [
+      "Content/w3.css"
+    ]
   }
 ]
