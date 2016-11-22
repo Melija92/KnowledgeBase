@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewBag.Title = "WorkingwithAzureMobileServices";
+}
+
+<h2>Working with Azure Mobile App Services</h2>
+
+<div id="metadata" cmpgrp="page info">
+    <a href="https://github.com/guntidheerajkumar" class="avatar" title="Dheeraj Kumar Gunti">
+        <span class="author-name" style="background-image: url('../../Images/avatar.png')" alt="Author Name"></span>
+    </a>
+    <div class="info">
+        <span class="name"><a href="https://github.com/guntidheerajkumar">Dheeraj Kumar Gunti</a></span>
+        <div class="meta">
+            <p>Reading Time : <span class="eta"></span> (<span class="words"></span> words)</p>
+        </div>
+    </div>
+</div>
+<article>
+    <p>When working with real time enterprise apps, infrastructure plays a bigger role. With Microsoft Azure we can overcome this infrastructure problem. This is one aspect. </p>
+    <p>When we are working with a mobile application which is targetting all the platforms (iOS, Android and Windows) then data storage, push notifications, etc play a key role. Using Azure Mobile App Service this process is made simpler and can easily be hooked in to the application.</p>
+    <p>In this article we will be discussing about Easy Tables in Mobile App Service.</p>
+    <p><b>What are Easy Tables</b></p>
+    <p>Easy Tables are known for no code table and with out writing code one can create a backend table and are ODATA friendly.</p>
+    <p>Lets start in creating app service and configuring the easy tables for our application.</p>
+    <p>Goto <a href="http://portal.azure.com" target="_blank">Azure Portal (http://portal.azure.com)</a> with your enterprise or personal account.</p>
+    <p>Click on Plus Sign which is used to create a new service.</p>
+    <img src="~/Images/MobileServices/1.png" class="img-responsive" width="600" height="550" />
+    <br />
+    <p>Choose Web + Mobile and select Mobile App. Specify a name for the app and change the rest of the properties and click on Create.</p>
+    <br />
+    <img src="~/Images/MobileServices/2.png" class="img-responsive" width="700" height="300" />
+    <br />
+    <p>Once the app service is create you can able to see that in all services section as above. </p>
+    <img src="~/Images/MobileServices/3.png" class="img-responsive" width="600" height="550" />
+    <br />
+    <p>Click on the app service for details.</p>
+    <br />
+    <img src="~/Images/MobileServices/5.png" class="img-responsive" width="700" height="550" />
+    <br />
+    <p>We can able to see App Service Editor which is browser based editor for the app service. This app is built over node.js. </p>
+    <br />
+    <img src="~/Images/MobileServices/6.png" class="img-responsive" width="500" height="500" />
+    <br />
+    <p>Click on Advanced Tools to see the complete app specific information which shows all about the endpoints and developer oriented tools. This is called as Kudu. You can able to see the complete environment and endpoint details as below.</p>
+    <br />
+    <img src="~/Images/MobileServices/7.png" class="img-responsive" width="500" height="500" />
+    <br />
+    <p>Scroll down and look for easy tables. </p>
+    <br />
+    <img src="~/Images/MobileServices/4.png" class="img-responsive" width="400" height="600" />
+    <br />
+    <img src="~/Images/MobileServices/8.png" class="img-responsive" />
+    <br />
+    <img src="~/Images/MobileServices/9.png" class="img-responsive" width="500" height="300" />
+    <br />
+    <p>Click on Continue to create a table.</p>
+    <br />
+    <img src="~/Images/MobileServices/10.png" width="600" height="400" class="img-responsive"  />
+    <br />
+    <p>Click to create a new database or connect to an existing database.</p>
+    <br />
+    <img src="~/Images/MobileServices/11.png" width="500" height="500" class="img-responsive" />
+    <br />
+    <p>Click on Plus Symbol to add a new Data connection (database).</p>
+    <br />
+    <img src="~/Images/MobileServices/12.png" width="500" height="500" class="img-responsive" />
+    <br />
+    <p>Click on New Database and provide all the details.</p>
+    <br />
+    <img src="~/Images/MobileServices/13.png" width="600" height="600" class="img-responsive" />
+    <br />
+    <br />
+    <img src="~/Images/MobileServices/14.png" width="400" height="600" class="img-responsive" />
+    <br />
+    <br />
+    <p>Provide all the details and click on create. </p>
+    <br />
+    <img src="~/Images/MobileServices/15.png" width="500" height="300" class="img-responsive" />
+    <br />
+    <p>Select to override the settings and click on Initialize. </p>
+    <br />
+    <img src="~/Images/MobileServices/16.png" width="700" height="500" class="img-responsive" />
+    <br />
+    <br />
+    <p>You can see the app service code generated. We can go to this page by clicking on App Service Editor.</p>
+    <br />
+    <img src="~/Images/MobileServices/17.png" width="400" height="500" class="img-responsive" />
+    <br />
+    <br />
+    <p>Once our database is created. Now we can add a table under that database. Click on Easy Tables and Choose add to create a new table and specify a name.</p>
+    <br />
+    <img src="~/Images/MobileServices/18.png" width="400" height="500" class="img-responsive" />
+    <br />
+    <br />
+    <p>Once the table is created, it creates with default schema and we can manage schema and add the necessary fields to that.</p>
+    <br />
+    <img src="~/Images/MobileServices/19.png" width="600" height="450" class="img-responsive" />
+    <br />
+    <p>You can able to see the default schema as below.</p>
+    <br />
+    <img src="~/Images/MobileServices/20.png" width="600" height="450" class="img-responsive" />
+    <br />
+    <p>Click on Add Column to create new column. Note: here app service supports 4 data types - string, number, boolean, date.</p>
+    <br />
+    <img src="~/Images/MobileServices/21.png" width="600" height="450" class="img-responsive" />
+    <br />
+    <p>Now we will start writing the mobile application. In this example I am targetting only iOS. If you are creating Xamarin Forms solution, the procedure is same but the code will be written in PCL.</p>
+    <p>As a generic process, create a new single view application. We need to add specific nuget packages for working with Mobile services. </p>
+    <p><i>Install-Package Microsoft.Azure.Mobile.Client <br />Install-Package Microsoft.Azure.Mobile.Client.SQLiteStore</i></p>
+    <br />
+    <p>Add the below code in AppDelegate.cs -> Finished Launching</p>
+    <script src="https://gist.github.com/guntidheerajkumar/66ff46cdedac2d057885e54a335df4a0.js"></script>
+    <p>Create a class names Azure Service. Initialize the following properties.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/4823e382817b4cbd91438ea872a9d59e.js"></script>
+    <p>Create a method, Initialize to setup the client and local db.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/ab2a7d795723dc3e3bd68c93bde0895e.js"></script>
+    <p>We will be having methods for getting employees and inserting employee.</p>
+    <p>As mobile app services support offline synchronization we are specifying sync method in order to push and pull the latest changes.</p>
+    <script src="https://gist.github.com/guntidheerajkumar/074c5ee284fe9700eb47b94240bfadb4.js"></script>
+    <script src="https://gist.github.com/guntidheerajkumar/a9876b67e5029692678f5d4a79931a90.js"></script>
+    <p>Once you insert the employees, you can able to see the details in Azure portal -> Easy tables as below.</p>
+    <img src="~/Images/MobileServices/22.png" width="600" height="450" class="img-responsive" />
+    <br />
+    <br />
+    <b>Output:</b><br />
+    <br />
+
+    <img src="~/Images/MobileServices/Output.gif" class="img-responsive" />
+    <br />
+    <br />
+    <br />
+    <p>This is just a basic example to get started with. You can know more about App Service here <a href="https://tryappservice.azure.com/" target="_blank">Azure App Service</a></p>
+</article>

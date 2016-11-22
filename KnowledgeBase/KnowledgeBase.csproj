@@ -195,6 +195,7 @@
     <Content Include="Images\EFCore\CommandLine.png" />
     <Content Include="Images\EFCore\Migrations.PNG" />
     <Content Include="Images\email.png" />
+    <Content Include="Images\MobileServices\Output.gif" />
     <Content Include="Images\nodata.png" />
     <Content Include="Images\319.GIF" />
     <Content Include="Images\alert_control_1.jpg" />
@@ -594,11 +595,10 @@
     <Content Include="Images\MobileServices\20.png" />
     <Content Include="Images\MobileServices\21.png" />
     <Content Include="Images\MobileServices\22.png" />
-    <None Include="Images\MobileServices\Output.mov" />
+    <Content Include="Views\XamariniOS\WorkingwithAzureMobileServices.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\MobileServices\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

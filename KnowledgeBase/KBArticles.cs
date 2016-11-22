@@ -623,6 +623,13 @@ namespace KnowledgeBase
                 Article = "XamarinObjCBinding",
                 Tag = "Xamarin"
             });
+            Names.Add(new ArticlesList
+            {
+                ArticleName = "Working with Azure Mobile Services",
+                ArticleURL = "../XamariniOS/WorkingwithAzureMobileServices",
+                Article = "WorkingwithAzureMobileServices",
+                Tag = "Xamarin"
+            });
             return Names;
         }
     }
