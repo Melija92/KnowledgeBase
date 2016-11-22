@@ -572,9 +572,33 @@
     <Content Include="Views\MVC\WorkingwithAzureStorageinWebApplication.cshtml" />
     <Content Include="Views\MVC\LeveragingDynamicCsharpinApplication.cshtml" />
     <Content Include="Views\XamariniOS\XamarinObjCBinding.cshtml" />
+    <Content Include="Images\MobileServices\1.png" />
+    <Content Include="Images\MobileServices\2.png" />
+    <Content Include="Images\MobileServices\3.png" />
+    <Content Include="Images\MobileServices\4.png" />
+    <Content Include="Images\MobileServices\5.png" />
+    <Content Include="Images\MobileServices\6.png" />
+    <Content Include="Images\MobileServices\7.png" />
+    <Content Include="Images\MobileServices\8.png" />
+    <Content Include="Images\MobileServices\9.png" />
+    <Content Include="Images\MobileServices\10.png" />
+    <Content Include="Images\MobileServices\11.png" />
+    <Content Include="Images\MobileServices\12.png" />
+    <Content Include="Images\MobileServices\13.png" />
+    <Content Include="Images\MobileServices\14.png" />
+    <Content Include="Images\MobileServices\15.png" />
+    <Content Include="Images\MobileServices\16.png" />
+    <Content Include="Images\MobileServices\17.png" />
+    <Content Include="Images\MobileServices\18.png" />
+    <Content Include="Images\MobileServices\19.png" />
+    <Content Include="Images\MobileServices\20.png" />
+    <Content Include="Images\MobileServices\21.png" />
+    <Content Include="Images\MobileServices\22.png" />
+    <None Include="Images\MobileServices\Output.mov" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\MobileServices\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -607,6 +631,11 @@
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>
+    <MonoDevelop>
+      <Properties>
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+      </Properties>
+    </MonoDevelop>
   </ProjectExtensions>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
